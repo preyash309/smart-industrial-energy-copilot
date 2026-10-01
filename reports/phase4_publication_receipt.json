@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/preyash309/smart-industrial-energy-copilot",
+  "visibility": "public",
+  "validated_commit": "60b1b18fb18070b390e9d864216c2c525ce6b891",
+  "validated_tree": "e953858412b7692147069b225813c127f8c8f350",
+  "tree_matches_tested_local_checkout": true,
+  "CI": {
+    "run": "https://github.com/preyash309/smart-industrial-energy-copilot/actions/runs/36837689567",
+    "demo": {"status": "success", "installation": "ordinary pip requirements-dev.txt on Ubuntu / Python 3.12", "passed": 43, "seconds": 3.51},
+    "scientific_smoke": {"status": "success", "installation": "ordinary pip requirements-full.txt on Ubuntu / Python 3.12", "passed": 224, "seconds": 5.89},
+    "example_command": "PASS"
+  },
+  "full_scientific_archive_regression": {"passed": 492, "skipped": 1, "seconds": 378.90},
+  "protected_files": {"upstream": 9954, "dashboard": 99, "changed": 0},
+  "publication_method": "Authenticated GitHub connector; shell network restricted; remote tree hash independently equals local Git tree",
+  "local_checkout": "main aligned with connector commits; original local preparation commits preserved on packaging-local-history",
+  "license": "Owner selection pending; no license invented",
+  "release_tag": "Not created",
+  "GitHub_Release": "Not published / requires separate authorization",
+  "bulk_scientific_archive": "Retained locally; not hosted in lightweight GitHub profile",
+  "fresh_local_browser_check": "Denied by browser security policy; no workaround; AppTest and unchanged Phase III-A screenshots retained",
+  "release_status": "PUBLIC REPOSITORY AND REPRODUCIBILITY CHECKS READY; LICENSE SELECTION PENDING"
+}

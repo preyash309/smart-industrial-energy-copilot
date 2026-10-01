@@ -73,12 +73,12 @@
   "license": "OWNER SELECTION PENDING",
   "remote_repository": "https://github.com/preyash309/smart-industrial-energy-copilot",
   "remote_publication": "Authorized creation and audited source push; release publishing not authorized",
-  "CI": "Both exact job test commands passed locally; remote install/workflow status recorded separately after push",
+  "CI": "PASS: ordinary Ubuntu/Python-3.12 installation, 43 demo tests and 224 scientific smoke tests; source commit 60b1b18 / run 36837689567",
   "remaining_limitations": [
     "No chosen project license",
     "Full bulk scientific archive is retained locally, not hosted/downloadable in Git",
-    "Fresh network wheel resolution not tested locally",
     "Fresh interactive browser audit denied; AppTest and prior screenshot evidence available",
-    "No industrial field evidence, real service ROI/billing/authentication/control, or qualified live G1"
+    "No industrial field evidence, real service ROI/billing/authentication/control, or qualified live G1",
+    "Local network installation unavailable; independent GitHub CI ordinary installation passed"
   ]
 }
