@@ -1,0 +1,35 @@
+{
+  "frozen_path": "data/processed/sim_v1.0",
+  "gates": [
+    {
+      "output": "...........                                                              [100%]\n11 passed in 2.21s",
+      "result": "PASS",
+      "stage": [
+        "tests/test_data.py",
+        "tests/test_v0.py"
+      ]
+    },
+    {
+      "output": ".........                                                                [100%]\n9 passed in 3.17s",
+      "result": "PASS",
+      "stage": [
+        "tests/test_v1.py"
+      ]
+    },
+    {
+      "output": "........                                                                 [100%]\n8 passed in 3.84s",
+      "result": "PASS",
+      "stage": [
+        "tests/test_acceptance.py"
+      ]
+    }
+  ],
+  "reproducibility": {
+    "events": true,
+    "heats": true,
+    "latent_heats": true,
+    "latent_truth": true,
+    "production": true,
+    "readings": true
+  }
+}

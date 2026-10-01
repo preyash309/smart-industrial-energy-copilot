@@ -1,0 +1,131 @@
+version: analytics_v1
+source_version: sim_v1.1
+assets: [IF_01, RHF_01, MILL_01, PMP_01, CMP_01, AUX, MAIN]
+quality_policy: conservative_public_quality_flag_and_finite_ranges
+parameters:
+  time_split_fractions:
+    value: [0.70, 0.15, 0.15]
+    unit: fraction of calendar days
+    status: assumption
+    source: Phase-II-A chronological handoff; thirty days cannot support Jan-Aug/Sep-Oct/Nov-Dec year splits
+    notes: Heat/load split metadata only. Maintenance requires later cycle-aware validation; no training is performed.
+  shift_hours:
+    value: 8
+    unit: h
+    status: derived
+    source: Reference_Plant_Spec_v2.pdf Section 4; public production shift indices
+    notes: Three equal shifts per day; timestamps use frozen local timezone.
+  publication_delay_minutes:
+    value: 0
+    unit: min
+    status: assumption
+    source: Phase-II-A time contract; source files have no ingestion timestamps
+    notes: Ideal posting at recorded interval/heat/shift end. Real ingestion and lab delays must replace this assumption; chemistry is excluded from pre-heat predictors.
+  slot_lags:
+    value: [1, 4, 96]
+    unit: 15-minute slot
+    status: assumption
+    source: Data_Workflow (1).pdf D7
+    notes: Lagged measurements only; never fill from future slots.
+  slot_windows:
+    value: [4, 96]
+    unit: 15-minute slot
+    status: assumption
+    source: Data_Workflow (1).pdf D7
+    notes: shift(1) before rolling; missing samples retained and counts published.
+  history_window:
+    value: 20
+    unit: completed heat
+    status: assumption
+    source: Phase-II-A transparent baseline design
+    notes: Rolling expectation uses the last twenty heats available by heat start.
+  min_history:
+    value: 8
+    unit: completed heat
+    status: assumption
+    source: Phase-II-A diagnostic warm-up design
+    notes: No diagnostic assertions from insufficient history; no fitted ML model.
+  group_min_history:
+    value: 8
+    unit: completed heat
+    status: assumption
+    source: Phase-II-A grouped historical expectation design
+    notes: Current shift and working/off-day group; falls back to rolling/global history.
+  range_quantiles:
+    value: [0.05, 0.95]
+    unit: probability
+    status: assumption
+    source: Phase-II-A empirical historical range
+    notes: Empirical 5th-95th percentile; descriptive range, not calibrated predictive coverage.
+  residual_sd_multiplier:
+    value: 2
+    unit: standard deviation
+    status: assumption
+    source: Phase-II-A rule baseline
+    notes: Candidate screening only; thresholds are not tuned to injected labels.
+  high_sec_min_residual:
+    value: 25
+    unit: kWh/t liquid
+    status: assumption
+    source: Reference_Plant_Spec_v2.pdf Section 12; Phase-II-A candidate screening
+    notes: Require both historical SD envelope and this absolute excess; no avoided-energy claim.
+  long_heat_min_residual:
+    value: 10
+    unit: min
+    status: assumption
+    source: Phase-II-A diagnostic screening
+    notes: Longer than past duration baseline; multiple physical causes remain possible.
+  high_tap_temperature:
+    value: 1690
+    unit: degC
+    status: assumption
+    source: Reference_Plant_Spec_v2.pdf Sections 9,12; nominal 1640 plus 50 K
+    notes: Observable candidate threshold, not a physical model change or confirmed fault.
+  hot_heat_min_residual:
+    value: 10
+    unit: kWh/t liquid
+    status: assumption
+    source: Phase-II-A joint temperature/energy evidence rule
+    notes: Both high measured tap temperature and excess SEC are required.
+  compressor_idle_min_residual:
+    value: 8
+    unit: kW
+    status: assumption
+    source: Phase-II-A compressor idle-context screening
+    notes: Compare with prior observed mill-off compressor load; running state alone is not an idle flag.
+  auxiliary_relative_deviation:
+    value: 0.20
+    unit: fraction of historical same-slot mean
+    status: assumption
+    source: Phase-II-A auxiliary screening
+    notes: Same time-of-day history only; warm-up required; may produce no alerts.
+  machine_relative_deviation:
+    value: 0.04
+    unit: fraction of earlier running mean
+    status: assumption
+    source: Phase-II-A pump/mill energy screening
+    notes: Evidence candidate; differences in throughput can also change energy.
+  machine_reference_samples:
+    value: 32
+    unit: earlier running interval
+    status: assumption
+    source: Phase-II-A transparent reference design
+    notes: First thirty-two prior valid running intervals; reference is available only after warm-up.
+  asset_history_days:
+    value: 7
+    unit: day
+    status: assumption
+    source: Data_Workflow (1).pdf D7
+    notes: Daily sensor histories shift(1) before rolling; no failure labels.
+  reconciliation_relative_median_limit:
+    value: 0.02
+    unit: fraction of MAIN common-coverage energy
+    status: assumption
+    source: Phase-II-A noisy-meter reconciliation gate
+    notes: Median absolute complete-case discrepancy; not an exact physical energy closure test.
+  register_tolerance:
+    value: 0.00000001
+    unit: t
+    status: assumption
+    source: Frozen Phase-I accounting tolerance
+    notes: Exact synthetic public mass registers should close within floating-point roundoff.

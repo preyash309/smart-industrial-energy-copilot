@@ -1,0 +1,1040 @@
+{
+  "imports": {
+    "src/energy_copilot/common.py": [
+      "__future__",
+      "hashlib",
+      "json",
+      "numpy",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/schema.py": [
+      "__future__",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/__init__.py": [],
+    "src/energy_copilot/analytics/baselines.py": [
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/analytics/build.py": [
+      "baselines",
+      "contracts",
+      "dataclasses",
+      "diagnostics",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/analytics/contracts.py": [
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/analytics/diagnostics.py": [
+      "contracts",
+      "json",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/analytics/evaluation.py": [
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scripts",
+      "yaml"
+    ],
+    "src/energy_copilot/analytics/reporting.py": [
+      "energy_copilot",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib"
+    ],
+    "src/energy_copilot/analytics/__init__.py": [
+      "build",
+      "contracts"
+    ],
+    "src/energy_copilot/dashboard/charts.py": [
+      "datetime",
+      "plotly"
+    ],
+    "src/energy_copilot/dashboard/components.py": [
+      "html",
+      "streamlit"
+    ],
+    "src/energy_copilot/dashboard/contracts.py": [
+      "dataclasses",
+      "datetime",
+      "hashlib",
+      "json",
+      "pathlib",
+      "scenarios",
+      "types",
+      "typing"
+    ],
+    "src/energy_copilot/dashboard/demo_loader.py": [
+      "contracts",
+      "scenarios"
+    ],
+    "src/energy_copilot/dashboard/evidence_builder.py": [
+      "contracts",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib",
+      "scenarios"
+    ],
+    "src/energy_copilot/dashboard/live_runner.py": [
+      "contracts",
+      "json",
+      "os",
+      "pathlib",
+      "queue",
+      "scenarios",
+      "subprocess",
+      "threading",
+      "time",
+      "uuid"
+    ],
+    "src/energy_copilot/dashboard/scenarios.py": [
+      "contracts"
+    ],
+    "src/energy_copilot/dashboard/service.py": [
+      "contracts",
+      "copy",
+      "dataclasses",
+      "demo_loader",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "uuid"
+    ],
+    "src/energy_copilot/dashboard/views.py": [
+      "components",
+      "json",
+      "streamlit"
+    ],
+    "src/energy_copilot/dashboard/__init__.py": [],
+    "src/energy_copilot/data/prepare.py": [
+      "__future__",
+      "energy_copilot",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "shutil",
+      "sklearn",
+      "stat",
+      "yaml"
+    ],
+    "src/energy_copilot/data/__init__.py": [],
+    "src/energy_copilot/forecast/contracts.py": [
+      "dataclasses",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/forecast/datasets.py": [
+      "contracts",
+      "energy_copilot",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/forecast/evaluation.py": [
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/forecast/interfaces.py": [
+      "contracts",
+      "dataclasses",
+      "joblib",
+      "json",
+      "models",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "uncertainty"
+    ],
+    "src/energy_copilot/forecast/models.py": [
+      "contracts",
+      "energy_copilot",
+      "joblib",
+      "json",
+      "lightgbm",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "sklearn",
+      "uncertainty"
+    ],
+    "src/energy_copilot/forecast/reporting.py": [
+      "dataclasses",
+      "energy_copilot",
+      "interfaces",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/forecast/uncertainty.py": [
+      "numpy"
+    ],
+    "src/energy_copilot/forecast/__init__.py": [
+      "interfaces"
+    ],
+    "src/energy_copilot/maintenance/checker.py": [
+      "contracts",
+      "dataclasses",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "replay_checker"
+    ],
+    "src/energy_copilot/maintenance/contracts.py": [
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "math",
+      "pandas"
+    ],
+    "src/energy_copilot/maintenance/controller.py": [
+      "contracts",
+      "dataclasses",
+      "energy_copilot",
+      "execution",
+      "math",
+      "optimizer",
+      "pandas",
+      "pathlib",
+      "policy"
+    ],
+    "src/energy_copilot/maintenance/evaluation.py": [
+      "checker",
+      "energy_copilot",
+      "execution",
+      "pandas",
+      "pathlib"
+    ],
+    "src/energy_copilot/maintenance/execution.py": [
+      "__future__",
+      "contracts",
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scenario",
+      "yaml"
+    ],
+    "src/energy_copilot/maintenance/independent_accounting.py": [
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/maintenance/optimizer.py": [
+      "contracts",
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "importlib",
+      "math",
+      "numpy",
+      "pandas",
+      "pyomo"
+    ],
+    "src/energy_copilot/maintenance/policy.py": [
+      "contracts",
+      "dataclasses",
+      "math",
+      "pandas"
+    ],
+    "src/energy_copilot/maintenance/replay_checker.py": [
+      "energy_copilot",
+      "independent_accounting",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/maintenance/scenario.py": [
+      "contracts",
+      "copy",
+      "energy_copilot",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/maintenance/__init__.py": [],
+    "src/energy_copilot/optimization/baseline.py": [
+      "candidates",
+      "contracts",
+      "dataclasses",
+      "solve"
+    ],
+    "src/energy_copilot/optimization/candidates.py": [
+      "contracts",
+      "datetime",
+      "energy_copilot",
+      "math",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/optimization/checker.py": [
+      "contracts",
+      "dataclasses",
+      "datetime",
+      "math"
+    ],
+    "src/energy_copilot/optimization/constraints.py": [],
+    "src/energy_copilot/optimization/contracts.py": [
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "math"
+    ],
+    "src/energy_copilot/optimization/explain.py": [
+      "contracts"
+    ],
+    "src/energy_copilot/optimization/model.py": [
+      "candidates",
+      "contracts",
+      "pyomo"
+    ],
+    "src/energy_copilot/optimization/objective.py": [
+      "pyomo"
+    ],
+    "src/energy_copilot/optimization/solve.py": [
+      "checker",
+      "constraints",
+      "contracts",
+      "dataclasses",
+      "datetime",
+      "explain",
+      "importlib",
+      "math",
+      "model",
+      "objective",
+      "pyomo"
+    ],
+    "src/energy_copilot/optimization/__init__.py": [
+      "candidates",
+      "checker",
+      "contracts",
+      "solve"
+    ],
+    "src/energy_copilot/replay/adapter.py": [
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib"
+    ],
+    "src/energy_copilot/replay/attribution.py": [
+      "compare",
+      "numpy"
+    ],
+    "src/energy_copilot/replay/checker.py": [
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "scripts"
+    ],
+    "src/energy_copilot/replay/compare.py": [
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/replay/compatible_v111.py": [
+      "__future__",
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/replay/forecast_error.py": [
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/replay/history.py": [
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "scripts"
+    ],
+    "src/energy_copilot/replay/origin_state.py": [
+      "energy_copilot",
+      "hashlib",
+      "io",
+      "pandas"
+    ],
+    "src/energy_copilot/replay/runner.py": [
+      "adapter",
+      "checker",
+      "compare",
+      "compatible_v111",
+      "energy_copilot",
+      "forecast_error",
+      "json",
+      "origin_state",
+      "pandas",
+      "pathlib"
+    ],
+    "src/energy_copilot/replay/scenarios.py": [
+      "energy_copilot",
+      "hashlib",
+      "numpy"
+    ],
+    "src/energy_copilot/replay/__init__.py": [
+      "adapter",
+      "checker",
+      "runner"
+    ],
+    "src/energy_copilot/robust/checker.py": [
+      "datetime",
+      "math",
+      "remaining_checker"
+    ],
+    "src/energy_copilot/robust/contracts.py": [
+      "dataclasses",
+      "energy_copilot",
+      "math",
+      "pandas"
+    ],
+    "src/energy_copilot/robust/evaluation.py": [
+      "dataclasses",
+      "energy_copilot",
+      "pandas",
+      "pathlib"
+    ],
+    "src/energy_copilot/robust/execution_prefix.py": [
+      "__future__",
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "yaml"
+    ],
+    "src/energy_copilot/robust/integrity.py": [
+      "energy_copilot",
+      "json",
+      "pathlib"
+    ],
+    "src/energy_copilot/robust/receding_horizon.py": [
+      "dataclasses",
+      "energy_copilot",
+      "execution_prefix",
+      "math",
+      "pandas",
+      "pathlib",
+      "robust_model",
+      "scenarios",
+      "state_update"
+    ],
+    "src/energy_copilot/robust/remaining_checker.py": [
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "math"
+    ],
+    "src/energy_copilot/robust/robust_model.py": [
+      "checker",
+      "contracts",
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "importlib",
+      "math",
+      "pyomo",
+      "scenarios"
+    ],
+    "src/energy_copilot/robust/scenarios.py": [
+      "contracts",
+      "math"
+    ],
+    "src/energy_copilot/robust/state_update.py": [
+      "contracts",
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "math",
+      "pandas"
+    ],
+    "src/energy_copilot/robust/__init__.py": [
+      "contracts",
+      "robust_model"
+    ],
+    "src/energy_copilot/sim/engine.py": [
+      "__future__",
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scenario",
+      "validate",
+      "yaml"
+    ],
+    "src/energy_copilot/sim/scenario.py": [
+      "__future__",
+      "energy_copilot",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/sim/validate.py": [
+      "__future__",
+      "energy_copilot",
+      "engine",
+      "numpy",
+      "pandas"
+    ],
+    "src/energy_copilot/sim/__init__.py": [
+      "engine"
+    ],
+    "src/energy_copilot/supervisor/approval.py": [
+      "contracts",
+      "dataclasses"
+    ],
+    "src/energy_copilot/supervisor/audit.py": [
+      "contracts",
+      "dataclasses",
+      "json",
+      "pathlib",
+      "time"
+    ],
+    "src/energy_copilot/supervisor/benchmark.py": [
+      "collections",
+      "contracts",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "llm_adapter",
+      "pathlib",
+      "rule_based",
+      "supervisor",
+      "time"
+    ],
+    "src/energy_copilot/supervisor/contracts.py": [
+      "dataclasses",
+      "datetime",
+      "enum",
+      "hashlib",
+      "json",
+      "math"
+    ],
+    "src/energy_copilot/supervisor/decision_packet.py": [
+      "contracts",
+      "hashlib",
+      "pathlib"
+    ],
+    "src/energy_copilot/supervisor/llm_adapter.py": [
+      "contracts",
+      "dataclasses",
+      "json",
+      "os",
+      "policy",
+      "time",
+      "typing",
+      "urllib"
+    ],
+    "src/energy_copilot/supervisor/policy.py": [
+      "contracts",
+      "energy_copilot",
+      "json",
+      "pathlib"
+    ],
+    "src/energy_copilot/supervisor/registry.py": [
+      "contracts",
+      "time"
+    ],
+    "src/energy_copilot/supervisor/rule_based.py": [
+      "contracts"
+    ],
+    "src/energy_copilot/supervisor/stack_backend.py": [
+      "contracts",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib",
+      "scripts"
+    ],
+    "src/energy_copilot/supervisor/state_machine.py": [
+      "enum"
+    ],
+    "src/energy_copilot/supervisor/supervisor.py": [
+      "audit",
+      "contracts",
+      "datetime",
+      "decision_packet",
+      "policy",
+      "registry",
+      "state_machine",
+      "time"
+    ],
+    "src/energy_copilot/supervisor/tools.py": [
+      "typing"
+    ],
+    "src/energy_copilot/supervisor/__init__.py": [
+      "contracts",
+      "llm_adapter",
+      "rule_based",
+      "supervisor"
+    ],
+    "dashboard/app.py": [
+      "energy_copilot",
+      "logging",
+      "pathlib",
+      "streamlit",
+      "sys"
+    ],
+    "scripts/create_config.py": [
+      "energy_copilot",
+      "pathlib",
+      "yaml"
+    ],
+    "scripts/independent_accounting.py": [
+      "numpy",
+      "pandas"
+    ],
+    "scripts/phase1.py": [
+      "__future__",
+      "argparse",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "scripts",
+      "shutil",
+      "subprocess",
+      "sys"
+    ],
+    "scripts/phase2b.py": [
+      "argparse",
+      "energy_copilot",
+      "importlib",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "platform",
+      "scripts",
+      "sklearn",
+      "threadpoolctl",
+      "warnings",
+      "yaml"
+    ],
+    "scripts/phase2b_setup.py": [
+      "energy_copilot",
+      "pathlib",
+      "yaml"
+    ],
+    "scripts/phase2c.py": [
+      "argparse",
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "pyarrow",
+      "scripts"
+    ],
+    "scripts/phase2c_release.py": [
+      "dataclasses",
+      "energy_copilot",
+      "importlib",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "platform",
+      "scripts",
+      "yaml"
+    ],
+    "scripts/phase2c_setup.py": [
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "yaml"
+    ],
+    "scripts/phase2d.py": [
+      "argparse",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "platform",
+      "scripts",
+      "shutil",
+      "yaml"
+    ],
+    "scripts/phase2d_release.py": [
+      "energy_copilot",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scripts"
+    ],
+    "scripts/phase2e.py": [
+      "argparse",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib"
+    ],
+    "scripts/phase2e_release.py": [
+      "argparse",
+      "energy_copilot",
+      "json",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "shutil"
+    ],
+    "scripts/phase2f.py": [
+      "argparse",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib"
+    ],
+    "scripts/phase2f_plot.py": [
+      "matplotlib",
+      "pandas",
+      "pathlib"
+    ],
+    "scripts/phase2f_release.py": [
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib",
+      "re",
+      "scripts"
+    ],
+    "scripts/phase2f_validation.py": [
+      "collections",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib"
+    ],
+    "scripts/phase2g.py": [
+      "argparse",
+      "datetime",
+      "energy_copilot",
+      "json",
+      "pathlib"
+    ],
+    "scripts/phase2g_benchmark.py": [
+      "argparse",
+      "energy_copilot",
+      "json",
+      "pathlib"
+    ],
+    "scripts/phase2g_release.py": [
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "re",
+      "shutil",
+      "sys"
+    ],
+    "scripts/phase2_analytics.py": [
+      "__future__",
+      "argparse",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "re",
+      "scripts",
+      "shutil",
+      "subprocess",
+      "sys"
+    ],
+    "scripts/phase3a_build_demo.py": [
+      "energy_copilot"
+    ],
+    "scripts/phase3a_live.py": [
+      "argparse",
+      "datetime",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "sys",
+      "traceback"
+    ],
+    "scripts/phase3a_release.py": [
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ],
+    "scripts/release_v11.py": [
+      "__future__",
+      "energy_copilot",
+      "hashlib",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scripts",
+      "shutil",
+      "subprocess",
+      "sys",
+      "unittest",
+      "yaml"
+    ],
+    "scripts/report.py": [
+      "energy_copilot",
+      "importlib",
+      "matplotlib",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "platform",
+      "yaml"
+    ],
+    "scripts/rhf_boundary.py": [
+      "numpy"
+    ],
+    "scripts/verify_release.py": [
+      "argparse",
+      "energy_copilot",
+      "hashlib",
+      "importlib",
+      "json",
+      "pathlib",
+      "re",
+      "subprocess",
+      "sys"
+    ],
+    "scripts/__init__.py": [],
+    "tests/test_acceptance.py": [
+      "copy",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_analytics.py": [
+      "copy",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "pytest",
+      "unittest",
+      "yaml"
+    ],
+    "tests/test_dashboard.py": [
+      "copy",
+      "datetime",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "pytest",
+      "sys",
+      "time"
+    ],
+    "tests/test_dashboard_ui.py": [
+      "energy_copilot",
+      "pytest",
+      "streamlit"
+    ],
+    "tests/test_data.py": [
+      "energy_copilot",
+      "json",
+      "pandas",
+      "yaml"
+    ],
+    "tests/test_optimizer_accounting.py": [
+      "dataclasses",
+      "datetime",
+      "energy_copilot",
+      "math",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_availability.py": [
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "pandas",
+      "pathlib",
+      "pyarrow",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_c1.py": [
+      "dataclasses",
+      "energy_copilot",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_constraints.py": [
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_contract.py": [
+      "ast",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pathlib",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_infeasible.py": [
+      "dataclasses",
+      "energy_copilot",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_optimizer_objectives.py": [
+      "dataclasses",
+      "energy_copilot",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_phase2b.py": [
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "joblib",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "pytest",
+      "unittest",
+      "yaml"
+    ],
+    "tests/test_phase2f_maintenance.py": [
+      "ast",
+      "dataclasses",
+      "energy_copilot",
+      "inspect",
+      "json",
+      "pandas",
+      "pathlib",
+      "pytest",
+      "scripts",
+      "types"
+    ],
+    "tests/test_phase2f_optimizer.py": [
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib",
+      "pytest"
+    ],
+    "tests/test_phase2f_reporting.py": [
+      "json",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_release_packaging.py": [
+      "importlib",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys"
+    ],
+    "tests/test_replay.py": [
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_rhf_boundary.py": [
+      "energy_copilot",
+      "importlib",
+      "pandas",
+      "pytest",
+      "scripts"
+    ],
+    "tests/test_robust_release.py": [
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pathlib",
+      "pytest"
+    ],
+    "tests/test_robust_scheduling.py": [
+      "copy",
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "math",
+      "pandas",
+      "pathlib",
+      "pytest",
+      "types"
+    ],
+    "tests/test_supervisor.py": [
+      "dataclasses",
+      "energy_copilot",
+      "json",
+      "pandas",
+      "pytest",
+      "types"
+    ],
+    "tests/test_v0.py": [
+      "copy",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pytest"
+    ],
+    "tests/test_v1.py": [
+      "copy",
+      "energy_copilot",
+      "numpy",
+      "pandas",
+      "pytest"
+    ]
+  },
+  "scientific": "Unchanged requirements-full.txt; separate Python 3.12 environment",
+  "demo": "Qualified requirements-demo.txt; Streamlit/Plotly plus actual pinned transitive dependencies",
+  "dev": "Demo + pytest in requirements-dev.txt",
+  "upgrades": [],
+  "CI": "UI and scientific smoke in separate jobs; no API/network evaluation or retraining"
+}

@@ -1,0 +1,28 @@
+name: Release smoke and demo tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python scripts/verify_release.py --tests
+      - run: python examples/demo_decision.py
+  scientific-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-full.txt
+      - run: python -m pip install -r requirements-full.txt
+      - run: python -m pytest tests/test_v0.py tests/test_v1.py tests/test_supervisor.py -q

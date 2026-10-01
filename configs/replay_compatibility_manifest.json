@@ -1,0 +1,13 @@
+{
+  "changes": [
+    "absolute imports",
+    "scoped day practice before heat generation",
+    "exact rolling-feed admission; never clip",
+    "decision manifest includes new controls",
+    "baseline envelope disabled for explicit controls"
+  ],
+  "diff_sha256": "2e67cf00e4677d42d0d9b23bab1a2332b2ecd5a6b6ffc6bed202d9c98c51297e",
+  "frozen_source_sha256": "2621e588ccbffd66f7fea4833cde65ebe8a4edf2bfd2cb780df306bfef350f42",
+  "layer_sha256": "1089ae88bef41842c93317fc1921aee56a009f3e9b1bf6a3f5bf8f0f392b00dc",
+  "physical_equations_changed": false
+}

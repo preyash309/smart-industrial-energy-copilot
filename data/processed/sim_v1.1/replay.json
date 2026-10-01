@@ -1,0 +1,22 @@
+{
+  "additional_seeds": 30,
+  "different_seeds_vary": true,
+  "parquet_byte_identical": {
+    "events": true,
+    "heats": true,
+    "latent_heats": true,
+    "latent_truth": true,
+    "production": true,
+    "readings": true
+  },
+  "physical_and_label_tables_identical_to_v10": [
+    "heats",
+    "production",
+    "events",
+    "latent_truth",
+    "latent_heats"
+  ],
+  "physical_summary_identical_to_v10": true,
+  "prior_evidence_unchanged": true,
+  "scenario_manifest_identical": true
+}

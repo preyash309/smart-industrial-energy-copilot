@@ -1,0 +1,2085 @@
+version: analytics_v1
+timezone: Asia/Kolkata
+timestamp_convention: Local naive timestamps in declared timezone; all windows are
+  half-open [start,end).
+posting: Completed meters/states/sensors at interval end; heat outcomes at heat end;
+  production registers at shift end, plus configured posting delay.
+forecasting: Select only task allowlisted columns with column availability <= forecast_origin.
+  Same-slot energy/PF cannot predict same-slot energy.
+missingness: Unknown values stay null. No backward fill, centered windows or future
+  interpolation.
+inventory: Latest published shift-end inventory joined backward at interval START;
+  opening stock is a static known balance. No inferred 15-minute physical stock/output.
+labels: Events and fault labels are evaluation-only and never enter predictor loaders.
+tables:
+  heat_features:
+    heat_id:
+      available_at: start_time
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    asset_id:
+      available_at: start_time
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    start_time:
+      available_at: start_time
+      role: calendar
+      predictor_tasks:
+      - heat_energy
+      source: known calendar
+      notes: ''
+    end_time:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    charge_t:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    liquid_t:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    billet_t:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    kWh:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    tap_temp_C:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    chem_ok:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    available_at:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    duration_min:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    SEC_kWh_per_t:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    actual_SEC:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    hour:
+      available_at: start_time
+      role: calendar
+      predictor_tasks:
+      - heat_energy
+      source: known calendar
+      notes: ''
+    weekday:
+      available_at: start_time
+      role: calendar
+      predictor_tasks:
+      - heat_energy
+      source: known calendar
+      notes: ''
+    shift:
+      available_at: start_time
+      role: calendar
+      predictor_tasks:
+      - heat_energy
+      source: known calendar
+      notes: ''
+    working_day:
+      available_at: start_time
+      role: calendar
+      predictor_tasks:
+      - heat_energy
+      source: known calendar
+      notes: ''
+    previous_heat_SEC:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    previous_heat_duration:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    previous_heat_available_at:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    history_count:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    global_mean_SEC:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    shift_mean_SEC:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    rolling_mean_SEC:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    historical_duration_mean:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    historical_duration_sd:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_SEC:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_SEC_sd:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_SEC_low:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_SEC_high:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_n:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_method:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_liquid_t:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    expected_kWh:
+      available_at: start_time
+      role: historical_baseline
+      predictor_tasks:
+      - heat_energy
+      source: completed heat logs with available_at <= current heat start
+      notes: ''
+    baseline_available_at:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    residual_SEC:
+      available_at: available_at
+      role: outcome_or_completed_register
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    context_available_at:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: completed public heat log; excluded from pre-heat forecasts
+      notes: ''
+    context_MAIN_kW:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_MAIN_kVA:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_IF_01_kW:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_RHF_01_temp_C:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_PMP_01_flow_m3_h:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_MILL_01_vibration_mm_s:
+      available_at: context_available_at
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: latest fully published meter interval before heat start
+      notes: ''
+    context_age_min:
+      available_at: start_time
+      role: past_observation
+      predictor_tasks:
+      - heat_energy
+      source: public observed/register data
+      notes: ''
+  slot_features:
+    interval_start:
+      available_at: interval_start
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    timestamp:
+      available_at: interval_start
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    interval_end:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    available_at:
+      available_at: available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    hour:
+      available_at: interval_start
+      role: calendar
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: public observed/register data
+      notes: ''
+    weekday:
+      available_at: interval_start
+      role: calendar
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: public observed/register data
+      notes: ''
+    shift:
+      available_at: interval_start
+      role: calendar
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: public observed/register data
+      notes: ''
+    working_day:
+      available_at: interval_start
+      role: calendar
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: public observed/register data
+      notes: ''
+    IF_01_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    IF_01_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    IF_01_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    IF_01_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    IF_01_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    IF_01_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    IF_01_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    IF_01_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    IF_01_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    IF_01_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    IF_01_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    IF_01_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    IF_01_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    IF_01_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    IF_01_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    IF_01_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    RHF_01_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    RHF_01_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    RHF_01_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    RHF_01_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    RHF_01_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    RHF_01_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    RHF_01_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    RHF_01_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    RHF_01_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    RHF_01_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    RHF_01_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    RHF_01_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    RHF_01_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    RHF_01_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    RHF_01_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    RHF_01_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    MILL_01_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    MILL_01_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    MILL_01_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    MILL_01_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    MILL_01_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    MILL_01_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    MILL_01_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    MILL_01_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    MILL_01_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    MILL_01_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    MILL_01_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    MILL_01_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    MILL_01_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    MILL_01_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    MILL_01_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    MILL_01_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    PMP_01_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    PMP_01_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    PMP_01_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    PMP_01_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    PMP_01_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    PMP_01_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    PMP_01_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    PMP_01_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    PMP_01_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    PMP_01_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    PMP_01_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    PMP_01_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    PMP_01_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    PMP_01_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    PMP_01_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    PMP_01_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    CMP_01_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    CMP_01_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    CMP_01_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    CMP_01_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    CMP_01_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    CMP_01_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    CMP_01_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    CMP_01_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    CMP_01_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    CMP_01_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    CMP_01_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    CMP_01_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    CMP_01_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    CMP_01_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    CMP_01_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    CMP_01_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    AUX_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    AUX_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    AUX_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    AUX_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    AUX_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    AUX_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    AUX_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    AUX_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    AUX_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    AUX_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    AUX_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    AUX_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    AUX_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    AUX_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    AUX_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    AUX_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    MAIN_kW:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kW
+      notes: ''
+    MAIN_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kWh
+      notes: ''
+    MAIN_kVA:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVA
+      notes: ''
+    MAIN_kVAh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.kVAh
+      notes: ''
+    MAIN_pf:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pf
+      notes: ''
+    MAIN_fuel_kg:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.fuel_kg
+      notes: ''
+    MAIN_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.temp_C
+      notes: ''
+    MAIN_vibration_mm_s:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.vibration_mm_s
+      notes: ''
+    MAIN_rpm:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.rpm
+      notes: ''
+    MAIN_pressure_bar:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.pressure_bar
+      notes: ''
+    MAIN_flow_m3_h:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flow_m3_h
+      notes: ''
+    MAIN_flue_temp_C:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.flue_temp_C
+      notes: ''
+    MAIN_state:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.state
+      notes: ''
+    MAIN_tariff_band:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.tariff_band
+      notes: ''
+    MAIN_energy_best_kWh:
+      available_at: available_at
+      role: observed
+      predictor_tasks:
+      - slot_next_load
+      source: readings.energy_best_kWh; public QC
+      notes: ''
+    MAIN_energy_method:
+      available_at: available_at
+      role: quality_metadata
+      predictor_tasks: []
+      source: readings.energy_method; public QC
+      notes: ''
+    production_report_available_at:
+      available_at: production_report_available_at
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    billet_inventory_t:
+      available_at: production_report_available_at
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    rolling_output_last_shift_t:
+      available_at: production_report_available_at
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    rolling_yield_pct:
+      available_at: production_report_available_at
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    known_cumulative_bar_t:
+      available_at: production_report_available_at
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    inventory_is_opening_balance:
+      available_at: interval_start
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    inventory_age_min:
+      available_at: interval_start
+      role: published_register
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: production completed-shift register / configured opening balance
+      notes: Last published value; not true instantaneous stock/output.
+    history_available_at:
+      available_at: history_available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    MAIN_kW_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(1)
+      notes: ''
+    lag_1_available_at:
+      available_at: lag_1_available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    MAIN_kW_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(4)
+      notes: ''
+    lag_4_available_at:
+      available_at: lag_4_available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    MAIN_kW_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(96)
+      notes: ''
+    lag_96_available_at:
+      available_at: lag_96_available_at
+      role: metadata
+      predictor_tasks: []
+      source: public observed/register data
+      notes: ''
+    MAIN_kW_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(1).rolling(4)
+      notes: ''
+    MAIN_kW_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(1).rolling(4)
+      notes: ''
+    MAIN_kW_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(1).rolling(96)
+      notes: ''
+    MAIN_kW_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kW.shift(1).rolling(96)
+      notes: ''
+    MAIN_kWh_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(1)
+      notes: ''
+    MAIN_kWh_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(4)
+      notes: ''
+    MAIN_kWh_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(96)
+      notes: ''
+    MAIN_kWh_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(1).rolling(4)
+      notes: ''
+    MAIN_kWh_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(1).rolling(4)
+      notes: ''
+    MAIN_kWh_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(1).rolling(96)
+      notes: ''
+    MAIN_kWh_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kWh.shift(1).rolling(96)
+      notes: ''
+    MAIN_kVA_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(1)
+      notes: ''
+    MAIN_kVA_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(4)
+      notes: ''
+    MAIN_kVA_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(96)
+      notes: ''
+    MAIN_kVA_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(1).rolling(4)
+      notes: ''
+    MAIN_kVA_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(1).rolling(4)
+      notes: ''
+    MAIN_kVA_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(1).rolling(96)
+      notes: ''
+    MAIN_kVA_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MAIN_kVA.shift(1).rolling(96)
+      notes: ''
+    IF_01_kWh_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(1)
+      notes: ''
+    IF_01_kWh_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(4)
+      notes: ''
+    IF_01_kWh_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(96)
+      notes: ''
+    IF_01_kWh_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(1).rolling(4)
+      notes: ''
+    IF_01_kWh_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(1).rolling(4)
+      notes: ''
+    IF_01_kWh_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(1).rolling(96)
+      notes: ''
+    IF_01_kWh_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: IF_01_kWh.shift(1).rolling(96)
+      notes: ''
+    MILL_01_vibration_mm_s_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(1)
+      notes: ''
+    MILL_01_vibration_mm_s_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(4)
+      notes: ''
+    MILL_01_vibration_mm_s_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(96)
+      notes: ''
+    MILL_01_vibration_mm_s_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(1).rolling(4)
+      notes: ''
+    MILL_01_vibration_mm_s_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(1).rolling(4)
+      notes: ''
+    MILL_01_vibration_mm_s_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(1).rolling(96)
+      notes: ''
+    MILL_01_vibration_mm_s_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: MILL_01_vibration_mm_s.shift(1).rolling(96)
+      notes: ''
+    PMP_01_vibration_mm_s_lag_1:
+      available_at: lag_1_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(1)
+      notes: ''
+    PMP_01_vibration_mm_s_lag_4:
+      available_at: lag_4_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(4)
+      notes: ''
+    PMP_01_vibration_mm_s_lag_96:
+      available_at: lag_96_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(96)
+      notes: ''
+    PMP_01_vibration_mm_s_past_4_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(1).rolling(4)
+      notes: ''
+    PMP_01_vibration_mm_s_past_4_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(1).rolling(4)
+      notes: ''
+    PMP_01_vibration_mm_s_past_96_mean:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(1).rolling(96)
+      notes: ''
+    PMP_01_vibration_mm_s_past_96_count:
+      available_at: history_available_at
+      role: past_observation
+      predictor_tasks:
+      - slot_load_at_start
+      - slot_next_load
+      source: PMP_01_vibration_mm_s.shift(1).rolling(96)
+      notes: ''
+  asset_daily_metrics:
+    asset_id:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    date:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    interval_start:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    interval_end:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    available_at:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    working_day:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    raw_meter_kWh:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    valid_meter_kWh:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    energy_best_kWh:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_kW:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    peak_kW:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    peak_kVA:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_pf:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    fuel_kg:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    valid_energy_slots:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    meter_slots:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    power_fallback_slots:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    missing_energy_slots:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    quality_flagged_slots:
+      available_at: available_at
+      role: metadata_or_quality_audit
+      predictor_tasks: []
+      source: clean public meters/states and completed production registers
+      notes: ''
+    observed_coverage_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    active_slot_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    off_slot_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    partial_repair_slot_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    downtime_lower_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    downtime_upper_hours:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    utilization_slot_fraction:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    bar_t:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    billet_t:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    liquid_t:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    rolling_yield_pct:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    electricity_kWh_per_t_bar:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    fuel_kg_per_t_bar:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_temp_C:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    max_temp_C:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_vibration_mm_s:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    max_vibration_mm_s:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_flow_m3_h:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    max_flow_m3_h:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_pressure_bar:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    max_pressure_bar:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_rpm:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    max_rpm:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    asset_share_MAIN_common:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    feeder_mix_share_common_all:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_temp_C_past_7d_mean:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+    mean_vibration_mm_s_past_7d_mean:
+      available_at: available_at
+      role: completed_day_metric
+      predictor_tasks:
+      - asset_next_day_risk
+      source: clean public meters/states and completed production registers
+      notes: ''
+  diagnostic_candidates:
+    candidate_id:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    timestamp:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    available_at:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    asset_id:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    source_id:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    rule:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    metric:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    measured_value:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    expected_value:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    residual:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    unit:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    evidence_json:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    possible_cause:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    confidence:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    baseline_samples:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+    limitation:
+      available_at: available_at
+      role: diagnostic_evidence
+      predictor_tasks: []
+      source: observable public data plus strictly earlier historical baseline
+      notes: ''
+  production_register:
+    plant_id:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    date:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    shift:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    billet_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    bar_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    rolled_billet_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    yard_stock_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    liquid_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    charge_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    melt_loss_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    cast_loss_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    rolling_loss_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    rolling_yield_pct:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    interval_start:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    interval_end:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    available_at:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    known_cumulative_bar_t:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''
+    working_day:
+      available_at: available_at
+      role: completed_shift_register
+      predictor_tasks: []
+      source: public production
+      notes: ''

@@ -1,0 +1,9 @@
+# Security, privacy, portability and scientific claims audit
+
+The original inventory scans all non-environment text below 16 MiB for GitHub/API/cloud/private-key patterns and credential-config names; potential-secret count was zero. The exact public profile is rescanned by verify_release.py, with values never printed. No credentials, .env or Streamlit secrets file are selected. There is no original Git history to scan: the research root had no Git repository. New history is built only from audited release contents.
+
+No private absolute paths occur in public runtime src. Machine-specific screenshot browser scripts are excluded; original path receipts in archived reports/frozen documentation are explicitly historical. New README/permanent docs use repository-relative commands. Runtime live simulation remains qualified Windows/full-archive functionality, not an advertised lightweight cross-platform feature. Demo Mode is portable and byte-preserving .gitattributes is required for protected hashes.
+
+Major headline metrics are exact frozen deck source fields/hashes: energy and tariff are separate; E0/E4 populations explicit; F0/F2 negative final feasibility preserved; 14 avoided services are distinct from calendar-day fault totals; undetermined cases remain. The public verifier checks all 30 metrics. No field savings, guaranteed safety, autonomous plant control, real tariff billing or maintenance ROI is claimed. Negative safety/deployment caveats are intentional, not positive marketing claims.
+
+No external challenge PDF or raw dataset is redistributed. Official UCI/AI4I CC BY 4.0 links/attribution are included. Project license is pending owner selection. Public visibility alone does not grant an open-source license. No secret value or private credential was copied to GitHub.

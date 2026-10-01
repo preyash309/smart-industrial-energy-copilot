@@ -1,0 +1,28 @@
+{
+  "command": "PYTHONPATH=src; python -m pytest -q -p no:cacheprovider",
+  "exit_code": 0,
+  "source_hashes": {
+    "scripts/phase2c.py": "9b9940556f7e8503119fd7d201da1ae324eba578589eb000c45b71b80f35553d",
+    "scripts/phase2c_release.py": "c8bb26c28621ff7f3d094cd30158cffb8a4819f99491246cce0904d7e78f0007",
+    "scripts/phase2c_setup.py": "f9b47735f539ea1c7e33f07b5d9577ec8c2798f19373941b5a9ad262a82e8ea2",
+    "src/energy_copilot/optimization/__init__.py": "46faaeed441668faf858097c601b1db86721b3af898fdd5774a07dff49dd27c4",
+    "src/energy_copilot/optimization/baseline.py": "683a2149a6011af284d3132d690819bbfe7acd0504536c5bb9e80974fa4473c0",
+    "src/energy_copilot/optimization/candidates.py": "8fcb07867e079c690e3d3f70e4719cf82707645b81c4acdcca918cd9ad6ba5fe",
+    "src/energy_copilot/optimization/checker.py": "5fdfefd53d0aae90d22f26ccde9430dfc970262cc1bf6428dd1947e4dcab0385",
+    "src/energy_copilot/optimization/constraints.py": "fdc5300d2a46205d7d4f9292856cc9ca9cb7f0049853372a72ca64d19de8ed16",
+    "src/energy_copilot/optimization/contracts.py": "ee665a8bb7566787ae158e26390c0e5d63b78c0a35b56f9cdbf0f47f8b1bf404",
+    "src/energy_copilot/optimization/explain.py": "af390e44058cd8b4b16ea2161311213c077865dfb80e1c1d0baf1f340b7e1968",
+    "src/energy_copilot/optimization/model.py": "5bac00a9c7d7f331ec1b85ffc824e0ac4756ee599b68ed9bbe8eaa352d619528",
+    "src/energy_copilot/optimization/objective.py": "f4ff04562ddbec083bace849825d4c597c0b351d98feb71b0540255c7ab30efd",
+    "src/energy_copilot/optimization/solve.py": "e99986822bec7e23c9b6cbb5faa7e8d1b640da2914d8b38aa1f9aa36f096a3a2",
+    "tests/test_optimizer_accounting.py": "7ed57b9bfabe02202605fd8d5c55048d3ce78697c0ac8d7f8cda6995d989ecd2",
+    "tests/test_optimizer_availability.py": "261900282b9b98cb28506f2704bcb6175259f6b9b14a48b0ee9e5bf87d845d71",
+    "tests/test_optimizer_c1.py": "361195ce594718a7bcc7086f7e8583e6e21a8769f2933854f29dbb3c96d9ba2e",
+    "tests/test_optimizer_constraints.py": "e02a1ddb1bda8761100325545cc28883683f0e6c8e8a03fec34559105b9304fa",
+    "tests/test_optimizer_contract.py": "1cb8bff18a73b11c6f893222c1bb5b16dd80ba7d95d19025cac9c1c02fcf7512",
+    "tests/test_optimizer_infeasible.py": "8763303297212a1003483388890e18ae7bb13b18db63d04801999a0cde9995ae",
+    "tests/test_optimizer_objectives.py": "b27e39604c52115d77cdd5274ef2f98bffdeca4a96d4844d29915965a7941b93"
+  },
+  "stderr": "",
+  "stdout": "........................................................................ [ 44%]\n........................................................................ [ 88%]\n...................                                                      [100%]\n163 passed in 183.01s (0:03:03)\n"
+}

@@ -1,0 +1,72 @@
+{
+  "bridge": {
+    "status": "incomplete; do not infer combined benefit"
+  },
+  "comparisons": {
+    "S1": {
+      "QC_known_meter_cost_difference_Rs": 15131.715788817033,
+      "bar_t_change": -1.4210854715202004e-14,
+      "baseline_QC_coverage": 0.9895833333333334,
+      "baseline_kWh_per_t": 900.2978666184667,
+      "kWh_reduction": -0.14677536631643306,
+      "kWh_reduction_pct": -0.00013750825197377848,
+      "label": "DIGITAL-TWIN-REALIZED",
+      "optimized_QC_coverage": 0.9895833333333334,
+      "optimized_kWh_per_t": 900.2991046023258,
+      "physical_evaluation_cost_reduction_Rs": 14858.142701626872,
+      "physical_evaluation_cost_reduction_pct": 1.8786752833831195,
+      "production_equal": true,
+      "tariff_label": "SYNTHETIC-TARIFF"
+    },
+    "S2": {
+      "QC_known_meter_cost_difference_Rs": 220.73647732287645,
+      "bar_t_change": 0.0,
+      "baseline_QC_coverage": 0.9895833333333334,
+      "baseline_kWh_per_t": 900.2978666184667,
+      "kWh_reduction": 2600.0000000002183,
+      "kWh_reduction_pct": 2.4358410004651154,
+      "label": "DIGITAL-TWIN-REALIZED",
+      "optimized_QC_coverage": 0.9895833333333334,
+      "optimized_kWh_per_t": 878.3680420570614,
+      "physical_evaluation_cost_reduction_Rs": 10400.000000000815,
+      "physical_evaluation_cost_reduction_pct": 1.3149842035806174,
+      "production_equal": true,
+      "tariff_label": "SYNTHETIC-TARIFF"
+    },
+    "S3": {
+      "cost_change": null,
+      "energy_change": null,
+      "status": "unavailable: replay infeasible or unsupported"
+    },
+    "conservative_normal": {
+      "QC_known_meter_cost_difference_Rs": 15131.715788817033,
+      "bar_t_change": -1.4210854715202004e-14,
+      "baseline_QC_coverage": 0.9895833333333334,
+      "baseline_kWh_per_t": 900.2978666184667,
+      "kWh_reduction": -0.14677536631643306,
+      "kWh_reduction_pct": -0.00013750825197377848,
+      "label": "DIGITAL-TWIN-REALIZED",
+      "optimized_QC_coverage": 0.9895833333333334,
+      "optimized_kWh_per_t": 900.2991046023258,
+      "physical_evaluation_cost_reduction_Rs": 14858.142701626872,
+      "physical_evaluation_cost_reduction_pct": 1.8786752833831195,
+      "production_equal": true,
+      "tariff_label": "SYNTHETIC-TARIFF"
+    },
+    "conservative_synthetic": {
+      "QC_known_meter_cost_difference_Rs": 33531.98106639297,
+      "bar_t_change": 0.0,
+      "baseline_QC_coverage": 0.9895833333333334,
+      "baseline_kWh_per_t": 900.2978666184667,
+      "kWh_reduction": 2599.7663997693307,
+      "kWh_reduction_pct": 2.435622149303533,
+      "label": "DIGITAL-TWIN-REALIZED",
+      "optimized_QC_coverage": 0.9895833333333334,
+      "optimized_kWh_per_t": 878.3700123694001,
+      "physical_evaluation_cost_reduction_Rs": 33257.448102712864,
+      "physical_evaluation_cost_reduction_pct": 4.205097971775593,
+      "production_equal": true,
+      "tariff_label": "SYNTHETIC-TARIFF"
+    }
+  }
+}

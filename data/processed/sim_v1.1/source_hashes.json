@@ -1,0 +1,20 @@
+{
+  "Steel_industry_data.csv": {
+    "bytes": 2731389,
+    "input_path": "Datasets/Steel_industry_data.csv",
+    "licence": "CC BY 4.0 per supplied Data Workflow D1",
+    "nature": "real Korean steel plant",
+    "raw_path": "data/raw/Steel_industry_data.csv",
+    "sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+    "source": "https://archive.ics.uci.edu/dataset/851/steel+industry+energy+consumption"
+  },
+  "ai4i2020.csv": {
+    "bytes": 522048,
+    "input_path": "Datasets/ai4i2020.csv",
+    "licence": "CC BY 4.0 per supplied Data Workflow D1",
+    "nature": "synthetic machine snapshots",
+    "raw_path": "data/raw/ai4i2020.csv",
+    "sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "source": "https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset"
+  }
+}

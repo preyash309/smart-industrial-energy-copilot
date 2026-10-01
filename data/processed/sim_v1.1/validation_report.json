@@ -1,0 +1,290 @@
+{
+  "additional_seed_distributions": {
+    "bar_tpd": {
+      "max": 118.56,
+      "mean": 118.55999999999999,
+      "min": 118.56
+    },
+    "coal_tpd": {
+      "max": 7.993847458357419,
+      "mean": 7.993458018032286,
+      "min": 7.99321870431818
+    },
+    "flue_fouling_correlation": {
+      "max": 0.543738851121339,
+      "mean": 0.5122373689203509,
+      "min": 0.4813108711107949
+    },
+    "if_sec": {
+      "max": 652.2437157596238,
+      "mean": 650.259335785826,
+      "min": 648.1123814461234
+    },
+    "inventory_max": {
+      "max": 50.000000000000014,
+      "mean": 50.0,
+      "min": 50.0
+    },
+    "inventory_min": {
+      "max": 2.5,
+      "mean": 1.7166666666666655,
+      "min": 0.0
+    },
+    "plant_MWh": {
+      "max": 106.99107833441481,
+      "mean": 106.73516957432575,
+      "min": 106.45851451191693
+    },
+    "recovery_max_error": {
+      "max": 0.2662349308427183,
+      "mean": 0.22226397338476034,
+      "min": 0.18776287337602326
+    },
+    "recovery_median_error": {
+      "max": 0.04390129392525273,
+      "mean": 0.04175310942312781,
+      "min": 0.03979108337020955
+    },
+    "reported_peak_kVA": {
+      "max": 6504.786002366311,
+      "mean": 6503.090163189856,
+      "min": 6501.69710098877
+    }
+  },
+  "baseline_summary": {
+    "baseline": true,
+    "checks": {
+      "baseline_coal": true,
+      "baseline_electricity": true,
+      "baseline_heat_count": true,
+      "baseline_if_share": true,
+      "baseline_sec": true,
+      "cast_balance": true,
+      "caster_yield": true,
+      "daily_bar_target": true,
+      "daily_billet_target": true,
+      "demand": true,
+      "electrical_balance": true,
+      "feeder_apparent_power": true,
+      "fuel_energy_balance": true,
+      "full_power_duration": true,
+      "furnace_cycle_consistency": true,
+      "furnace_heat_meter_balance": true,
+      "furnace_loss_accounting": true,
+      "heat_no_overlap": true,
+      "inventory_bounds": true,
+      "latent_boundary": true,
+      "main_vector_power": true,
+      "melt_balance": true,
+      "power_energy_units": true,
+      "pump_interlock": true,
+      "rhf_temperature": true,
+      "rolling_balance": true,
+      "rolling_capacity": true,
+      "rolling_yield": true,
+      "shared_clock": true,
+      "tap_temperature": true,
+      "yard_balance": true
+    },
+    "days": 30,
+    "electrical_balance_max_error_kWh": 4.547473508864641e-13,
+    "event_counts": [
+      {
+        "asset_id": "CMP_01",
+        "count": 1,
+        "label": "air_leak",
+        "type": "fault"
+      },
+      {
+        "asset_id": "IF_01",
+        "count": 153,
+        "label": "charge_bad",
+        "type": "fault"
+      },
+      {
+        "asset_id": "IF_01",
+        "count": 8,
+        "label": "half",
+        "type": "fault"
+      },
+      {
+        "asset_id": "IF_01",
+        "count": 103,
+        "label": "lid",
+        "type": "fault"
+      },
+      {
+        "asset_id": "IF_01",
+        "count": 57,
+        "label": "superheat",
+        "type": "fault"
+      },
+      {
+        "asset_id": "MILL_01",
+        "count": 2,
+        "label": "bearing_wear",
+        "type": "failure"
+      },
+      {
+        "asset_id": "MILL_01",
+        "count": 2,
+        "label": "bearing_wear_replacement",
+        "type": "repair"
+      },
+      {
+        "asset_id": "PMP_01",
+        "count": 2,
+        "label": "impeller_wear",
+        "type": "failure"
+      },
+      {
+        "asset_id": "PMP_01",
+        "count": 2,
+        "label": "impeller_wear_replacement",
+        "type": "repair"
+      },
+      {
+        "asset_id": "RHF_01",
+        "count": 1,
+        "label": "recuperator_fouling",
+        "type": "fault"
+      }
+    ],
+    "heats": 338,
+    "heats_per_working_day": 13.0,
+    "if_working_day_share": 0.792189781461394,
+    "max_yard_t": 50.0,
+    "mean_bar_t_working_day": 118.56,
+    "mean_billet_t_working_day": 123.5,
+    "mean_calendar_day_MWh": 92.94003881951201,
+    "mean_coal_t_working_day": 7.993855690054905,
+    "mean_if_sec_kWh_t": 650.9299600908571,
+    "mean_working_day_MWh": 106.81896786866771,
+    "min_yard_t": 2.499999999999993,
+    "peak_kVA": 6502.922854377966,
+    "seed": 42,
+    "total_bar_t": 3082.56,
+    "total_coal_kg": 207840.24794142751,
+    "total_electricity_kWh": 2788201.1645853603,
+    "working_days": 26
+  },
+  "boundary_new": {
+    "exact_rows": 0,
+    "flue_relative_noise_sd": 0.00513675091619507,
+    "formula": "(1200 * observed_flue / observed_zone - 350) / 40",
+    "max_error": 0.20040328214174766,
+    "median_error": 0.04378561822771154,
+    "observed_flue_fouling_correlation": 0.47844534664444993,
+    "residual_correlation": -0.035527206027981345,
+    "residual_max_difference": 0.022796000403848327,
+    "rows": 1655,
+    "zone_relative_noise_sd": 0.004877956588254303
+  },
+  "boundary_old": {
+    "exact_rows": 1655,
+    "flue_relative_noise_sd": 0.004954898462151259,
+    "formula": "(1200 * observed_flue / observed_zone - 350) / 40",
+    "max_error": 2.1094237467877974e-15,
+    "median_error": 5.620504062164855e-16,
+    "observed_flue_fouling_correlation": 0.4828209088784133,
+    "residual_correlation": 1.0,
+    "residual_max_difference": 2.220446049250313e-16,
+    "rows": 1655,
+    "zone_relative_noise_sd": 0.004954898462151261
+  },
+  "independent_checks": {
+    "15_minute_clock": 0,
+    "IF_component_energy": 0,
+    "IF_tap_temperature_limits": 0,
+    "IF_total_heat_energy": 0,
+    "RHF_baseline_fuel_from_bars": 0,
+    "RHF_fouling_fuel": 0,
+    "RHF_temperature_limits": 0,
+    "apparent_energy_units": 0,
+    "asset_slot_cardinality": 0,
+    "availability_MILL_01": 0,
+    "availability_PMP_01": 0,
+    "caster_from_heat": 0,
+    "caster_mass": 0,
+    "caster_yield": 0,
+    "coal_NCV_energy": 0,
+    "coal_energy_components": 0,
+    "daily_bar_target": 0,
+    "daily_billet_target": 0,
+    "electricity_branch_to_main": 0,
+    "exact_piecewise_contract_demand": 0,
+    "exact_piecewise_pump_interlock": 0,
+    "feeder_kVA_from_P_and_PF": 0,
+    "half_power_duration": 0,
+    "heat_SEC": 0,
+    "heat_no_overlap": 0,
+    "heat_to_clock_billet_t": 0,
+    "heat_to_clock_charge_t": 0,
+    "heat_to_clock_liquid_t": 0,
+    "heat_wall_duration": 0,
+    "heats_per_working_day": 0,
+    "independent_IF_piecewise_energy": 0,
+    "independent_IF_powered_minutes": 0,
+    "inventory_conservative_intraslot_upper": 0,
+    "inventory_cumulative": 0,
+    "inventory_interval_end_bounds": 0,
+    "inventory_opening_minus_rolling_bounds": 0,
+    "kWh_equals_kW_times_hours": 0,
+    "main_PF": 0,
+    "main_P_from_branches": 0,
+    "main_kVA_vector_sum": 0,
+    "melt_input_from_heat": 0,
+    "melt_mass": 0,
+    "normal_IF_full_power": 0,
+    "production_register_bar_t": 0,
+    "production_register_billet_t": 0,
+    "production_register_cast_loss_t": 0,
+    "production_register_charge_t": 0,
+    "production_register_liquid_t": 0,
+    "production_register_melt_loss_t": 0,
+    "production_register_rolled_billet_t": 0,
+    "production_register_rolling_loss_t": 0,
+    "production_register_stock": 0,
+    "published_peak_is_conservative": 0,
+    "rated_power_CMP_01": 0,
+    "rated_power_IF_01": 0,
+    "rated_power_MILL_01": 0,
+    "rated_power_PMP_01": 0,
+    "rolling_RHF_and_mill_capacity": 0,
+    "rolling_mass": 0,
+    "rolling_outside_schedule": 0,
+    "rolling_yield": 0,
+    "slot_average_contract_demand": 0,
+    "slot_cooling_interlock": 0,
+    "unique_asset_timestamp": 0,
+    "whole_plant_mass": 0,
+    "working_calendar": 0
+  },
+  "independent_violations": 0,
+  "inherited_warnings": "W01-W09 unchanged; see the immutable V1.0 independent audit",
+  "replay": {
+    "additional_seeds": 30,
+    "different_seeds_vary": true,
+    "parquet_byte_identical": {
+      "events": true,
+      "heats": true,
+      "latent_heats": true,
+      "latent_truth": true,
+      "production": true,
+      "readings": true
+    },
+    "physical_and_label_tables_identical_to_v10": [
+      "heats",
+      "production",
+      "events",
+      "latent_truth",
+      "latent_heats"
+    ],
+    "physical_summary_identical_to_v10": true,
+    "prior_evidence_unchanged": true,
+    "scenario_manifest_identical": true
+  },
+  "resolved_blocker": "B01",
+  "status": "PASS",
+  "version": "sim_v1.1"
+}

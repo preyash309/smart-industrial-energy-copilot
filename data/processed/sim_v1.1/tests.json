@@ -1,0 +1,5 @@
+{
+  "command": "python -m pytest -q",
+  "output": ".................................                                        [100%]\n33 passed in 31.82s",
+  "status": "PASS"
+}

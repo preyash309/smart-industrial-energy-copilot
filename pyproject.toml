@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "smart-industrial-energy-copilot"
+version = "1.0.0"
+description = "Digital-twin-backed industrial energy decision support"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

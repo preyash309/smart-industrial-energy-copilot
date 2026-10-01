@@ -1,0 +1,14 @@
+# Phase II-D limitations and release boundary
+
+All quantities are simulated reference-plant outcomes. DIGITAL-TWIN-REALIZED uses physical truth only in segregated evaluation. OPTIMIZER-PREDICTED remains separate. SYNTHETIC-TARIFF is 4/8/12 Rs/kWh, not a Punjab/PSPCL bill. SYNTHETIC-PRACTICE is the existing loss-40 intervention, not a validated shop-floor recommendation. No EXTERNAL-BENCHMARK is used in replay or as a plant outcome. No field savings, emissions, fuel prices or maintenance benefits are claimed.
+
+- Replay-compatible versioned copy adds admission controls only; maintain its explicit diff/regression when evolving it. Frozen V1.1 is untouched.
+- Exact heat/practice/rolling controls remain subject to future duration, yield timing and actual availability. All forecast-feasible failures are unreleasable and retained. There is no automatic repair/reoptimization.
+- Full30-day recreation is essential; V1.1 does not have prefix-invariant tapes across horizon lengths. Wear/faults are calendar driven; persistent thermal chemistry/runtime state absent. Chemistry remains a placeholder, not a metallurgical quality certificate.
+- Five-minute starts and quarter-hour accounting are inherited optimizer approximations. p50/p90 are marginal empirical quantiles, not certified joint safety bounds. A successfully replayed simulated seed is not a plant safety guarantee.
+- Ten held-out seeds retain the same fixed January calendar and reduced plant model. Robustness denominators include failed plans; savings distributions are conditional on success and are not unconditional expected benefits.
+- Unchanged sensor noise/missingness/glitches prevent exact observed accounting. Meter cost remains an incomplete subtotal where coverage is missing; physical truth is evaluation-only. No real tariff economics, fuel-cost/carbon calculation or external-benchmark transfer claim is implemented.
+- S1 tariff scheduling includes optimized rolling timing as well as heat starts. Its small wear-dependent energy/fuel effects are shown separately. S2's reference start policy responds naturally to shorter heats. No maintenance decision is evaluated.
+- Primary central synthetic plan fails; the complete central attribution bridge is unavailable. Conservative synthetic success is reported separately. Remaining forecast misses are evidence for a later authorized supervisory step, not grounds to recalibrate or unfreeze upstream.
+
+Milestone achieved: True. Multi-seed status: completed. Test evidence: {'exit_code': 0, 'passed': 194, 'prior_tests': 163, 'replay_tests': 31, 'summary': '194 passed in 274.82s', 'command': 'PYTHONPATH=src .venv/Scripts/python.exe -m pytest -q -p no:cacheprovider'}. All generated files are new Phase-II-D files. Upstream frozen manifest: configs/phase2d_readonly_manifest.json. Reproduce in a new --output directory; released replay evidence is not overwritten.

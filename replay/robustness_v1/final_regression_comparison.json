@@ -1,0 +1,431 @@
+{
+  "E0": {
+    "absolute_feasibility_improvement": 0.0,
+    "attempted": 10,
+    "completed_production_rate": 0.0,
+    "conditional_on_feasible": {
+      "IF_SEC_kWh_per_t": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "IF_idle_hours": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "IF_utilization": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "final_inventory_t": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "inventory_min_t": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "physical_evaluation_tariff_cost_Rs": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "plant_kWh_per_t_bars": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      },
+      "total_kWh": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "n": 0
+      }
+    },
+    "failures": [
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 201
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 202
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 203
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 204
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 205
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 206
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 207
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 208
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 209
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 210
+      }
+    ],
+    "feasibility_rate": 0.0,
+    "feasible": 0,
+    "no_feasible_continuations": 0,
+    "relative_feasibility_improvement": null,
+    "total_replans": 0
+  },
+  "E1": {
+    "absolute_feasibility_improvement": 0.6,
+    "attempted": 10,
+    "completed_production_rate": 0.6,
+    "conditional_on_feasible": {
+      "IF_SEC_kWh_per_t": {
+        "max": 637.9537666828205,
+        "mean": 631.3658512241007,
+        "min": 623.7253002088661,
+        "n": 6
+      },
+      "IF_idle_hours": {
+        "max": 1.933142194571115,
+        "mean": 1.665770507904444,
+        "min": 1.4233820255397234,
+        "n": 6
+      },
+      "IF_utilization": {
+        "max": 0.9406924156025115,
+        "mean": 0.9305928955039816,
+        "min": 0.9194524085595369,
+        "n": 6
+      },
+      "final_inventory_t": {
+        "max": 50.0,
+        "mean": 50.0,
+        "min": 50.0,
+        "n": 6
+      },
+      "inventory_min_t": {
+        "max": 2.5,
+        "mean": 2.5,
+        "min": 2.5,
+        "n": 6
+      },
+      "physical_evaluation_tariff_cost_Rs": {
+        "max": 763289.8597767289,
+        "mean": 759204.912697513,
+        "min": 751221.9017562335,
+        "n": 6
+      },
+      "plant_kWh_per_t_bars": {
+        "max": 885.6980904827444,
+        "mean": 878.4961166500489,
+        "min": 870.0918863226234,
+        "n": 6
+      },
+      "total_kWh": {
+        "max": 105008.36560763419,
+        "mean": 104154.49959002978,
+        "min": 103158.09404241023,
+        "n": 6
+      }
+    },
+    "failures": [
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 201
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 206
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 208
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 210
+      }
+    ],
+    "feasibility_rate": 0.6,
+    "feasible": 6,
+    "no_feasible_continuations": 0,
+    "relative_feasibility_improvement": null,
+    "total_replans": 0
+  },
+  "E2": {
+    "absolute_feasibility_improvement": 0.5,
+    "attempted": 10,
+    "completed_production_rate": 0.5,
+    "conditional_on_feasible": {
+      "IF_SEC_kWh_per_t": {
+        "max": 637.9537666828205,
+        "mean": 630.6030574668766,
+        "min": 623.7253002088661,
+        "n": 5
+      },
+      "IF_idle_hours": {
+        "max": 1.933142194571115,
+        "mean": 1.6915665551101113,
+        "min": 1.5015537079080516,
+        "n": 5
+      },
+      "IF_utilization": {
+        "max": 0.9374352621704979,
+        "mean": 0.9295180602037455,
+        "min": 0.9194524085595369,
+        "n": 5
+      },
+      "final_inventory_t": {
+        "max": 50.00000000000008,
+        "mean": 50.00000000000006,
+        "min": 50.000000000000036,
+        "n": 5
+      },
+      "inventory_min_t": {
+        "max": 2.5000000000000764,
+        "mean": 2.50000000000006,
+        "min": 2.5000000000000355,
+        "n": 5
+      },
+      "physical_evaluation_tariff_cost_Rs": {
+        "max": 757106.0825839092,
+        "mean": 751305.1267647061,
+        "min": 744069.6311930246,
+        "n": 5
+      },
+      "plant_kWh_per_t_bars": {
+        "max": 885.6980904827449,
+        "mean": 877.6627586846931,
+        "min": 870.0906035042949,
+        "n": 5
+      },
+      "total_kWh": {
+        "max": 105008.3656076342,
+        "mean": 104055.69666965716,
+        "min": 103157.94195146913,
+        "n": 5
+      }
+    },
+    "failures": [
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 204
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 206
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 208
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 209
+      },
+      {
+        "cause": "duration_miss_overlap",
+        "reason": "Schedule has overlapping heat or wrong working day",
+        "seed": 210
+      }
+    ],
+    "feasibility_rate": 0.5,
+    "feasible": 5,
+    "no_feasible_continuations": 0,
+    "relative_feasibility_improvement": null,
+    "total_replans": 0
+  },
+  "E3": {
+    "absolute_feasibility_improvement": 0.5,
+    "attempted": 10,
+    "completed_production_rate": 0.5,
+    "conditional_on_feasible": {
+      "IF_SEC_kWh_per_t": {
+        "max": 632.1527555048251,
+        "mean": 627.9163388339934,
+        "min": 623.7253002088661,
+        "n": 5
+      },
+      "IF_idle_hours": {
+        "max": 1.933142194571115,
+        "mean": 1.6486173669126685,
+        "min": 1.4805782406272243,
+        "n": 5
+      },
+      "IF_utilization": {
+        "max": 0.9383092399738656,
+        "mean": 0.9313076097119722,
+        "min": 0.9194524085595369,
+        "n": 5
+      },
+      "final_inventory_t": {
+        "max": 49.99999999999999,
+        "mean": 49.999999999999986,
+        "min": 49.99999999999998,
+        "n": 5
+      },
+      "inventory_min_t": {
+        "max": 4.499999999999991,
+        "mean": 4.499999999999986,
+        "min": 4.4999999999999805,
+        "n": 5
+      },
+      "physical_evaluation_tariff_cost_Rs": {
+        "max": 737829.9349753398,
+        "mean": 732978.2831596079,
+        "min": 722069.1237917573,
+        "n": 5
+      },
+      "plant_kWh_per_t_bars": {
+        "max": 879.4502707696253,
+        "mean": 874.7124769105254,
+        "min": 870.0900685417571,
+        "n": 5
+      },
+      "total_kWh": {
+        "max": 104267.62410244677,
+        "mean": 103705.91126251189,
+        "min": 103157.87852631073,
+        "n": 5
+      }
+    },
+    "failures": [
+      {
+        "cause": "solver_infeasibility",
+        "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+        "seed": 202
+      },
+      {
+        "cause": "solver_infeasibility",
+        "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+        "seed": 204
+      },
+      {
+        "cause": "end_of_day_overrun",
+        "reason": "D007_H12 cannot complete daily target within working day: end 1441.70 min",
+        "seed": 205
+      },
+      {
+        "cause": "solver_infeasibility",
+        "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+        "seed": 207
+      },
+      {
+        "cause": "solver_infeasibility",
+        "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+        "seed": 209
+      }
+    ],
+    "feasibility_rate": 0.5,
+    "feasible": 5,
+    "no_feasible_continuations": 5,
+    "relative_feasibility_improvement": null,
+    "total_replans": 120
+  },
+  "E4": {
+    "absolute_feasibility_improvement": 1.0,
+    "attempted": 10,
+    "completed_production_rate": 1.0,
+    "conditional_on_feasible": {
+      "IF_SEC_kWh_per_t": {
+        "max": 637.9537666828205,
+        "mean": 630.4051501305705,
+        "min": 623.7253002088661,
+        "n": 10
+      },
+      "IF_idle_hours": {
+        "max": 1.933142194571115,
+        "mean": 1.6304567687418892,
+        "min": 1.4233820255397234,
+        "n": 10
+      },
+      "IF_utilization": {
+        "max": 0.9406924156025115,
+        "mean": 0.9320643013024211,
+        "min": 0.9194524085595369,
+        "n": 10
+      },
+      "final_inventory_t": {
+        "max": 50.00000000000003,
+        "mean": 49.99999999999999,
+        "min": 49.999999999999986,
+        "n": 10
+      },
+      "inventory_min_t": {
+        "max": 8.499999999999993,
+        "mean": 5.500000000000002,
+        "min": 2.4999999999999964,
+        "n": 10
+      },
+      "physical_evaluation_tariff_cost_Rs": {
+        "max": 754000.229165168,
+        "mean": 744789.1747427501,
+        "min": 730736.6758218597,
+        "n": 10
+      },
+      "plant_kWh_per_t_bars": {
+        "max": 885.6974654910019,
+        "mean": 877.4449215968713,
+        "min": 870.0910019967965,
+        "n": 10
+      },
+      "total_kWh": {
+        "max": 105008.29150861317,
+        "mean": 104029.86990452505,
+        "min": 103157.98919674019,
+        "n": 10
+      }
+    },
+    "failures": [],
+    "feasibility_rate": 1.0,
+    "feasible": 10,
+    "no_feasible_continuations": 0,
+    "relative_feasibility_improvement": null,
+    "total_replans": 120
+  }
+}

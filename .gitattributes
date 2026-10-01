@@ -1,0 +1,3 @@
+# Scientific evidence hashes require byte-identical checkout on every OS.
+# Preserve original line endings instead of Git's automatic text conversion.
+* -text

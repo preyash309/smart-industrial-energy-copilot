@@ -1,0 +1,10 @@
+{
+  "files": {
+    "impact.json": "0d2421b373a31d584ccc66b4b86a3e5fde33a6c09be722a2e8c2b31b658db3a6",
+    "maintenance/bundle.json": "b102e56fe504e48d227cca80377219174bcb0801af1f4b96790031db80e5b611",
+    "normal/bundle.json": "b2b2913068bd85f35b244dc14058ffd6786d583aa5088be948ccd26e2a3e55c9",
+    "recovery/bundle.json": "e06fc7d93748cc2b175c0cf81853dea79d7a1561c196d6e8627b1d767e1d4fd2",
+    "rejection/bundle.json": "99ecf7115f48732a6ff097433fa3d894fb79d4fd30dd7baf863015a0f44bf237"
+  },
+  "version": "dashboard_demo_v1"
+}

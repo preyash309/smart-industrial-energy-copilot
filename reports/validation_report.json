@@ -1,0 +1,70 @@
+{
+  "physical_checks": {
+    "baseline_coal": true,
+    "baseline_electricity": true,
+    "baseline_heat_count": true,
+    "baseline_if_share": true,
+    "baseline_sec": true,
+    "cast_balance": true,
+    "caster_yield": true,
+    "daily_bar_target": true,
+    "daily_billet_target": true,
+    "demand": true,
+    "electrical_balance": true,
+    "feeder_apparent_power": true,
+    "fuel_energy_balance": true,
+    "full_power_duration": true,
+    "furnace_cycle_consistency": true,
+    "furnace_heat_meter_balance": true,
+    "furnace_loss_accounting": true,
+    "heat_no_overlap": true,
+    "inventory_bounds": true,
+    "latent_boundary": true,
+    "main_vector_power": true,
+    "melt_balance": true,
+    "power_energy_units": true,
+    "pump_interlock": true,
+    "rhf_temperature": true,
+    "rolling_balance": true,
+    "rolling_capacity": true,
+    "rolling_yield": true,
+    "shared_clock": true,
+    "tap_temperature": true,
+    "yard_balance": true
+  },
+  "reproducibility": {
+    "events": true,
+    "heats": true,
+    "latent_heats": true,
+    "latent_truth": true,
+    "production": true,
+    "readings": true
+  },
+  "scope": "Phase I",
+  "temporal_diagnostics": {
+    "lag_1_difference": {
+      "envelope": 0.25,
+      "in_envelope": true,
+      "value": 0.24347597757608186
+    },
+    "lag_4_difference": {
+      "envelope": 0.25,
+      "in_envelope": false,
+      "value": 0.5377292697956757
+    },
+    "profile_rmse": {
+      "envelope": 1.0,
+      "in_envelope": true,
+      "value": 0.8371200784034163
+    },
+    "ramp_sd_ratio": {
+      "envelope": [
+        0.2,
+        3.0
+      ],
+      "in_envelope": true,
+      "value": 1.0160770710105145
+    }
+  },
+  "temporal_note": "Lag-4 autocorrelation is outside the declared cross-plant diagnostic envelope. A dominant single IF alternates 78 powered and 27 non-powered minutes (approximately seven slots per cycle); four-slot separation therefore often crosses charging breaks. UCI aggregates a different coils/plates plant with smoother load. Preserve the physical cycle rather than add fictitious power or fit held-out data. This discrepancy limits transfer of forecasting results; physical feasibility remains independently tested."
+}

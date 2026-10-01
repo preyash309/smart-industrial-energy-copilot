@@ -1,0 +1,3587 @@
+version: analytics_v1
+timezone: Asia/Kolkata
+tables:
+  heat_features:
+    keys:
+    - heat_id
+    access: public_analytics
+    columns:
+      heat_id:
+        unit: identifier or category
+        available_at: start_time
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      asset_id:
+        unit: identifier or category
+        available_at: start_time
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      start_time:
+        unit: local datetime
+        available_at: start_time
+        role: calendar
+        predictor_tasks:
+        - heat_energy
+        source: known calendar
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      end_time:
+        unit: local datetime
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      charge_t:
+        unit: t
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      liquid_t:
+        unit: t
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      billet_t:
+        unit: t
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      kWh:
+        unit: kWh
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      tap_temp_C:
+        unit: degC
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      chem_ok:
+        unit: dimensionless
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: boolean
+        nullable: false
+        min: null
+        max: null
+      available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      duration_min:
+        unit: min
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      SEC_kWh_per_t:
+        unit: kWh/t liquid
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      actual_SEC:
+        unit: kWh/t liquid
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      hour:
+        unit: dimensionless
+        available_at: start_time
+        role: calendar
+        predictor_tasks:
+        - heat_energy
+        source: known calendar
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      weekday:
+        unit: dimensionless
+        available_at: start_time
+        role: calendar
+        predictor_tasks:
+        - heat_energy
+        source: known calendar
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      shift:
+        unit: dimensionless
+        available_at: start_time
+        role: calendar
+        predictor_tasks:
+        - heat_energy
+        source: known calendar
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      working_day:
+        unit: dimensionless
+        available_at: start_time
+        role: calendar
+        predictor_tasks:
+        - heat_energy
+        source: known calendar
+        notes: ''
+        type: boolean
+        nullable: false
+        min: null
+        max: null
+      previous_heat_SEC:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      previous_heat_duration:
+        unit: min
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      previous_heat_available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      history_count:
+        unit: dimensionless
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      global_mean_SEC:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      shift_mean_SEC:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      rolling_mean_SEC:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      historical_duration_mean:
+        unit: min
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      historical_duration_sd:
+        unit: min
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_SEC:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_SEC_sd:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_SEC_low:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_SEC_high:
+        unit: kWh/t liquid
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_n:
+        unit: dimensionless
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      expected_method:
+        unit: identifier or category
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      expected_liquid_t:
+        unit: t
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      expected_kWh:
+        unit: kWh
+        available_at: start_time
+        role: historical_baseline
+        predictor_tasks:
+        - heat_energy
+        source: completed heat logs with available_at <= current heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      baseline_available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      residual_SEC:
+        unit: kWh/t liquid
+        available_at: available_at
+        role: outcome_or_completed_register
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: completed public heat log; excluded from pre-heat forecasts
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      context_MAIN_kW:
+        unit: kW
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_MAIN_kVA:
+        unit: kVA
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_IF_01_kW:
+        unit: kW
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_RHF_01_temp_C:
+        unit: degC
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_PMP_01_flow_m3_h:
+        unit: m3/h
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_MILL_01_vibration_mm_s:
+        unit: mm/s
+        available_at: context_available_at
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: latest fully published meter interval before heat start
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      context_age_min:
+        unit: min
+        available_at: start_time
+        role: past_observation
+        predictor_tasks:
+        - heat_energy
+        source: public observed/register data
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+  slot_features:
+    keys:
+    - interval_start
+    access: public_analytics
+    columns:
+      interval_start:
+        unit: local datetime
+        available_at: interval_start
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      timestamp:
+        unit: local datetime
+        available_at: interval_start
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      interval_end:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      hour:
+        unit: calendar
+        available_at: interval_start
+        role: calendar
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: public observed/register data
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      weekday:
+        unit: calendar
+        available_at: interval_start
+        role: calendar
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: public observed/register data
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      shift:
+        unit: calendar
+        available_at: interval_start
+        role: calendar
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: public observed/register data
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      working_day:
+        unit: calendar
+        available_at: interval_start
+        role: calendar
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: public observed/register data
+        notes: ''
+        type: boolean
+        nullable: false
+        min: null
+        max: null
+      IF_01_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      IF_01_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      IF_01_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      IF_01_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      RHF_01_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      RHF_01_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      RHF_01_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      RHF_01_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      RHF_01_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MILL_01_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      MILL_01_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MILL_01_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MILL_01_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      PMP_01_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      PMP_01_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      PMP_01_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      PMP_01_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      CMP_01_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      CMP_01_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      CMP_01_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      CMP_01_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      CMP_01_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      AUX_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      AUX_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      AUX_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      AUX_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      AUX_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MAIN_kW:
+        unit: kW
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kW
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kWh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA:
+        unit: kVA
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVA
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVAh:
+        unit: kVAh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.kVAh
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pf
+        notes: ''
+        type: number
+        nullable: true
+        min: 0
+        max: 1
+      MAIN_fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.fuel_kg
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.vibration_mm_s
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_rpm:
+        unit: rpm
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.rpm
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.pressure_bar
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flow_m3_h
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_flue_temp_C:
+        unit: degC
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.flue_temp_C
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_state:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.state
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MAIN_tariff_band:
+        unit: category
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.tariff_band
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      MAIN_energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: observed
+        predictor_tasks:
+        - slot_next_load
+        source: readings.energy_best_kWh; public QC
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_energy_method:
+        unit: category
+        available_at: available_at
+        role: quality_metadata
+        predictor_tasks: []
+        source: readings.energy_method; public QC
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      production_report_available_at:
+        unit: local datetime
+        available_at: production_report_available_at
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      billet_inventory_t:
+        unit: t
+        available_at: production_report_available_at
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: number
+        nullable: false
+        min: null
+        max: null
+      rolling_output_last_shift_t:
+        unit: t
+        available_at: production_report_available_at
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: number
+        nullable: true
+        min: null
+        max: null
+      rolling_yield_pct:
+        unit: percent
+        available_at: production_report_available_at
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: number
+        nullable: true
+        min: null
+        max: null
+      known_cumulative_bar_t:
+        unit: t
+        available_at: production_report_available_at
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: number
+        nullable: false
+        min: null
+        max: null
+      inventory_is_opening_balance:
+        unit: boolean
+        available_at: interval_start
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: boolean
+        nullable: false
+        min: null
+        max: null
+      inventory_age_min:
+        unit: min
+        available_at: interval_start
+        role: published_register
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: production completed-shift register / configured opening balance
+        notes: Last published value; not true instantaneous stock/output.
+        type: number
+        nullable: false
+        min: null
+        max: null
+      history_available_at:
+        unit: local datetime
+        available_at: history_available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_lag_1:
+        unit: kW
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      lag_1_available_at:
+        unit: local datetime
+        available_at: lag_1_available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_lag_4:
+        unit: kW
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      lag_4_available_at:
+        unit: local datetime
+        available_at: lag_4_available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_lag_96:
+        unit: kW
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      lag_96_available_at:
+        unit: local datetime
+        available_at: lag_96_available_at
+        role: metadata
+        predictor_tasks: []
+        source: public observed/register data
+        notes: ''
+        type: datetime
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_past_4_mean:
+        unit: kW
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MAIN_kW_past_96_mean:
+        unit: kW
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kW_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kW.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MAIN_kWh_lag_1:
+        unit: kWh
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh_lag_4:
+        unit: kWh
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh_lag_96:
+        unit: kWh
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh_past_4_mean:
+        unit: kWh
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MAIN_kWh_past_96_mean:
+        unit: kWh
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kWh_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kWh.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MAIN_kVA_lag_1:
+        unit: kVA
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA_lag_4:
+        unit: kVA
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA_lag_96:
+        unit: kVA
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA_past_4_mean:
+        unit: kVA
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MAIN_kVA_past_96_mean:
+        unit: kVA
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MAIN_kVA_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MAIN_kVA.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      IF_01_kWh_lag_1:
+        unit: kWh
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh_lag_4:
+        unit: kWh
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh_lag_96:
+        unit: kWh
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh_past_4_mean:
+        unit: kWh
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      IF_01_kWh_past_96_mean:
+        unit: kWh
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      IF_01_kWh_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: IF_01_kWh.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_lag_1:
+        unit: mm/s
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_lag_4:
+        unit: mm/s
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_lag_96:
+        unit: mm/s
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_past_4_mean:
+        unit: mm/s
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_past_96_mean:
+        unit: mm/s
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      MILL_01_vibration_mm_s_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: MILL_01_vibration_mm_s.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_lag_1:
+        unit: mm/s
+        available_at: lag_1_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(1)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_lag_4:
+        unit: mm/s
+        available_at: lag_4_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_lag_96:
+        unit: mm/s
+        available_at: lag_96_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_past_4_mean:
+        unit: mm/s
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_past_4_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(1).rolling(4)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_past_96_mean:
+        unit: mm/s
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      PMP_01_vibration_mm_s_past_96_count:
+        unit: sample
+        available_at: history_available_at
+        role: past_observation
+        predictor_tasks:
+        - slot_load_at_start
+        - slot_next_load
+        source: PMP_01_vibration_mm_s.shift(1).rolling(96)
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+  asset_daily_metrics:
+    keys:
+    - asset_id
+    - date
+    access: public_analytics
+    columns:
+      asset_id:
+        unit: dimensionless
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      date:
+        unit: local datetime
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      interval_start:
+        unit: local datetime
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      interval_end:
+        unit: local datetime
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      available_at:
+        unit: local datetime
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      working_day:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: boolean
+        nullable: false
+        min: null
+        max: null
+      raw_meter_kWh:
+        unit: kWh
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      valid_meter_kWh:
+        unit: kWh
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      energy_best_kWh:
+        unit: kWh
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      mean_kW:
+        unit: kW
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      peak_kW:
+        unit: kW
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      peak_kVA:
+        unit: kVA
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      mean_pf:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: 0
+        max: 1
+      fuel_kg:
+        unit: kg coal
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      valid_energy_slots:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      meter_slots:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      power_fallback_slots:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      missing_energy_slots:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      quality_flagged_slots:
+        unit: dimensionless
+        available_at: available_at
+        role: metadata_or_quality_audit
+        predictor_tasks: []
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      observed_coverage_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      active_slot_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      off_slot_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      partial_repair_slot_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      downtime_lower_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      downtime_upper_hours:
+        unit: h (interval proxy/bound)
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      utilization_slot_fraction:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      bar_t:
+        unit: t
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      billet_t:
+        unit: t
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      liquid_t:
+        unit: t
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      rolling_yield_pct:
+        unit: percent
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      electricity_kWh_per_t_bar:
+        unit: kWh/t bar
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      fuel_kg_per_t_bar:
+        unit: kg/t bar
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_temp_C:
+        unit: degC
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      max_temp_C:
+        unit: degC
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      max_vibration_mm_s:
+        unit: mm/s
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      max_flow_m3_h:
+        unit: m3/h
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      max_pressure_bar:
+        unit: bar
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_rpm:
+        unit: rpm
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      max_rpm:
+        unit: rpm
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      asset_share_MAIN_common:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      feeder_mix_share_common_all:
+        unit: dimensionless
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_temp_C_past_7d_mean:
+        unit: degC
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      mean_vibration_mm_s_past_7d_mean:
+        unit: mm/s
+        available_at: available_at
+        role: completed_day_metric
+        predictor_tasks:
+        - asset_next_day_risk
+        source: clean public meters/states and completed production registers
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+  diagnostic_candidates:
+    keys:
+    - candidate_id
+    access: diagnostic_only
+    columns:
+      candidate_id:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      timestamp:
+        unit: local datetime
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      available_at:
+        unit: local datetime
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      asset_id:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      source_id:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      rule:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      metric:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      measured_value:
+        unit: metric-specific; see unit
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      expected_value:
+        unit: metric-specific; see unit
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      residual:
+        unit: metric-specific; see unit
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      unit:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      evidence_json:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      possible_cause:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      confidence:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      baseline_samples:
+        unit: count
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      limitation:
+        unit: identifier or text
+        available_at: available_at
+        role: diagnostic_evidence
+        predictor_tasks: []
+        source: observable public data plus strictly earlier historical baseline
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+  production_register:
+    keys:
+    - plant_id
+    - date
+    - shift
+    access: public_analytics
+    columns:
+      plant_id:
+        unit: identifier or category
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      date:
+        unit: identifier or category
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      shift:
+        unit: identifier or category
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: string
+        nullable: false
+        min: null
+        max: null
+      billet_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      bar_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      rolled_billet_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      yard_stock_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      liquid_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      charge_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      melt_loss_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      cast_loss_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      rolling_loss_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      rolling_yield_pct:
+        unit: percent
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: true
+        min: null
+        max: null
+      interval_start:
+        unit: local datetime
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      interval_end:
+        unit: local datetime
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      available_at:
+        unit: local datetime
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: datetime
+        nullable: false
+        min: null
+        max: null
+      known_cumulative_bar_t:
+        unit: t
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: number
+        nullable: false
+        min: null
+        max: null
+      working_day:
+        unit: identifier or category
+        available_at: available_at
+        role: completed_shift_register
+        predictor_tasks: []
+        source: public production
+        notes: ''
+        type: boolean
+        nullable: false
+        min: null
+        max: null

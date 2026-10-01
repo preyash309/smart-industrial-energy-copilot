@@ -1,0 +1,51 @@
+version: supervisor_v1
+prompt_version: supervisor_prompt_v1
+timezone: Asia/Kolkata
+authority: [OBSERVE, ANALYZE, RECOMMEND]
+real_execution_enabled: false
+simulated_execution_enabled: false
+maximum_replan_attempts:
+  value: 3
+  unit: attempts after initial candidate
+  status: assumption
+  source: Phase II-G bounded supervisory loop
+  notes: No relaxation of constraints; only declared deterministic continuation choices.
+maximum_tool_calls:
+  value: 24
+  unit: calls per episode
+  status: assumption
+  source: Phase II-G orchestration bound
+  notes: Exceeding the bound escalates without an operating recommendation.
+maximum_state_age_min:
+  value: 30
+  unit: min
+  status: assumption
+  source: Phase II-G public snapshot freshness contract
+  notes: Closed interval data required; freshness does not confer future knowledge.
+maximum_response_bytes:
+  value: 262144
+  unit: bytes
+  status: assumption
+  source: Phase II-G API response bound
+  notes: Fail closed on oversized model/tool responses.
+api_timeout_seconds:
+  value: 30
+  unit: s
+  status: assumption
+  source: Phase II-G model transport bound
+  notes: No automatic retry or model fallback for an invalid live response.
+approved_plan_modes: [robust, robust_maintenance, adaptive_robust, adaptive_maintenance]
+commitment_policy: frozen_E4_current_heat
+maintenance_policy: frozen_Phase_II_F
+prediction_model_version: forecast_v1
+prediction_schema_path: models/phase2b_v1/prediction_schema.yaml
+api:
+  enabled: false
+  protocol: chat_completions_json
+  endpoint_environment: SUPERVISOR_ENDPOINT
+  model_environment: SUPERVISOR_MODEL
+  credential_environment: SUPERVISOR_API_KEY
+  allow_local_http: false
+  cost_per_million_input_tokens: null
+  cost_per_million_output_tokens: null
+  notes: Provider-agnostic chat-completions JSON transport; no configured provider or price and no secrets in files.

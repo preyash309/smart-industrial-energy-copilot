@@ -1,0 +1,121 @@
+version: maintenance_v1
+label: SYNTHETIC-MAINTENANCE
+plant_config: data/processed/sim_v1.1/config_snapshot.yaml
+robust_config: configs/robustness_v1.yaml
+prediction_directory: models/phase2b_v1
+split_manifest: configs/maintenance_split_v1.json
+output_directory: replay/maintenance_v1
+service:
+  MILL_01:
+    intervention_type: preventive_replacement
+    condition_effect: reset_wear
+    duration_min:
+      value: 15
+      unit: min
+      status: assumption
+      source: Phase II-F synthetic experiment; no plant service-time measurement
+      notes: One quarter-hour; sensitivity and physical transfer unvalidated.
+    post_service_wear:
+      value: 0.02
+      unit: fraction of failure threshold
+      status: assumption
+      source: Matches initial wear in frozen Phase-I configuration
+      notes: Action begins a new life draw at service end; it does not certify future reliability.
+    restart_delay_min:
+      value: 0
+      unit: min
+      status: assumption
+      source: Phase II-F synthetic experiment; no observed restart delay
+      notes: Add as downtime if site evidence becomes available.
+    direct_cost_Rs:
+      value: null
+      unit: Rs/action
+      status: assumption
+      source: No versioned real maintenance cost exists
+      notes: Excluded from monetary objective and results.
+    candidate_start_hour:
+      value: [0, 4, 8, 12, 16, 20]
+      unit: local hour
+      status: assumption
+      source: Phase II-F declared candidate grid
+      notes: Feasibility, availability and decision time filter candidates.
+  PMP_01:
+    intervention_type: preventive_replacement
+    condition_effect: reset_wear
+    duration_min:
+      value: 15
+      unit: min
+      status: assumption
+      source: Phase II-F synthetic experiment; no plant service-time measurement
+      notes: A service stops cooling and all IF operation during its interval.
+    post_service_wear:
+      value: 0.02
+      unit: fraction of failure threshold
+      status: assumption
+      source: Matches initial wear in frozen Phase-I configuration
+      notes: Action begins a new life draw at service end.
+    restart_delay_min:
+      value: 0
+      unit: min
+      status: assumption
+      source: Phase II-F synthetic experiment; no observed restart delay
+      notes: No real restart procedure is represented.
+    direct_cost_Rs:
+      value: null
+      unit: Rs/action
+      status: assumption
+      source: No versioned real maintenance cost exists
+      notes: Excluded from monetary objective and results.
+    candidate_start_hour:
+      value: [0, 4, 8, 12, 16, 20]
+      unit: local hour
+      status: assumption
+      source: Phase II-F declared candidate grid
+      notes: Feasibility, interlock and decision time filter candidates.
+policy:
+  threshold_candidates:
+    MILL_01:
+      value: [0.55, 0.7, 0.85]
+      unit: calibrated 24-hour probability
+      status: assumption
+      source: Fresh development policy candidates, distinct from classifier threshold
+      notes: Select on operational outcomes, not classification F1.
+    PMP_01:
+      value: [0.55, 0.7, 0.85]
+      unit: calibrated 24-hour probability
+      status: assumption
+      source: Fresh development policy candidates, distinct from classifier threshold
+      notes: Select on operational outcomes, not classification F1.
+  persistence_observations:
+    value: [1, 2]
+    unit: consecutive published heat-completion predictions
+    status: assumption
+    source: Fresh development candidate policies
+    notes: Two suppresses one isolated probability spike.
+  warning_probability:
+    value: 0.3
+    unit: calibrated 24-hour probability
+    status: assumption
+    source: Phase II-F diagnostic assumption
+    notes: Warning only; never forces a service.
+  minimum_valid_recent_fraction:
+    value: 0.75
+    unit: fraction of previous 4 closed sensor rows
+    status: assumption
+    source: Phase II-F sensor-quality gate
+    notes: Confidence/quality gate, not a second health model.
+  risk_horizon_hours:
+    value: 24
+    unit: h
+    status: sourced
+    source: Frozen Phase-II-B health prediction contract
+    notes: Other horizons rejected by the frozen service.
+  planning_hazard_rule: uniform_conditional_failure_within_24h
+  planning_consequence: expected_corrective_repair_minutes_minus_preventive_unavailability
+  scenario_life_rule: fresh_named_seed_stream_draw_after_preventive_reset
+  false_maintenance_window_hours:
+    value: 24
+    unit: h after service start
+    status: assumption
+    source: Matches frozen health prediction horizon
+    notes: Evaluate false services against a same-seed no-service counterfactual.

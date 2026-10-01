@@ -1,0 +1,25 @@
+version: robustness_schema_v1
+state:
+  current_time: local ISO completion-publication timestamp
+  completed_heats: immutable ordered heat identities
+  remaining_heats: ordered suffix of the production order
+  actual_inventory_t: public completed-billet register minus executed-feed acknowledgements
+  executed_rolling: immutable tonnes issued at each plant-slot start
+  frozen_executed_decisions: immutable heat_id/start/end records
+  observed_recent_load: closed public AUX meter intervals with QC/null handling
+  latest_health_state: published typed probabilistic model outputs, informational only
+remaining_input:
+  forecast_origin: accounting geometry start at the current quarter-hour boundary
+  decision_time: actual replanning publication time; predictor availability uses this
+  known_arrivals: completed public billet arrival; future entries forbidden
+  committed_first_feed_t: immutable already-issued current-slot rolling feed
+  production_order: full-day order less acknowledged production; closing reserve unchanged
+result:
+  status: optimal, feasible, infeasible, solver_limit, solver_error, or checker_failed
+  releasable: solver incumbent plus independent nominal/scenario checker gate
+  physical_acceptance: separate full matched-condition twin/checker gate
+labels:
+  operational_predictions: frozen public PredictionService only
+  evaluation_only: latent truth, future fault marks, failure-mechanism annotations
+  tariffs: synthetic electricity-energy price only
+  uncertainty: empirical marginal predictions and declared scenario envelope; no joint safety guarantee

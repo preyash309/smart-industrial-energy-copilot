@@ -1,0 +1,679 @@
+{
+  "calibrated_test": {
+    "Brier": 0.012617292536631105,
+    "F1": 0.7391304347826086,
+    "PR_AUC": 0.8139794912187803,
+    "ROC_AUC": 0.9681051164427124,
+    "calibration_bins": [
+      {
+        "observed": 0.0,
+        "predicted": 0.0003317726082651797
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0005243170667582631
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0006787416576704866
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.00086968496788239
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.001119323648060678
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.0015408284213242391
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.002159134356043244
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.003827366614796399
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.01650710265630661
+      },
+      {
+        "observed": 0.31333333333333335,
+        "predicted": 0.3423985260639708
+      }
+    ],
+    "confusion_matrix": [
+      [
+        1442,
+        7
+      ],
+      [
+        17,
+        34
+      ]
+    ],
+    "precision": 0.8292682926829268,
+    "prevalence": 0.034,
+    "recall": 0.6666666666666666,
+    "threshold": 0.55
+  },
+  "candidates": {
+    "lightgbm": {
+      "calibration": {
+        "Brier": 0.015260940359237026,
+        "F1": 0.6511627906976745,
+        "PR_AUC": 0.7435797610217456,
+        "ROC_AUC": 0.9859310344827585,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.00021935371270035296
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.00033553821218945326
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0004374486798960169
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0005694263468191814
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0007100106055399802
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0009242417848563291
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.001339136789218532
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0024032301233175225
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.010282032867088545
+          },
+          {
+            "observed": 0.32,
+            "predicted": 0.2718901782170726
+          }
+        ],
+        "confusion_matrix": [
+          [
+            721,
+            4
+          ],
+          [
+            11,
+            14
+          ]
+        ],
+        "precision": 0.7777777777777778,
+        "prevalence": 0.03333333333333333,
+        "recall": 0.56,
+        "threshold": 0.5
+      },
+      "test": {
+        "Brier": 0.012511202568241477,
+        "F1": 0.7555555555555555,
+        "PR_AUC": 0.8139794912187803,
+        "ROC_AUC": 0.9681051164427124,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.00020924141743689797
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0003329015539938267
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0004326664716196226
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0005565244220830928
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.0007191018993971203
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.0009949110437384864
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0014017154969882385
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.002508697199195885
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.011169581509667388
+          },
+          {
+            "observed": 0.31333333333333335,
+            "predicted": 0.299823342214301
+          }
+        ],
+        "confusion_matrix": [
+          [
+            1444,
+            5
+          ],
+          [
+            17,
+            34
+          ]
+        ],
+        "precision": 0.8717948717948718,
+        "prevalence": 0.034,
+        "recall": 0.6666666666666666,
+        "threshold": 0.5
+      },
+      "validation": {
+        "Brier": 0.013178291585505562,
+        "F1": 0.7346938775510204,
+        "PR_AUC": 0.826105266796701,
+        "ROC_AUC": 0.9858159796005099,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.00021165002653240108
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.00034908437473604026
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0004541212974434017
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0005699871424004353
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.000737972855085778
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0009864997397975603
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0014108669924492517
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.0024171372597342243
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.00881903140493873
+          },
+          {
+            "observed": 0.3333333333333333,
+            "predicted": 0.33966539968086773
+          }
+        ],
+        "confusion_matrix": [
+          [
+            719,
+            5
+          ],
+          [
+            8,
+            18
+          ]
+        ],
+        "precision": 0.782608695652174,
+        "prevalence": 0.034666666666666665,
+        "recall": 0.6923076923076923,
+        "threshold": 0.5
+      }
+    },
+    "linear": {
+      "calibration": {
+        "Brier": 0.024831655055256092,
+        "F1": 0.1935483870967742,
+        "PR_AUC": 0.4118295155563129,
+        "ROC_AUC": 0.8732137931034483,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.00045805458392565094
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.001064152678207744
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0018348376012961706
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.0029214421136015078
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.004597738344540365
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.007071625381132093
+          },
+          {
+            "observed": 0.05333333333333334,
+            "predicted": 0.011014199367961407
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.019430065544221713
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.04048144148088965
+          },
+          {
+            "observed": 0.22666666666666666,
+            "predicted": 0.22767073493098416
+          }
+        ],
+        "confusion_matrix": [
+          [
+            722,
+            3
+          ],
+          [
+            22,
+            3
+          ]
+        ],
+        "precision": 0.5,
+        "prevalence": 0.03333333333333333,
+        "recall": 0.12,
+        "threshold": 0.5
+      },
+      "test": {
+        "Brier": 0.024665634618053163,
+        "F1": 0.2222222222222222,
+        "PR_AUC": 0.43069191741640295,
+        "ROC_AUC": 0.900336946372752,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.0005251945630107896
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.0011661696587778989
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.002062473664557392
+          },
+          {
+            "observed": 0.02,
+            "predicted": 0.003523462736105123
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.005547772138949928
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.008772590006140342
+          },
+          {
+            "observed": 0.006666666666666667,
+            "predicted": 0.013960040455076246
+          },
+          {
+            "observed": 0.02666666666666667,
+            "predicted": 0.02400139038163451
+          },
+          {
+            "observed": 0.03333333333333333,
+            "predicted": 0.049516535277652776
+          },
+          {
+            "observed": 0.24666666666666667,
+            "predicted": 0.21035568100572974
+          }
+        ],
+        "confusion_matrix": [
+          [
+            1444,
+            5
+          ],
+          [
+            44,
+            7
+          ]
+        ],
+        "precision": 0.5833333333333334,
+        "prevalence": 0.034,
+        "recall": 0.13725490196078433,
+        "threshold": 0.5
+      },
+      "validation": {
+        "Brier": 0.027158906730085676,
+        "F1": 0.25806451612903225,
+        "PR_AUC": 0.36320631293584293,
+        "ROC_AUC": 0.8513068423289417,
+        "calibration_bins": [
+          {
+            "observed": 0.0,
+            "predicted": 0.0005123464643584756
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.001234077283893031
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.0021938669954954097
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.0034405057891433674
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.005549833607201788
+          },
+          {
+            "observed": 0.0,
+            "predicted": 0.009008079403409454
+          },
+          {
+            "observed": 0.013333333333333334,
+            "predicted": 0.014561583018408602
+          },
+          {
+            "observed": 0.08,
+            "predicted": 0.023539194291389873
+          },
+          {
+            "observed": 0.05333333333333334,
+            "predicted": 0.04640041486357648
+          },
+          {
+            "observed": 0.17333333333333334,
+            "predicted": 0.21180336208084477
+          }
+        ],
+        "confusion_matrix": [
+          [
+            723,
+            1
+          ],
+          [
+            22,
+            4
+          ]
+        ],
+        "precision": 0.8,
+        "prevalence": 0.034666666666666665,
+        "recall": 0.15384615384615385,
+        "threshold": 0.5
+      }
+    }
+  },
+  "config": {
+    "calibrator_C": 100.0,
+    "days": 30,
+    "health_horizon_hours": 24,
+    "health_minimum_pr_gain": 0.01,
+    "health_stride_slots": 4,
+    "learning_rate": 0.05,
+    "leaves": 15,
+    "load_horizon_slots": 96,
+    "load_lags": [
+      1,
+      2,
+      4,
+      96
+    ],
+    "load_windows": [
+      4,
+      96
+    ],
+    "logistic_C": 1.0,
+    "max_iter": 2000,
+    "min_calibration_group": 30,
+    "min_child_samples": 40,
+    "minimum_improvement": 0.02,
+    "reg_lambda": 2.0,
+    "ridge_alpha": 10.0,
+    "seed": 42,
+    "threshold_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "trees": 220,
+    "version": "forecast_v1"
+  },
+  "data_hashes": {
+    "features.parquet": "4aa7164dda6830cc53fce67fd1a3bace659e28d895ee18e6474d8e7b27ed734b",
+    "index.parquet": "0ed82c88aac78cae338b295911cfe671ea0053d697a1d7534c30d0366244a960",
+    "targets.parquet": "7f2e4902047b52a10a15d7808cf29aa892eb0e84c9dd239f0621dc2e850e0942"
+  },
+  "dataset_audit": {
+    "features": [
+      "Type",
+      "Air temperature [K]",
+      "Process temperature [K]",
+      "Rotational speed [rpm]",
+      "Torque [Nm]",
+      "Tool wear [min]"
+    ],
+    "null_predictors": {
+      "Air temperature [K]": 0,
+      "Process temperature [K]": 0,
+      "Rotational speed [rpm]": 0,
+      "Tool wear [min]": 0,
+      "Torque [Nm]": 0,
+      "Type": 0
+    },
+    "rows": 10000,
+    "rows_by_split": {
+      "calibration": 750,
+      "test": 1500,
+      "train": 7000,
+      "validation": 750
+    },
+    "status": "PASS"
+  },
+  "deterministic_training": {
+    "lightgbm": true,
+    "linear": true
+  },
+  "fallback": {
+    "calibrated": false,
+    "prevalence": 0.033857142857142856
+  },
+  "feature_types": {
+    "Air temperature [K]": "number",
+    "Process temperature [K]": "number",
+    "Rotational speed [rpm]": "number",
+    "Tool wear [min]": "number",
+    "Torque [Nm]": "number",
+    "Type": "string"
+  },
+  "features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "grouped_test": {},
+  "no_skill_Brier": 0.03284402040816326,
+  "raw_test": {
+    "Brier": 0.012511202568241477,
+    "F1": 0.6987951807228916,
+    "PR_AUC": 0.8139794912187803,
+    "ROC_AUC": 0.9681051164427124,
+    "calibration_bins": [
+      {
+        "observed": 0.0,
+        "predicted": 0.00020924141743689797
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0003329015539938267
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0004326664716196226
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0005565244220830928
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.0007191018993971203
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.0009949110437384864
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0014017154969882385
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.002508697199195885
+      },
+      {
+        "observed": 0.006666666666666667,
+        "predicted": 0.011169581509667388
+      },
+      {
+        "observed": 0.31333333333333335,
+        "predicted": 0.299823342214301
+      }
+    ],
+    "confusion_matrix": [
+      [
+        1446,
+        3
+      ],
+      [
+        22,
+        29
+      ]
+    ],
+    "precision": 0.90625,
+    "prevalence": 0.034,
+    "recall": 0.5686274509803921,
+    "threshold": 0.55
+  },
+  "selected": "lightgbm",
+  "split_manifest": "data/interim/ai4i_split_manifest.parquet",
+  "task": "ai4i",
+  "threshold": 0.55,
+  "training_data_version": "ai4i_frozen_clean_v1",
+  "validation_calibrated": {
+    "Brier": 0.01359152714936807,
+    "F1": 0.76,
+    "PR_AUC": 0.826105266796701,
+    "ROC_AUC": 0.9858159796005099,
+    "calibration_bins": [
+      {
+        "observed": 0.0,
+        "predicted": 0.00033551433136260085
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0005494026214268927
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.000711869499088419
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0008904081076961974
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0011482231901915828
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.0015280224009990788
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.002173110651180052
+      },
+      {
+        "observed": 0.013333333333333334,
+        "predicted": 0.0036899641906162645
+      },
+      {
+        "observed": 0.0,
+        "predicted": 0.013090589823306058
+      },
+      {
+        "observed": 0.3333333333333333,
+        "predicted": 0.38296454219470466
+      }
+    ],
+    "confusion_matrix": [
+      [
+        719,
+        5
+      ],
+      [
+        7,
+        19
+      ]
+    ],
+    "precision": 0.7916666666666666,
+    "prevalence": 0.034666666666666665,
+    "recall": 0.7307692307692307,
+    "threshold": 0.55
+  }
+}

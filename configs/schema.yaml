@@ -1,0 +1,2119 @@
+version: schema_v1.0
+timestamp_convention: interval-start local plant time; timezone in config; end exclusive
+readings_features:
+- kW
+- kWh
+- kVA
+- kVAh
+- pf
+- fuel_kg
+- temp_C
+- vibration_mm_s
+- rpm
+- pressure_bar
+- flow_m3_h
+- flue_temp_C
+- state
+- tariff_band
+forbidden_features:
+- latent_wear
+- latent_fouling
+- latent_air_leak
+- fault_label
+- future_failure_time
+- true_fault_severity
+- health
+- outage_min
+- fault_kWh
+notes: No automatic feature selection from numeric columns. Events/fault labels are
+  targets only. Sensor-null fields may be not applicable or injected missingness.
+tables:
+  readings:
+    columns:
+      timestamp:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      asset_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kW:
+        type: number
+        unit: kW
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: kW
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kW
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh:
+        type: number
+        unit: kWh
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kVA:
+        type: number
+        unit: kVA
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kVAh:
+        type: number
+        unit: kVAh
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: kVAh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kVAh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      pf:
+        type: number
+        unit: dimensionless
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_kg:
+        type: number
+        unit: kg coal
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: kg coal
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kg coal
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      temp_C:
+        type: number
+        unit: degC
+        nullable: true
+        role: measurement
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      vibration_mm_s:
+        type: number
+        unit: mm/s
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: mm/s
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: mm/s
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rpm:
+        type: number
+        unit: rpm
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: rpm
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: rpm
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      pressure_bar:
+        type: number
+        unit: bar
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: bar
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: bar
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      flow_m3_h:
+        type: number
+        unit: m3/h
+        nullable: true
+        role: measurement
+        min:
+          value: 0
+          unit: m3/h
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: m3/h
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      flue_temp_C:
+        type: number
+        unit: degC
+        nullable: true
+        role: measurement
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      state:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: measurement
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      tariff_band:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: measurement
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      measurement_status:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      sensor_glitch:
+        type: boolean
+        unit: dimensionless
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - timestamp
+    - asset_id
+    access: downstream
+  heats:
+    columns:
+      heat_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      asset_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      start:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      end:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      charge_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      liquid_t:
+        type: number
+        unit: t
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh:
+        type: number
+        unit: kWh
+        nullable: false
+        role: measurement
+        min:
+          value: 0
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh_per_t:
+        type: number
+        unit: kWh/t liquid
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: kWh/t liquid
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh/t liquid
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      tap_temp_C:
+        type: number
+        unit: degC
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      chem_ok:
+        type: boolean
+        unit: dimensionless
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fault_label:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - heat_id
+    access: targets_and_operator_register
+  production:
+    columns:
+      plant_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      date:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      shift:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      bar_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rolled_billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      yard_stock_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 200
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      liquid_t:
+        type: number
+        unit: t
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      charge_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      melt_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      cast_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rolling_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rolling_yield_pct:
+        type: number
+        unit: percent
+        nullable: true
+        role: join_or_register
+        min:
+          value: 0
+          unit: percent
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 100
+          unit: percent
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - plant_id
+    - date
+    - shift
+    access: operator_register
+  events:
+    columns:
+      asset_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      start:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      end:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: target_or_audit_only
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      type:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      label:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: join_or_register
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      duration_min:
+        type: number
+        unit: min
+        nullable: false
+        role: join_or_register
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - asset_id
+    - start
+    - type
+    - label
+    access: targets_only
+  latent_truth:
+    columns:
+      timestamp:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      asset_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kW:
+        type: number
+        unit: kW
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: kW
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kW
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh:
+        type: number
+        unit: kWh
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kVA:
+        type: number
+        unit: kVA
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kVAh:
+        type: number
+        unit: kVAh
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: kVAh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kVAh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      pf:
+        type: number
+        unit: dimensionless
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 1
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_kg:
+        type: number
+        unit: kg coal
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: kg coal
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kg coal
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      temp_C:
+        type: number
+        unit: degC
+        nullable: true
+        role: internal_only
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      vibration_mm_s:
+        type: number
+        unit: mm/s
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: mm/s
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: mm/s
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rpm:
+        type: number
+        unit: rpm
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: rpm
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: rpm
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      pressure_bar:
+        type: number
+        unit: bar
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: bar
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: bar
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      flow_m3_h:
+        type: number
+        unit: m3/h
+        nullable: true
+        role: internal_only
+        min:
+          value: 0
+          unit: m3/h
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: m3/h
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      flue_temp_C:
+        type: number
+        unit: degC
+        nullable: true
+        role: internal_only
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      state:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      tariff_band:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      working_day:
+        type: boolean
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      latent_air_leak:
+        type: boolean
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      latent_wear:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 1
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      latent_fouling:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 1
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      ambient_C:
+        type: number
+        unit: degC
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      yard_stock_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: 200
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      liquid_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      charge_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      melt_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      cast_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rolled_billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      bar_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      rolling_loss_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      if_powered_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      pump_available_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      mill_available_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      peak_kVA:
+        type: number
+        unit: kVA
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kVA
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_input_GJ:
+        type: number
+        unit: GJ
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_base_GJ:
+        type: number
+        unit: GJ
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_fouling_GJ:
+        type: number
+        unit: GJ
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fuel_holding_GJ:
+        type: number
+        unit: GJ
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: GJ
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - timestamp
+    - asset_id
+    access: internal_only
+  latent_heats:
+    columns:
+      heat_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      asset_id:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      start:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      end:
+        type: datetime
+        unit: local datetime
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: local datetime
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      charge_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      liquid_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      billet_t:
+        type: number
+        unit: t
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: t
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh:
+        type: number
+        unit: kWh
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      kWh_per_t:
+        type: number
+        unit: kWh/t liquid
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: kWh/t liquid
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: kWh/t liquid
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      tap_temp_C:
+        type: number
+        unit: degC
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: degC
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      chem_ok:
+        type: boolean
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fault_label:
+        type: string
+        unit: identifier or category
+        nullable: false
+        role: internal_only
+        min:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: identifier or category
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      day:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      start_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      end_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      powered_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      nonpowered_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      outage_min:
+        type: number
+        unit: min
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: min
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      best_kWh:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      practice_kWh:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+      fault_kWh:
+        type: number
+        unit: dimensionless
+        nullable: false
+        role: internal_only
+        min:
+          value: 0
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+        max:
+          value: null
+          unit: dimensionless
+          status: derived
+          source: Phase-I schema and plant_v1.yaml
+          notes: Null means no hard schema bound; physical validation has stricter
+            state constraints.
+    keys:
+    - heat_id
+    access: internal_only

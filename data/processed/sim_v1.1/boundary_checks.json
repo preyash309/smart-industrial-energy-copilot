@@ -1,0 +1,63 @@
+{
+  "B01": "RESOLVED",
+  "loader": {
+    "feature_columns": [
+      "timestamp",
+      "asset_id",
+      "kW",
+      "kWh",
+      "kVA",
+      "kVAh",
+      "pf",
+      "fuel_kg",
+      "temp_C",
+      "vibration_mm_s",
+      "rpm",
+      "pressure_bar",
+      "flow_m3_h",
+      "flue_temp_C",
+      "state",
+      "tariff_band"
+    ],
+    "hidden_column_injections_rejected": [
+      "latent_fouling",
+      "latent_wear",
+      "true_fault_severity",
+      "health",
+      "future_failure_time",
+      "future_exogenous_event",
+      "fault_label"
+    ],
+    "scope": "Observed allowlist only; events/heats labels are targets; latent files internal. W01 as-of warning remains."
+  },
+  "new": {
+    "exact_rows": 0,
+    "flue_relative_noise_sd": 0.00513675091619507,
+    "formula": "(1200 * observed_flue / observed_zone - 350) / 40",
+    "max_error": 0.20040328214174766,
+    "median_error": 0.04378561822771154,
+    "observed_flue_fouling_correlation": 0.47844534664444993,
+    "residual_correlation": -0.035527206027981345,
+    "residual_max_difference": 0.022796000403848327,
+    "rows": 1655,
+    "zone_relative_noise_sd": 0.004877956588254303
+  },
+  "noise_scale": 0.005,
+  "old": {
+    "exact_rows": 1655,
+    "flue_relative_noise_sd": 0.004954898462151259,
+    "formula": "(1200 * observed_flue / observed_zone - 350) / 40",
+    "max_error": 2.1094237467877974e-15,
+    "median_error": 5.620504062164855e-16,
+    "observed_flue_fouling_correlation": 0.4828209088784133,
+    "residual_correlation": 1.0,
+    "residual_max_difference": 2.220446049250313e-16,
+    "rows": 1655,
+    "zone_relative_noise_sd": 0.004954898462151261
+  },
+  "status": "PASS",
+  "streams": [
+    "rhf_zone_temperature",
+    "rhf_flue_temperature"
+  ]
+}

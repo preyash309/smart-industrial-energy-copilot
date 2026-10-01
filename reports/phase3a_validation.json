@@ -1,0 +1,239 @@
+{
+  "backend": "frozen deterministic G0",
+  "browser": {
+    "overflow": 0,
+    "render_errors": 0,
+    "viewports": [
+      1440,
+      1280
+    ],
+    "views": 18
+  },
+  "deck_metric_count": 30,
+  "full_regression": {
+    "passed": 492,
+    "sha256": "350dceee9d59f18924fbf2972e8c04d2f67996c9b9184c6e494f692da87e85bc",
+    "skipped": 1,
+    "source": "data/tmp/phase3a_regression_release.log"
+  },
+  "human_approval": "EXPLICIT, AUDITED; EXECUTION DISABLED",
+  "isolated_dashboard_tests": {
+    "passed": 40,
+    "sha256": "86e3a7548c1a71636b2de75e6da2d2ac567f97e7e59082ef75c8517f714397d1",
+    "skipped": 0,
+    "source": "data/tmp/phase3a_ui_release.log"
+  },
+  "live_G1": "PENDING / OUT OF SCOPE",
+  "live_interaction": {
+    "approval_audited": true,
+    "confirmation_enforced": true,
+    "demo_before_live_explicit": true,
+    "interactive_navigation": [
+      {
+        "cycle": 0,
+        "elapsed_ms": 2576,
+        "page": "Overview"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 849,
+        "page": "Energy"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 9796,
+        "page": "Optimise"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 476,
+        "page": "Maintenance"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 440,
+        "page": "Decision Center"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 467,
+        "page": "Impact"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 484,
+        "page": "Evidence / Audit"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 1271,
+        "page": "Overview"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 684,
+        "page": "Energy"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 9205,
+        "page": "Optimise"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 486,
+        "page": "Maintenance"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 377,
+        "page": "Decision Center"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 445,
+        "page": "Impact"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 1116,
+        "page": "Evidence / Audit"
+      }
+    ],
+    "live_backend_executed": true,
+    "live_elapsed_ms": 80056,
+    "live_outcome": "VERIFIED_RECOMMENDATION",
+    "live_output": "data\\runs\\dashboard_v1\\live\\0e6598e27a4d4e699d214be8274d5099",
+    "max_navigation_ms": 9796,
+    "mean_navigation_ms": 2048,
+    "rejected_approval_disabled": true,
+    "reset_isolated": true
+  },
+  "navigation": {
+    "interactive_navigation": [
+      {
+        "cycle": 0,
+        "elapsed_ms": 397,
+        "page": "Overview"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 1717,
+        "page": "Energy"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 1965,
+        "page": "Optimise"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 696,
+        "page": "Maintenance"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 523,
+        "page": "Decision Center"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 570,
+        "page": "Impact"
+      },
+      {
+        "cycle": 0,
+        "elapsed_ms": 632,
+        "page": "Evidence / Audit"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 1364,
+        "page": "Overview"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 651,
+        "page": "Energy"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 765,
+        "page": "Optimise"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 498,
+        "page": "Maintenance"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 323,
+        "page": "Decision Center"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 391,
+        "page": "Impact"
+      },
+      {
+        "cycle": 1,
+        "elapsed_ms": 1113,
+        "page": "Evidence / Audit"
+      }
+    ],
+    "max_navigation_ms": 1965,
+    "mean_navigation_ms": 828.9285714285714,
+    "scope": "Warm UI navigation after compact tariff shading; no backend work"
+  },
+  "pages": [
+    "Overview",
+    "Energy",
+    "Optimise",
+    "Maintenance",
+    "Decision Center",
+    "Impact",
+    "Evidence / Audit"
+  ],
+  "protected_upstream_files": 9954,
+  "scenarios": [
+    {
+      "day": 28,
+      "key": "normal",
+      "outcome": "VERIFIED_RECOMMENDATION",
+      "scope": "PRECOMPUTED VERIFIED DEMO",
+      "seed": 3003,
+      "source_episode": "supervision/supervisor_v1/integration/late_day_release_approval/episode",
+      "title": "Normal optimization"
+    },
+    {
+      "day": 14,
+      "key": "maintenance",
+      "outcome": "NO_VERIFIED_RECOMMENDATION",
+      "scope": "PRECOMPUTED REJECTED DEMO",
+      "seed": 3002,
+      "source_episode": "supervision/supervisor_v1/integration/maintenance_release_checks/episode",
+      "title": "Maintenance warning"
+    },
+    {
+      "day": 7,
+      "key": "rejection",
+      "outcome": "NO_VERIFIED_RECOMMENDATION",
+      "scope": "REJECTED CANDIDATE EXCERPT \u00b7 subsequent recovery shown separately",
+      "seed": 3001,
+      "source_episode": "supervision/supervisor_v1/integration/normal_release_checks/episode",
+      "title": "Replay rejection"
+    },
+    {
+      "day": 7,
+      "key": "recovery",
+      "outcome": "VERIFIED_RECOMMENDATION",
+      "scope": "PRECOMPUTED VERIFIED DEMO",
+      "seed": 3001,
+      "source_episode": "supervision/supervisor_v1/integration/normal_release_checks/episode",
+      "title": "Adaptive recovery"
+    }
+  ],
+  "status": "PHASE III-A COMPLETE",
+  "upstream_hash_status": "PASS"
+}

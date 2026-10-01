@@ -1,0 +1,12 @@
+version: dashboard_v1
+default_mode: DEMO
+default_scenario: normal
+timezone: Asia/Kolkata
+backend: deterministic_G0
+real_execution_enabled: false
+simulated_execution_enabled: false
+backend_python: .venv/Scripts/python.exe
+demo_root: dashboard/evidence_v1
+runtime_root: data/runs/dashboard_v1
+protected_manifest: configs/phase3a_readonly_manifest.json
+notes: Immutable evidence consumer. No live LLM, real authentication, PLC, ingestion, cloud billing or maintenance ROI.

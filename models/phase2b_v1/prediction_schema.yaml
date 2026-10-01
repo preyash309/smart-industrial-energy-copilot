@@ -1,0 +1,112 @@
+version: forecast_v1
+timezone: Asia/Kolkata
+inputs:
+  feature_values: Exact keys/types in each artifact metadata feature schema; missing
+    numeric values allowed
+  available_at: One local timestamp per input; all <= forecast_origin
+  forecast_origin: Nonmissing local timestamp
+  candidate_start: 'Heat only: proposed start >= origin; calendar must agree'
+  seasonal_profile: 'Load only: 96 posted prior-day values with individual timestamps'
+outputs:
+  HeatPrediction:
+  - name: heat_id
+    type: string
+    unit: identifier/category/index/flag
+  - name: practice_mode
+    type: string
+    unit: identifier/category/index/flag
+  - name: energy_p10_kWh
+    type: number
+    unit: kWh
+  - name: energy_p50_kWh
+    type: number
+    unit: kWh
+  - name: energy_p90_kWh
+    type: number
+    unit: kWh
+  - name: SEC_p50
+    type: number
+    unit: kWh/t liquid
+  - name: duration_p10_min
+    type: number
+    unit: min
+  - name: duration_p50_min
+    type: number
+    unit: min
+  - name: duration_p90_min
+    type: number
+    unit: min
+  - name: available_at
+    type: string
+    unit: ISO local datetime, Asia/Kolkata
+  - name: model_version
+    type: string
+    unit: identifier/category/index/flag
+  - name: status
+    type: string
+    unit: identifier/category/index/flag
+  - name: usable_for_constraints
+    type: boolean
+    unit: identifier/category/index/flag
+  LoadPrediction:
+  - name: interval_start
+    type: string
+    unit: ISO local datetime, Asia/Kolkata
+  - name: interval_end
+    type: string
+    unit: ISO local datetime, Asia/Kolkata
+  - name: available_at
+    type: string
+    unit: ISO local datetime, Asia/Kolkata
+  - name: horizon_slot
+    type: integer
+    unit: identifier/category/index/flag
+  - name: load_p10_kW
+    type: number
+    unit: kW
+  - name: load_p50_kW
+    type: number
+    unit: kW
+  - name: load_p90_kW
+    type: number
+    unit: kW
+  - name: components
+    type: array[string]
+    unit: identifier/category/index/flag
+  - name: model_version
+    type: string
+    unit: identifier/category/index/flag
+  - name: status
+    type: string
+    unit: identifier/category/index/flag
+  - name: usable_for_constraints
+    type: boolean
+    unit: identifier/category/index/flag
+  HealthPrediction:
+  - name: asset_id
+    type: string
+    unit: identifier/category/index/flag
+  - name: horizon_hours
+    type: number
+    unit: h
+  - name: failure_probability
+    type: number
+    unit: probability [0,1]
+  - name: calibrated_probability
+    type: number|null
+    unit: probability [0,1]
+  - name: available_at
+    type: string
+    unit: ISO local datetime, Asia/Kolkata
+  - name: model_version
+    type: string
+    unit: identifier/category/index/flag
+  - name: status
+    type: string
+    unit: identifier/category/index/flag
+  - name: usable_for_constraints
+    type: boolean
+    unit: identifier/category/index/flag
+quantile_order: p10 <= p50 <= p90; finite nonnegative outcomes
+safety: Empirical upper quantile is not a hard bound; fallback disables constraint
+  use

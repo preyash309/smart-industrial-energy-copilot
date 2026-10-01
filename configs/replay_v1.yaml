@@ -1,0 +1,50 @@
+version: replay_v1
+layer: replay_compatible_v1.1.1
+origin: '2026-01-12T00:00:00'
+end: '2026-01-13T00:00:00'
+timezone: Asia/Kolkata
+plant_config: data/processed/sim_v1.1/config_snapshot.yaml
+horizon_days:
+  value: 30
+  unit: day
+  status: assumption
+  source: Phase II-D evaluation protocol predeclared before outcomes
+  notes: Must match the frozen 30-day tape, including history.
+primary_seed:
+  value: 42
+  unit: dimensionless
+  status: assumption
+  source: Phase II-D evaluation protocol predeclared before outcomes
+  notes: Original Phase-II-C scenario; do not replace after failure.
+evaluation_seeds:
+  value:
+  - 201
+  - 202
+  - 203
+  - 204
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  unit: seed list
+  status: assumption
+  source: Phase II-D evaluation protocol predeclared before outcomes
+  notes: Ten held-out seeds; disjoint from Phase-II-B 101-125. No selection by outcomes.
+practice_loss_40:
+  value: 40
+  unit: kWh/t liquid
+  status: assumption
+  source: Phase II-D evaluation protocol predeclared before outcomes
+  notes: Already-supported synthetic intervention, scoped to origin day only.
+controls: exact heat starts and requested quarter-hour rolling feed; uniform day-scoped
+  practice; mixed practices rejected
+rolling_tolerance:
+  value: 1.0e-06
+  unit: t
+  status: assumption
+  source: Phase II-D evaluation protocol predeclared before outcomes
+  notes: MILP numerical ledger tolerance only; never clips requested feed or shortens
+    heat.
+output_directory: replay/optimizer_v1

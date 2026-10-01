@@ -1,0 +1,5019 @@
+{
+  "asset_energy": [],
+  "diagnostics": [],
+  "heat_analytics": [],
+  "metadata": {
+    "canonical_source_decision_id": "decision_6adf0239661efa297ae4ae44",
+    "day": 14,
+    "maintenance_eligible_assets": [
+      "PMP_01"
+    ],
+    "missing_public_trace": true,
+    "origin": "2026-01-19T00:00:00",
+    "predictive_as_of": "2026-01-19T00:00:00",
+    "replay_evaluation_day": "2026-01-19",
+    "scenario": "maintenance",
+    "scope": "PRECOMPUTED REJECTED DEMO",
+    "seed": 3002,
+    "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+    "source_episode": "supervision/supervisor_v1/integration/maintenance_release_checks/episode",
+    "source_hashes": {
+      "supervision\\supervisor_v1\\integration\\maintenance_release_checks\\episode\\decision_packet.json": "c63b97ba0a7daf7aae2c8c4454e2aa452fabaec340d23d6216dfa3d1df552b1b",
+      "supervision\\supervisor_v1\\integration\\maintenance_release_checks\\execution_gateway_evaluation_only\\schedule_b334089ca353636e0e928311.json": "506479b09394982e6f34ea44e69cc64228a5a812374109025d61f6db4961e7a0"
+    },
+    "source_worker": "supervision/supervisor_v1/integration/maintenance_release_checks/execution_gateway_evaluation_only",
+    "story": "Elevated pump risk makes service eligible. A rejected continuation is withheld.",
+    "title": "Maintenance warning"
+  },
+  "observed_history": [],
+  "packet": {
+    "alternatives_considered": [
+      {
+        "binding_constraints": [
+          "binding_demand_slots",
+          "binding_inventory_lower",
+          "binding_inventory_upper"
+        ],
+        "failure_reason": null,
+        "maintenance_actions": [
+          {
+            "asset_id": "PMP_01",
+            "duration_min": 15,
+            "policy_version": "maintenance_v1",
+            "start_time": "2026-01-19T00:00:00"
+          }
+        ],
+        "mode": "robust_maintenance",
+        "optimizer_feasible": true,
+        "optimizer_version": "frozen_E4_Phase_F",
+        "predicted_SEC": 629.037714232674,
+        "predicted_cost_Rs": 755630.7862869165,
+        "predicted_energy_kWh": 103750.12925792244,
+        "predicted_peak_kVA": 6935.926598883756,
+        "production_target_t": 118.56,
+        "reserve_minutes": 5,
+        "schedule_id": "schedule_0e282e120c128a9e19df98f4",
+        "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+        "status": "FEASIBLE"
+      },
+      {
+        "binding_constraints": [
+          "binding_demand_slots",
+          "binding_inventory_lower",
+          "binding_inventory_upper"
+        ],
+        "failure_reason": null,
+        "maintenance_actions": [],
+        "mode": "adaptive_robust",
+        "optimizer_feasible": true,
+        "optimizer_version": "frozen_E4_Phase_F",
+        "predicted_SEC": 629.0377142326737,
+        "predicted_cost_Rs": 748220.0082784942,
+        "predicted_energy_kWh": 103768.87925792238,
+        "predicted_peak_kVA": 6935.926598883756,
+        "production_target_t": 118.56,
+        "reserve_minutes": 5,
+        "schedule_id": "schedule_b334089ca353636e0e928311",
+        "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+        "status": "FEASIBLE"
+      }
+    ],
+    "card_sentences": [
+      [
+        "NO VERIFIED RECOMMENDATION: Deterministic replan returned an unchanged rejected candidate; operator escalation required",
+        [
+          "tool_738b13c8126342ab151d8fc9",
+          "tool_0601280f758a76755a024590",
+          "tool_dd5db80168c1dee1b489cbfa",
+          "tool_93f3c7b6f8a4eea0c0d43585",
+          "tool_59b0d6c0a0c5c45cfc68ec5b",
+          "tool_147fdc6a6ce73a6ff76282a2",
+          "tool_6d35568908fbbdf79bc2e52e",
+          "tool_b8636431aeae64678d7ad997",
+          "tool_7b85e137e7aff71d86a93d03",
+          "tool_57556f6c6ac64615bd62cc7e",
+          "gate_74b13681e522a040a4b3bce6",
+          "config_bfe2ae84d52a9c04a41316eb",
+          "upstream_30ac645973a009defcc75a65"
+        ]
+      ],
+      [
+        "OPTIMIZER-PREDICTED: energy 103768.8793 kWh.",
+        [
+          "tool_b8636431aeae64678d7ad997"
+        ]
+      ],
+      [
+        "OPTIMIZER-PREDICTED: tariff cost 748220.0083 synthetic Rs.",
+        [
+          "tool_b8636431aeae64678d7ad997"
+        ]
+      ],
+      [
+        "OPTIMIZER-PREDICTED: peak demand 6935.9266 kVA.",
+        [
+          "tool_b8636431aeae64678d7ad997"
+        ]
+      ],
+      [
+        "OPTIMIZER-PREDICTED: IF SEC 629.0377 kWh/t.",
+        [
+          "tool_b8636431aeae64678d7ad997"
+        ]
+      ],
+      [
+        "OPTIMIZER-PREDICTED: production target 118.5600 t.",
+        [
+          "tool_b8636431aeae64678d7ad997"
+        ]
+      ],
+      [
+        "No preventive service selected.",
+        [
+          "tool_738b13c8126342ab151d8fc9",
+          "tool_0601280f758a76755a024590",
+          "tool_dd5db80168c1dee1b489cbfa",
+          "tool_93f3c7b6f8a4eea0c0d43585",
+          "tool_59b0d6c0a0c5c45cfc68ec5b",
+          "tool_147fdc6a6ce73a6ff76282a2",
+          "tool_6d35568908fbbdf79bc2e52e",
+          "tool_b8636431aeae64678d7ad997",
+          "tool_7b85e137e7aff71d86a93d03",
+          "tool_57556f6c6ac64615bd62cc7e",
+          "gate_74b13681e522a040a4b3bce6",
+          "config_bfe2ae84d52a9c04a41316eb",
+          "upstream_30ac645973a009defcc75a65"
+        ]
+      ]
+    ],
+    "comparison": null,
+    "confidence_notes": [
+      "p50/p90 are empirical individual-outcome forecasts, not guaranteed joint safety bounds."
+    ],
+    "decision_id": "decision_6adf0239661efa297ae4ae44",
+    "diagnostics": {
+      "analytics_version": "analytics_v1",
+      "limitations": [
+        "Sensor evidence suggests candidates, not true fault diagnoses."
+      ],
+      "measured": [
+        [
+          "historical_IF_SEC_kWh_per_t",
+          650.154586323547
+        ],
+        [
+          "historical_heat_duration_min",
+          105.37537559563408
+        ]
+      ],
+      "no_action_needed": false,
+      "signals": [
+        "Historical sensor/register context; no true fault diagnosis."
+      ],
+      "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117"
+    },
+    "disposition": "PROPOSED",
+    "grounded_values": [
+      {
+        "label": "OPTIMIZER-PREDICTED",
+        "name": "predicted energy",
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "source_field": "predicted_energy_kWh",
+        "unit": "kWh",
+        "value": 103768.87925792238
+      },
+      {
+        "label": "OPTIMIZER-PREDICTED",
+        "name": "predicted tariff cost",
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "source_field": "predicted_cost_Rs",
+        "unit": "synthetic Rs",
+        "value": 748220.0082784942
+      },
+      {
+        "label": "OPTIMIZER-PREDICTED",
+        "name": "predicted peak demand",
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "source_field": "predicted_peak_kVA",
+        "unit": "kVA",
+        "value": 6935.926598883756
+      },
+      {
+        "label": "OPTIMIZER-PREDICTED",
+        "name": "predicted IF SEC",
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "source_field": "predicted_SEC",
+        "unit": "kWh/t",
+        "value": 629.0377142326737
+      },
+      {
+        "label": "OPTIMIZER-PREDICTED",
+        "name": "predicted production target",
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "source_field": "production_target_t",
+        "unit": "t",
+        "value": 118.56
+      }
+    ],
+    "independent_check": null,
+    "limitations": [
+      "Reduced-order simulated plant; no field safety or reliability evidence.",
+      "Synthetic electricity tariff; no real maintenance cost or ROI.",
+      "Synthetic maintenance does not resolve furnace-duration/scheduling failures.",
+      "Health risk is a calibrated simulated 24-hour probability.",
+      "Replay acceptance is scenario-specific, not a guarantee for future operations."
+    ],
+    "optimizer_plan": {
+      "binding_constraints": [
+        "binding_demand_slots",
+        "binding_inventory_lower",
+        "binding_inventory_upper"
+      ],
+      "failure_reason": null,
+      "maintenance_actions": [],
+      "mode": "adaptive_robust",
+      "optimizer_feasible": true,
+      "optimizer_version": "frozen_E4_Phase_F",
+      "predicted_SEC": 629.0377142326737,
+      "predicted_cost_Rs": 748220.0082784942,
+      "predicted_energy_kWh": 103768.87925792238,
+      "predicted_peak_kVA": 6935.926598883756,
+      "production_target_t": 118.56,
+      "reserve_minutes": 5,
+      "schedule_id": "schedule_b334089ca353636e0e928311",
+      "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+      "status": "FEASIBLE"
+    },
+    "outcome": "NO_VERIFIED_RECOMMENDATION",
+    "predictions": {
+      "aux_p50_kW": [
+        222.62420807433307,
+        223.55129591856453,
+        222.96980549732461,
+        223.20744285901873,
+        221.13311123406027,
+        218.76021338040542,
+        217.7977573922975,
+        217.66583887996345,
+        217.556794609619,
+        217.68750124459208,
+        217.4946624284746,
+        217.54471010076816,
+        217.57364696815296,
+        217.71281703083247,
+        217.45177609680695,
+        217.315214084035,
+        217.747540249656,
+        217.49197852890836,
+        217.62238131284664,
+        217.56628388194906,
+        217.3243236530856,
+        217.52947539634667,
+        217.3723693711695,
+        217.23826287016627,
+        217.27488560520857,
+        217.24406054701376,
+        217.57005531653738,
+        217.40599849847868,
+        217.29615915254237,
+        217.75438772959743,
+        218.58081324815836,
+        220.0766268323493,
+        260.3722121962102,
+        284.48048730802225,
+        288.0127664372093,
+        291.03592668098304,
+        290.2147276611575,
+        289.3360902175616,
+        287.71018525513296,
+        287.3756520222042,
+        286.32946105256065,
+        286.52990286282494,
+        286.482103025572,
+        286.61509240312836,
+        288.40409921458433,
+        289.09403097020385,
+        288.30232661924447,
+        284.14957418843386,
+        225.46382727677002,
+        220.2289977557551,
+        220.14128524522323,
+        219.7902093959231,
+        264.71146451296954,
+        287.04541758829,
+        286.2129404576207,
+        285.64547250875074,
+        285.79664218945834,
+        285.5757549194657,
+        286.36011119319096,
+        286.3045759593841,
+        284.5772623835838,
+        285.5896496382847,
+        287.25498087174674,
+        285.6506000066281,
+        286.17500937329356,
+        285.3432365656857,
+        285.49786319397117,
+        285.2028077133241,
+        284.97508784221924,
+        281.3995957014391,
+        255.78773833003416,
+        252.15824736736582,
+        258.48172747476366,
+        269.7687173132677,
+        268.65426665014814,
+        271.06711786165664,
+        269.21892183341373,
+        270.64819738399484,
+        270.8605645923448,
+        270.7363201628311,
+        271.3279692716506,
+        271.9651419261057,
+        266.0906832466569,
+        249.523786266633,
+        229.155158425161,
+        227.32694345707608,
+        226.21570699794188,
+        225.75696401314224,
+        225.12870277054026,
+        224.59428418368952,
+        224.8246038330798,
+        224.5202852300503,
+        224.2333425469322,
+        224.54404908055758,
+        224.34427320010786,
+        224.44208887879975
+      ],
+      "aux_p90_kW": [
+        224.161349866126,
+        224.9832705954689,
+        224.39614613527488,
+        225.00093586010308,
+        222.66190277924056,
+        220.2614664239164,
+        219.3198018404865,
+        219.17548753967208,
+        219.08864674983684,
+        218.47669209024903,
+        218.7615363036479,
+        218.82521424275473,
+        218.99894565090074,
+        219.32876640447034,
+        218.97164675467903,
+        218.7582505289614,
+        218.74607927742767,
+        218.7441263642027,
+        219.92097397231404,
+        219.45357279513874,
+        218.79217732173174,
+        219.04318903802658,
+        218.75248403452105,
+        219.2577135366615,
+        218.82068483110564,
+        218.90717997694458,
+        219.01095801804195,
+        218.88901757535288,
+        218.8498044211413,
+        219.6543463032707,
+        220.5501217605476,
+        221.4637294419092,
+        262.4265619515796,
+        288.1515148176062,
+        289.74486676607046,
+        292.9401590375019,
+        291.92142602292165,
+        290.7654296854509,
+        289.41607065893606,
+        289.0102044773192,
+        288.4465320821198,
+        288.47549449338896,
+        288.39791421828915,
+        288.9279810959227,
+        291.41065733811837,
+        291.5546061115017,
+        289.930460956085,
+        286.5681654318417,
+        227.0022544983207,
+        221.6570504690695,
+        221.3905179077351,
+        221.30529931529227,
+        266.72457325369027,
+        289.4031269196787,
+        288.2231976380886,
+        287.82265230122215,
+        287.8413327638838,
+        288.10727068533635,
+        288.45763953759223,
+        288.65342958399356,
+        286.2130945974283,
+        287.79882285399066,
+        289.4888725941726,
+        287.67272081666505,
+        288.1241963257932,
+        287.26385647557345,
+        288.97322288785665,
+        287.53248058683425,
+        287.4634870652251,
+        287.3726188423181,
+        259.2311304973804,
+        254.02530365003054,
+        261.01212136902853,
+        271.3764956055406,
+        271.09397188604385,
+        272.7552019993808,
+        271.8035703839283,
+        272.72450412785605,
+        273.28637192029004,
+        272.7067069543959,
+        272.87484606030966,
+        274.0705682116257,
+        268.34967324338714,
+        251.58279926209826,
+        230.97486984537576,
+        229.36336285939763,
+        228.45505356717234,
+        227.5693179865777,
+        227.8920798171716,
+        225.66374025876826,
+        226.4574001499133,
+        225.77045941823445,
+        225.69707737232048,
+        226.24053023420868,
+        226.06326427144907,
+        226.22694083590224
+      ],
+      "available_at": "2026-01-19T00:00:00",
+      "health_risk": [
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "calibrated_probability": 5.308198885625554e-21,
+          "horizon_hours": 24
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "calibrated_probability": 0.9999306748335918,
+          "horizon_hours": 24
+        }
+      ],
+      "heat_estimates": [
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H00"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H01"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H02"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H03"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H04"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H05"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H06"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H07"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H08"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H09"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H10"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H11"
+        },
+        {
+          "available_at": "2026-01-19T00:00:00",
+          "duration_p50_min": 102.7761541907886,
+          "duration_p90_min": 106.01300063897595,
+          "energy_p50_kWh": 6287.906705092792,
+          "energy_p90_kWh": 6550.206256661741,
+          "heat_id": "D014_H12"
+        }
+      ],
+      "model_version": "forecast_v1",
+      "schema_sha256": "5fa06e4683cc4a4573091f40e854d71cf676b139492c8f11368ddfae0cd67ff4",
+      "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+      "usable_for_constraints": true,
+      "warnings": [
+        "Upper empirical forecast quantiles are not physical guarantees."
+      ]
+    },
+    "provenance": [
+      {
+        "response_id": "tool_738b13c8126342ab151d8fc9",
+        "response_sha256": "23470c98d655612a64480b72b186ae5f0414d7d80f2a6eda34690f7d47ee7d11",
+        "tool": "get_public_snapshot"
+      },
+      {
+        "response_id": "tool_0601280f758a76755a024590",
+        "response_sha256": "9ee244c897a114877550b925940ee7159a29e85a9d0e946c636184f0e3fe4b90",
+        "tool": "get_energy_diagnostics"
+      },
+      {
+        "response_id": "tool_dd5db80168c1dee1b489cbfa",
+        "response_sha256": "7d4b4ca619e9d1cb89d7a4ea6dd471906d467c566722c2ebf457465851809ab5",
+        "tool": "request_predictions"
+      },
+      {
+        "response_id": "tool_93f3c7b6f8a4eea0c0d43585",
+        "response_sha256": "387dbd488066ef44ac9b75e815173fc299b3ed65515344563842faa8badf29e6",
+        "tool": "get_maintenance_candidates"
+      },
+      {
+        "response_id": "tool_59b0d6c0a0c5c45cfc68ec5b",
+        "response_sha256": "f3af95921e94ca96c78829c185d9285c4b8de5c502e72577ef2c7a10927fc1c7",
+        "tool": "solve_robust_schedule"
+      },
+      {
+        "response_id": "tool_147fdc6a6ce73a6ff76282a2",
+        "response_sha256": "efcd2a2f97dc2d9496e804514c68b1f6474a7fde3f24ce851da0ff5069827c33",
+        "tool": "replay_candidate_plan"
+      },
+      {
+        "response_id": "tool_6d35568908fbbdf79bc2e52e",
+        "response_sha256": "e956b27a7584a6bb55bbf02809704bceac2e9090103c01567381a34a11fb7053",
+        "tool": "get_failure_diagnostics"
+      },
+      {
+        "response_id": "tool_b8636431aeae64678d7ad997",
+        "response_sha256": "d106ac03935f89b21a362d88085bcb9065fc1aff3fc7ccf32b17900854353a8c",
+        "tool": "solve_robust_schedule"
+      },
+      {
+        "response_id": "tool_7b85e137e7aff71d86a93d03",
+        "response_sha256": "09ad54e279864a74bde730d07549a5ffe1503bae9fc159f29d1a21bbdf20952e",
+        "tool": "replay_candidate_plan"
+      },
+      {
+        "response_id": "tool_57556f6c6ac64615bd62cc7e",
+        "response_sha256": "6674410993bbef2a49e8b4f19b82e7f37acb214de21f454586a19afe68eeb841",
+        "tool": "get_failure_diagnostics"
+      },
+      {
+        "response_id": "gate_74b13681e522a040a4b3bce6",
+        "response_sha256": "74b13681e522a040a4b3bce6468f7548e0da25579928e1ccfbb7ca50e220befa",
+        "tool": "supervisory_gate"
+      },
+      {
+        "response_id": "config_bfe2ae84d52a9c04a41316eb",
+        "response_sha256": "bfe2ae84d52a9c04a41316eb332ac6e5294fdac742e7a59de8c78138a98b66bb",
+        "tool": "supervisor_config"
+      },
+      {
+        "response_id": "upstream_30ac645973a009defcc75a65",
+        "response_sha256": "30ac645973a009defcc75a650f61cb854e7ad7cd5bec199f2c5946514a27f665",
+        "tool": "upstream_config_and_release_hashes"
+      }
+    ],
+    "recommendation": "NO VERIFIED RECOMMENDATION: Deterministic replan returned an unchanged rejected candidate; operator escalation required",
+    "replay_outcome": {
+      "failure_reason": "The represented heat execution exceeded the working-day window.",
+      "inventory_bounds": null,
+      "physically_valid": false,
+      "production_complete": false,
+      "realized_control_sha256": "fb53878b0541fed028bc49f1aa4178efa51785c38df157ff3af8bc4bf2cec273",
+      "realized_cost_Rs": null,
+      "realized_energy_kWh": null,
+      "realized_peak_kVA": null,
+      "replay_id": "replay_d1a2254035406b5c63a0d8a2",
+      "schedule_id": "schedule_b334089ca353636e0e928311",
+      "status": "FAIL",
+      "violations": [
+        "physical_acceptance_failed"
+      ]
+    },
+    "required_human_action": "Review/escalate; no executable plan.",
+    "snapshot": {
+      "completed_heat_ids": [],
+      "inventory_t": 50.0,
+      "last_posted_at": "2026-01-19T00:00:00",
+      "observations": [
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 80.66366164232481
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 20.04883607950243
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 82.89053148902822
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9661371375456228
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "AUX",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "running"
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 0.0
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 0.0
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 0.0
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9672767727516086
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": 24.242554549772784
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": null
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "IF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "off"
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 0.0
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 0.0
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 0.0
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9463889915010635
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": 24.625884694953626
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": 351.53039540285505
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": null
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "RHF_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "off"
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 0.0
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 0.0
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 0.0
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9452843958897323
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": 55.576821837722925
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": 1.6735575517890924
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": 0.0
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "MILL_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "off"
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 0.0
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 0.0
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 0.0
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9571247632189567
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": 53.79020474050838
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": 4.943064665683417
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": 0.0
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "PMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "off"
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 29.65579678057245
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 7.458098665509517
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 31.444156681625472
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9461153112785733
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": null
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": 7.000629541641225
+        },
+        {
+          "asset_id": "CMP_01",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "running"
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kW",
+          "value": 109.20604107841021
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kWh",
+          "value": 27.394367741626997
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "kVA",
+          "value": 115.3206231614687
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pf",
+          "value": 0.9539857640044802
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flue_temp_C",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "vibration_mm_s",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "rpm",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "flow_m3_h",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "pressure_bar",
+          "value": null
+        },
+        {
+          "asset_id": "MAIN",
+          "available_at": "2026-01-19T00:00:00",
+          "field": "state",
+          "value": "running"
+        }
+      ],
+      "production_target_t": 118.56,
+      "snapshot_id": "snapshot_a67f7eecc21b75f1ae3cd117",
+      "timestamp": "2026-01-19T00:00:00",
+      "untrusted_notes": [],
+      "version": "public_snapshot_v1"
+    },
+    "timestamp": "2026-01-19T00:00:00"
+  },
+  "public_summary": null,
+  "replay_observations": [],
+  "schedule": {
+    "heats": [
+      {
+        "candidate_id": "D014_H00:2026-01-19T00:00:00:0:practice_loss_40",
+        "duration_p50_min": 102.7761541907886,
+        "duration_p90_min": 106.01300063897595,
+        "energy_p50_kWh": 6287.906705092792,
+        "energy_p90_kWh": 6550.206256661741,
+        "heat_id": "D014_H00",
+        "predicted_end": "2026-01-19T01:42:46.569251",
+        "reserved_end": "2026-01-19T01:43:00",
+        "selected_duration_min": 102.7761541907886,
+        "selected_energy_kWh": 6287.906705092792,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T00:00:00"
+      },
+      {
+        "candidate_id": "D014_H01:2026-01-19T00:00:00:107:practice_loss_40",
+        "duration_p50_min": 102.7761541907886,
+        "duration_p90_min": 106.01300063897595,
+        "energy_p50_kWh": 6287.906705092792,
+        "energy_p90_kWh": 6550.206256661741,
+        "heat_id": "D014_H01",
+        "predicted_end": "2026-01-19T03:29:46.569251",
+        "reserved_end": "2026-01-19T03:30:00",
+        "selected_duration_min": 102.7761541907886,
+        "selected_energy_kWh": 6287.906705092792,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T01:47:00"
+      },
+      {
+        "candidate_id": "D014_H02:2026-01-19T00:00:00:214:practice_loss_40",
+        "duration_p50_min": 102.7761541907886,
+        "duration_p90_min": 106.01300063897595,
+        "energy_p50_kWh": 6287.906705092792,
+        "energy_p90_kWh": 6550.206256661741,
+        "heat_id": "D014_H02",
+        "predicted_end": "2026-01-19T05:16:46.569251",
+        "reserved_end": "2026-01-19T05:17:00",
+        "selected_duration_min": 102.7761541907886,
+        "selected_energy_kWh": 6287.906705092792,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T03:34:00"
+      },
+      {
+        "candidate_id": "D014_H03:2026-01-19T00:00:00:321:practice_loss_40",
+        "duration_p50_min": 102.7761541907886,
+        "duration_p90_min": 106.01300063897595,
+        "energy_p50_kWh": 6287.906705092792,
+        "energy_p90_kWh": 6550.206256661741,
+        "heat_id": "D014_H03",
+        "predicted_end": "2026-01-19T07:03:46.569251",
+        "reserved_end": "2026-01-19T07:04:00",
+        "selected_duration_min": 102.7761541907886,
+        "selected_energy_kWh": 6287.906705092792,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T05:21:00"
+      },
+      {
+        "candidate_id": "D014_H04:2026-01-19T00:00:00:428:practice_loss_40",
+        "duration_p50_min": 102.7761541907886,
+        "duration_p90_min": 106.01300063897595,
+        "energy_p50_kWh": 6287.906705092792,
+        "energy_p90_kWh": 6550.206256661741,
+        "heat_id": "D014_H04",
+        "predicted_end": "2026-01-19T08:50:46.569251",
+        "reserved_end": "2026-01-19T08:51:00",
+        "selected_duration_min": 102.7761541907886,
+        "selected_energy_kWh": 6287.906705092792,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T07:08:00"
+      },
+      {
+        "candidate_id": "D014_H05:2026-01-19T00:00:00:536:practice_loss_40",
+        "duration_p50_min": 102.8257372249,
+        "duration_p90_min": 106.06258367308735,
+        "energy_p50_kWh": 6294.940300310707,
+        "energy_p90_kWh": 6557.239851879655,
+        "heat_id": "D014_H05",
+        "predicted_end": "2026-01-19T10:38:49.544233",
+        "reserved_end": "2026-01-19T10:39:00",
+        "selected_duration_min": 102.8257372249,
+        "selected_energy_kWh": 6294.940300310707,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T08:56:00"
+      },
+      {
+        "candidate_id": "D014_H06:2026-01-19T00:00:00:643:practice_loss_40",
+        "duration_p50_min": 102.8257372249,
+        "duration_p90_min": 106.06258367308735,
+        "energy_p50_kWh": 6294.940300310707,
+        "energy_p90_kWh": 6557.239851879655,
+        "heat_id": "D014_H06",
+        "predicted_end": "2026-01-19T12:25:49.544233",
+        "reserved_end": "2026-01-19T12:26:00",
+        "selected_duration_min": 102.8257372249,
+        "selected_energy_kWh": 6294.940300310707,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T10:43:00"
+      },
+      {
+        "candidate_id": "D014_H07:2026-01-19T00:00:00:760:practice_loss_40",
+        "duration_p50_min": 102.8257372249,
+        "duration_p90_min": 106.06258367308735,
+        "energy_p50_kWh": 6294.940300310707,
+        "energy_p90_kWh": 6557.239851879655,
+        "heat_id": "D014_H07",
+        "predicted_end": "2026-01-19T14:22:49.544233",
+        "reserved_end": "2026-01-19T14:23:00",
+        "selected_duration_min": 102.8257372249,
+        "selected_energy_kWh": 6294.940300310707,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T12:40:00"
+      },
+      {
+        "candidate_id": "D014_H08:2026-01-19T00:00:00:868:practice_loss_40",
+        "duration_p50_min": 102.8257372249,
+        "duration_p90_min": 106.06258367308735,
+        "energy_p50_kWh": 6294.940300310707,
+        "energy_p90_kWh": 6557.239851879655,
+        "heat_id": "D014_H08",
+        "predicted_end": "2026-01-19T16:10:49.544233",
+        "reserved_end": "2026-01-19T16:11:00",
+        "selected_duration_min": 102.8257372249,
+        "selected_energy_kWh": 6294.940300310707,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T14:28:00"
+      },
+      {
+        "candidate_id": "D014_H09:2026-01-19T00:00:00:975:practice_loss_40",
+        "duration_p50_min": 102.77860775494044,
+        "duration_p90_min": 106.01545420312779,
+        "energy_p50_kWh": 6288.90203088521,
+        "energy_p90_kWh": 6551.201582454158,
+        "heat_id": "D014_H09",
+        "predicted_end": "2026-01-19T17:57:46.716465",
+        "reserved_end": "2026-01-19T17:58:00",
+        "selected_duration_min": 102.77860775494044,
+        "selected_energy_kWh": 6288.90203088521,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T16:15:00"
+      },
+      {
+        "candidate_id": "D014_H10:2026-01-19T00:00:00:1105:practice_loss_40",
+        "duration_p50_min": 102.77860775494044,
+        "duration_p90_min": 106.01545420312779,
+        "energy_p50_kWh": 6288.90203088521,
+        "energy_p90_kWh": 6551.201582454158,
+        "heat_id": "D014_H10",
+        "predicted_end": "2026-01-19T20:07:46.716465",
+        "reserved_end": "2026-01-19T20:08:00",
+        "selected_duration_min": 102.77860775494044,
+        "selected_energy_kWh": 6288.90203088521,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T18:25:00"
+      },
+      {
+        "candidate_id": "D014_H11:2026-01-19T00:00:00:1221:practice_loss_40",
+        "duration_p50_min": 102.77860775494044,
+        "duration_p90_min": 106.01545420312779,
+        "energy_p50_kWh": 6288.90203088521,
+        "energy_p90_kWh": 6551.201582454158,
+        "heat_id": "D014_H11",
+        "predicted_end": "2026-01-19T22:03:46.716465",
+        "reserved_end": "2026-01-19T22:04:00",
+        "selected_duration_min": 102.77860775494044,
+        "selected_energy_kWh": 6288.90203088521,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T20:21:00"
+      },
+      {
+        "candidate_id": "D014_H12:2026-01-19T00:00:00:1328:practice_loss_40",
+        "duration_p50_min": 102.77860775494044,
+        "duration_p90_min": 106.01545420312779,
+        "energy_p50_kWh": 6288.90203088521,
+        "energy_p90_kWh": 6551.201582454158,
+        "heat_id": "D014_H12",
+        "predicted_end": "2026-01-19T23:50:46.716465",
+        "reserved_end": "2026-01-19T23:51:00",
+        "selected_duration_min": 102.77860775494044,
+        "selected_energy_kWh": 6288.90203088521,
+        "selected_practice": "practice_loss_40",
+        "start": "2026-01-19T22:08:00"
+      }
+    ],
+    "initial_rejected": "schedule_0e282e120c128a9e19df98f4",
+    "inventory": [
+      {
+        "boundary": 0,
+        "inventory_t": 50.0,
+        "timestamp": "2026-01-19T00:00:00"
+      },
+      {
+        "boundary": 1,
+        "inventory_t": 48.0,
+        "timestamp": "2026-01-19T00:15:00"
+      },
+      {
+        "boundary": 2,
+        "inventory_t": 46.0,
+        "timestamp": "2026-01-19T00:30:00"
+      },
+      {
+        "boundary": 3,
+        "inventory_t": 44.0,
+        "timestamp": "2026-01-19T00:45:00"
+      },
+      {
+        "boundary": 4,
+        "inventory_t": 42.0,
+        "timestamp": "2026-01-19T01:00:00"
+      },
+      {
+        "boundary": 5,
+        "inventory_t": 40.0,
+        "timestamp": "2026-01-19T01:15:00"
+      },
+      {
+        "boundary": 6,
+        "inventory_t": 38.0,
+        "timestamp": "2026-01-19T01:30:00"
+      },
+      {
+        "boundary": 7,
+        "inventory_t": 45.5,
+        "timestamp": "2026-01-19T01:45:00"
+      },
+      {
+        "boundary": 8,
+        "inventory_t": 43.5,
+        "timestamp": "2026-01-19T02:00:00"
+      },
+      {
+        "boundary": 9,
+        "inventory_t": 41.5,
+        "timestamp": "2026-01-19T02:15:00"
+      },
+      {
+        "boundary": 10,
+        "inventory_t": 39.5,
+        "timestamp": "2026-01-19T02:30:00"
+      },
+      {
+        "boundary": 11,
+        "inventory_t": 37.5,
+        "timestamp": "2026-01-19T02:45:00"
+      },
+      {
+        "boundary": 12,
+        "inventory_t": 35.5,
+        "timestamp": "2026-01-19T03:00:00"
+      },
+      {
+        "boundary": 13,
+        "inventory_t": 33.5,
+        "timestamp": "2026-01-19T03:15:00"
+      },
+      {
+        "boundary": 14,
+        "inventory_t": 41.0,
+        "timestamp": "2026-01-19T03:30:00"
+      },
+      {
+        "boundary": 15,
+        "inventory_t": 39.0,
+        "timestamp": "2026-01-19T03:45:00"
+      },
+      {
+        "boundary": 16,
+        "inventory_t": 37.0,
+        "timestamp": "2026-01-19T04:00:00"
+      },
+      {
+        "boundary": 17,
+        "inventory_t": 35.0,
+        "timestamp": "2026-01-19T04:15:00"
+      },
+      {
+        "boundary": 18,
+        "inventory_t": 33.0,
+        "timestamp": "2026-01-19T04:30:00"
+      },
+      {
+        "boundary": 19,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T04:45:00"
+      },
+      {
+        "boundary": 20,
+        "inventory_t": 29.0,
+        "timestamp": "2026-01-19T05:00:00"
+      },
+      {
+        "boundary": 21,
+        "inventory_t": 27.0,
+        "timestamp": "2026-01-19T05:15:00"
+      },
+      {
+        "boundary": 22,
+        "inventory_t": 34.5,
+        "timestamp": "2026-01-19T05:30:00"
+      },
+      {
+        "boundary": 23,
+        "inventory_t": 32.5,
+        "timestamp": "2026-01-19T05:45:00"
+      },
+      {
+        "boundary": 24,
+        "inventory_t": 30.5,
+        "timestamp": "2026-01-19T06:00:00"
+      },
+      {
+        "boundary": 25,
+        "inventory_t": 28.5,
+        "timestamp": "2026-01-19T06:15:00"
+      },
+      {
+        "boundary": 26,
+        "inventory_t": 26.5,
+        "timestamp": "2026-01-19T06:30:00"
+      },
+      {
+        "boundary": 27,
+        "inventory_t": 24.5,
+        "timestamp": "2026-01-19T06:45:00"
+      },
+      {
+        "boundary": 28,
+        "inventory_t": 22.5,
+        "timestamp": "2026-01-19T07:00:00"
+      },
+      {
+        "boundary": 29,
+        "inventory_t": 30.0,
+        "timestamp": "2026-01-19T07:15:00"
+      },
+      {
+        "boundary": 30,
+        "inventory_t": 28.0,
+        "timestamp": "2026-01-19T07:30:00"
+      },
+      {
+        "boundary": 31,
+        "inventory_t": 26.0,
+        "timestamp": "2026-01-19T07:45:00"
+      },
+      {
+        "boundary": 32,
+        "inventory_t": 24.0,
+        "timestamp": "2026-01-19T08:00:00"
+      },
+      {
+        "boundary": 33,
+        "inventory_t": 22.0,
+        "timestamp": "2026-01-19T08:15:00"
+      },
+      {
+        "boundary": 34,
+        "inventory_t": 20.0,
+        "timestamp": "2026-01-19T08:30:00"
+      },
+      {
+        "boundary": 35,
+        "inventory_t": 18.0,
+        "timestamp": "2026-01-19T08:45:00"
+      },
+      {
+        "boundary": 36,
+        "inventory_t": 25.499999999999922,
+        "timestamp": "2026-01-19T09:00:00"
+      },
+      {
+        "boundary": 37,
+        "inventory_t": 23.499999999999922,
+        "timestamp": "2026-01-19T09:15:00"
+      },
+      {
+        "boundary": 38,
+        "inventory_t": 21.499999999999922,
+        "timestamp": "2026-01-19T09:30:00"
+      },
+      {
+        "boundary": 39,
+        "inventory_t": 19.499999999999922,
+        "timestamp": "2026-01-19T09:45:00"
+      },
+      {
+        "boundary": 40,
+        "inventory_t": 17.499999999999922,
+        "timestamp": "2026-01-19T10:00:00"
+      },
+      {
+        "boundary": 41,
+        "inventory_t": 15.499999999999922,
+        "timestamp": "2026-01-19T10:15:00"
+      },
+      {
+        "boundary": 42,
+        "inventory_t": 13.499999999999922,
+        "timestamp": "2026-01-19T10:30:00"
+      },
+      {
+        "boundary": 43,
+        "inventory_t": 20.999999999999922,
+        "timestamp": "2026-01-19T10:45:00"
+      },
+      {
+        "boundary": 44,
+        "inventory_t": 18.999999999999922,
+        "timestamp": "2026-01-19T11:00:00"
+      },
+      {
+        "boundary": 45,
+        "inventory_t": 16.999999999999922,
+        "timestamp": "2026-01-19T11:15:00"
+      },
+      {
+        "boundary": 46,
+        "inventory_t": 14.999999999999922,
+        "timestamp": "2026-01-19T11:30:00"
+      },
+      {
+        "boundary": 47,
+        "inventory_t": 14.999999999999922,
+        "timestamp": "2026-01-19T11:45:00"
+      },
+      {
+        "boundary": 48,
+        "inventory_t": 12.999999999999922,
+        "timestamp": "2026-01-19T12:00:00"
+      },
+      {
+        "boundary": 49,
+        "inventory_t": 10.999999999999922,
+        "timestamp": "2026-01-19T12:15:00"
+      },
+      {
+        "boundary": 50,
+        "inventory_t": 18.499999999999922,
+        "timestamp": "2026-01-19T12:30:00"
+      },
+      {
+        "boundary": 51,
+        "inventory_t": 16.499999999999922,
+        "timestamp": "2026-01-19T12:45:00"
+      },
+      {
+        "boundary": 52,
+        "inventory_t": 14.499999999999922,
+        "timestamp": "2026-01-19T13:00:00"
+      },
+      {
+        "boundary": 53,
+        "inventory_t": 12.499999999999922,
+        "timestamp": "2026-01-19T13:15:00"
+      },
+      {
+        "boundary": 54,
+        "inventory_t": 10.499999999999922,
+        "timestamp": "2026-01-19T13:30:00"
+      },
+      {
+        "boundary": 55,
+        "inventory_t": 10.499999999999922,
+        "timestamp": "2026-01-19T13:45:00"
+      },
+      {
+        "boundary": 56,
+        "inventory_t": 8.499999999999922,
+        "timestamp": "2026-01-19T14:00:00"
+      },
+      {
+        "boundary": 57,
+        "inventory_t": 6.499999999999922,
+        "timestamp": "2026-01-19T14:15:00"
+      },
+      {
+        "boundary": 58,
+        "inventory_t": 14.499999999999998,
+        "timestamp": "2026-01-19T14:30:00"
+      },
+      {
+        "boundary": 59,
+        "inventory_t": 12.499999999999998,
+        "timestamp": "2026-01-19T14:45:00"
+      },
+      {
+        "boundary": 60,
+        "inventory_t": 10.499999999999998,
+        "timestamp": "2026-01-19T15:00:00"
+      },
+      {
+        "boundary": 61,
+        "inventory_t": 8.499999999999998,
+        "timestamp": "2026-01-19T15:15:00"
+      },
+      {
+        "boundary": 62,
+        "inventory_t": 6.499999999999998,
+        "timestamp": "2026-01-19T15:30:00"
+      },
+      {
+        "boundary": 63,
+        "inventory_t": 4.499999999999998,
+        "timestamp": "2026-01-19T15:45:00"
+      },
+      {
+        "boundary": 64,
+        "inventory_t": 2.4999999999999982,
+        "timestamp": "2026-01-19T16:00:00"
+      },
+      {
+        "boundary": 65,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T16:15:00"
+      },
+      {
+        "boundary": 66,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T16:30:00"
+      },
+      {
+        "boundary": 67,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T16:45:00"
+      },
+      {
+        "boundary": 68,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T17:00:00"
+      },
+      {
+        "boundary": 69,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T17:15:00"
+      },
+      {
+        "boundary": 70,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T17:30:00"
+      },
+      {
+        "boundary": 71,
+        "inventory_t": 11.999999999999998,
+        "timestamp": "2026-01-19T17:45:00"
+      },
+      {
+        "boundary": 72,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T18:00:00"
+      },
+      {
+        "boundary": 73,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T18:15:00"
+      },
+      {
+        "boundary": 74,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T18:30:00"
+      },
+      {
+        "boundary": 75,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T18:45:00"
+      },
+      {
+        "boundary": 76,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T19:00:00"
+      },
+      {
+        "boundary": 77,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T19:15:00"
+      },
+      {
+        "boundary": 78,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T19:30:00"
+      },
+      {
+        "boundary": 79,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T19:45:00"
+      },
+      {
+        "boundary": 80,
+        "inventory_t": 21.5,
+        "timestamp": "2026-01-19T20:00:00"
+      },
+      {
+        "boundary": 81,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T20:15:00"
+      },
+      {
+        "boundary": 82,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T20:30:00"
+      },
+      {
+        "boundary": 83,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T20:45:00"
+      },
+      {
+        "boundary": 84,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T21:00:00"
+      },
+      {
+        "boundary": 85,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T21:15:00"
+      },
+      {
+        "boundary": 86,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T21:30:00"
+      },
+      {
+        "boundary": 87,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T21:45:00"
+      },
+      {
+        "boundary": 88,
+        "inventory_t": 31.0,
+        "timestamp": "2026-01-19T22:00:00"
+      },
+      {
+        "boundary": 89,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T22:15:00"
+      },
+      {
+        "boundary": 90,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T22:30:00"
+      },
+      {
+        "boundary": 91,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T22:45:00"
+      },
+      {
+        "boundary": 92,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T23:00:00"
+      },
+      {
+        "boundary": 93,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T23:15:00"
+      },
+      {
+        "boundary": 94,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T23:30:00"
+      },
+      {
+        "boundary": 95,
+        "inventory_t": 40.5,
+        "timestamp": "2026-01-19T23:45:00"
+      },
+      {
+        "boundary": 96,
+        "inventory_t": 50.0,
+        "timestamp": "2026-01-20T00:00:00"
+      }
+    ],
+    "load": [
+      {
+        "asset_kWh": {
+          "AUX": 55.65605201858327,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1249.8923166181428,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T00:15:00",
+        "interval_start": "2026-01-19T00:00:00",
+        "kVA_bound": 1710.025216744097,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 0,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1190.6242080743332,
+        "tariff_period": "offpeak",
+        "total_kW": 1190.6242080743332,
+        "total_kWh": 297.6560520185833
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.887823979641134,
+          "CMP_01": 21.25,
+          "IF_01": 223.22718919374296,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 2170.309779595249,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T00:30:00",
+        "interval_start": "2026-01-19T00:15:00",
+        "kVA_bound": 6865.630108506237,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 1,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 2084.4600526935365,
+        "tariff_period": "offpeak",
+        "total_kW": 2084.4600526935365,
+        "total_kWh": 521.1150131733841
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.742451374331154,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6402.855844397454,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T00:45:00",
+        "interval_start": "2026-01-19T00:30:00",
+        "kVA_bound": 6865.024389317445,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 2,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6190.969805497325,
+        "tariff_period": "offpeak",
+        "total_kW": 6190.969805497325,
+        "total_kWh": 1547.7424513743313
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.80186071475468,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6403.103300840999,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T01:00:00",
+        "interval_start": "2026-01-19T00:45:00",
+        "kVA_bound": 6865.271928235876,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 3,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6191.207442859019,
+        "tariff_period": "offpeak",
+        "total_kW": 6191.207442859019,
+        "total_kWh": 1547.8018607147546
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.28327780851507,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6400.94325886839,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T01:15:00",
+        "interval_start": "2026-01-19T01:00:00",
+        "kVA_bound": 6863.111166126544,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 4,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6189.13311123406,
+        "tariff_period": "offpeak",
+        "total_kW": 6189.13311123406,
+        "total_kWh": 1547.283277808515
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.690053345101354,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6398.472314655829,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T01:30:00",
+        "interval_start": "2026-01-19T01:15:00",
+        "kVA_bound": 6860.6393975289875,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 5,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6186.760213380406,
+        "tariff_period": "offpeak",
+        "total_kW": 6186.760213380406,
+        "total_kWh": 1546.6900533451014
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.44943934807438,
+          "CMP_01": 21.25,
+          "IF_01": 1064.67951589905,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 5633.328541254959,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T01:45:00",
+        "interval_start": "2026-01-19T01:30:00",
+        "kVA_bound": 6859.636839208041,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 6,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5444.515820988498,
+        "tariff_period": "offpeak",
+        "total_kW": 5444.515820988498,
+        "total_kWh": 1361.1289552471244
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.41645971999086,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1244.729020639412,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T02:00:00",
+        "interval_start": "2026-01-19T01:45:00",
+        "kVA_bound": 1704.8602488332951,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 7,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1185.6658388799635,
+        "tariff_period": "offpeak",
+        "total_kW": 1185.6658388799635,
+        "total_kWh": 296.4164597199909
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.38919865240475,
+          "CMP_01": 21.25,
+          "IF_01": 56.56052252707866,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1477.4559371787336,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T02:15:00",
+        "interval_start": "2026-01-19T02:00:00",
+        "kVA_bound": 6859.385836309418,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 8,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1411.7988847179336,
+        "tariff_period": "offpeak",
+        "total_kW": 1411.7988847179336,
+        "total_kWh": 352.9497211794834
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.42187531114802,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.355279068482,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T02:30:00",
+        "interval_start": "2026-01-19T02:15:00",
+        "kVA_bound": 6859.521989054182,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 9,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.687501244592,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.687501244592,
+        "total_kWh": 1546.421875311148
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.37366560711865,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.154472348563,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T02:45:00",
+        "interval_start": "2026-01-19T02:30:00",
+        "kVA_bound": 6859.321115287393,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 10,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.494662428475,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.494662428475,
+        "total_kWh": 1546.3736656071187
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.38617752519204,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.206587939383,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T03:00:00",
+        "interval_start": "2026-01-19T02:45:00",
+        "kVA_bound": 6859.373248279365,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 11,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.5447101007685,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.5447101007685,
+        "total_kWh": 1546.3861775251921
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.39341174203824,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.2367204486,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T03:15:00",
+        "interval_start": "2026-01-19T03:00:00",
+        "kVA_bound": 6859.403390849558,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 12,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.573646968153,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.573646968153,
+        "total_kWh": 1546.3934117420383
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.42820425770812,
+          "CMP_01": 21.25,
+          "IF_01": 1231.3461825657157,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6320.464659771237,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T03:30:00",
+        "interval_start": "2026-01-19T03:15:00",
+        "kVA_bound": 6859.548359664849,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 13,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6111.097547293695,
+        "tariff_period": "offpeak",
+        "total_kW": 6111.097547293695,
+        "total_kWh": 1527.7743868234238
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.36294402420174,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1244.506111066746,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T03:45:00",
+        "interval_start": "2026-01-19T03:30:00",
+        "kVA_bound": 1704.6372667675073,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 14,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1185.451776096807,
+        "tariff_period": "offpeak",
+        "total_kW": 1185.451776096807,
+        "total_kWh": 296.36294402420174
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.32880352100875,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1244.363905230891,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T04:00:00",
+        "interval_start": "2026-01-19T03:45:00",
+        "kVA_bound": 1704.4950146708698,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 15,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1185.315214084035,
+        "tariff_period": "offpeak",
+        "total_kW": 1185.315214084035,
+        "total_kWh": 296.32880352100875
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.436885062414,
+          "CMP_01": 21.25,
+          "IF_01": 1139.893855860412,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 5943.409365294384,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T04:15:00",
+        "interval_start": "2026-01-19T04:00:00",
+        "kVA_bound": 6859.584529684456,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 16,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5745.322963691304,
+        "tariff_period": "offpeak",
+        "total_kW": 5745.322963691304,
+        "total_kWh": 1436.330740922826
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.37299463222709,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.151677553026,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T04:30:00",
+        "interval_start": "2026-01-19T04:15:00",
+        "kVA_bound": 6859.318319558678,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 17,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.4919785289085,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.4919785289085,
+        "total_kWh": 1546.3729946322271
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.40559532821166,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.287468446901,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T04:45:00",
+        "interval_start": "2026-01-19T04:30:00",
+        "kVA_bound": 6859.4541557919465,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 18,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.622381312846,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.622381312846,
+        "total_kWh": 1546.4055953282116
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.391570970487265,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.229053127178,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T05:00:00",
+        "interval_start": "2026-01-19T04:45:00",
+        "kVA_bound": 6859.395720968096,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 19,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.566283881949,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.566283881949,
+        "total_kWh": 1546.3915709704872
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.3310809132714,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6396.977095351679,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T05:15:00",
+        "interval_start": "2026-01-19T05:00:00",
+        "kVA_bound": 6859.14367906303,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 20,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 6185.324323653085,
+        "tariff_period": "offpeak",
+        "total_kW": 6185.324323653085,
+        "total_kWh": 1546.3310809132713
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.38236884908667,
+          "CMP_01": 21.25,
+          "IF_01": 148.01284923238237,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1854.1177553760556,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T05:30:00",
+        "interval_start": "2026-01-19T05:15:00",
+        "kVA_bound": 6859.357378795593,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 21,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1777.580872325876,
+        "tariff_period": "offpeak",
+        "total_kW": 1777.580872325876,
+        "total_kWh": 444.395218081469
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.343092342792374,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1244.4234226255148,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T05:45:00",
+        "interval_start": "2026-01-19T05:30:00",
+        "kVA_bound": 1704.5545514283015,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 22,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1185.3723693711695,
+        "tariff_period": "offpeak",
+        "total_kW": 1185.3723693711695,
+        "total_kWh": 296.3430923427924
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.30956571754157,
+          "CMP_01": 21.25,
+          "IF_01": 973.2271891937456,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 5255.662915258288,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T06:00:00",
+        "interval_start": "2026-01-19T05:45:00",
+        "kVA_bound": 6859.054032414156,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 23,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5078.147019645149,
+        "tariff_period": "offpeak",
+        "total_kW": 5078.147019645149,
+        "total_kWh": 1269.5367549112873
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.31872140130214,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0000000000002,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6396.925614575566,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T06:15:00",
+        "interval_start": "2026-01-19T06:00:00",
+        "kVA_bound": 6859.092181096492,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 24,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12370.549771210419,
+        "tariff_period": "normal",
+        "total_kW": 6185.274885605209,
+        "total_kWh": 1546.3187214013024
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.31101513675344,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0000000000002,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6396.893515858467,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T06:30:00",
+        "interval_start": "2026-01-19T06:15:00",
+        "kVA_bound": 6859.0600716608715,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 25,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12370.48812109403,
+        "tariff_period": "normal",
+        "total_kW": 6185.244060547015,
+        "total_kWh": 1546.3110151367537
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.392513829134344,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0000000000002,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.2329803936,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T06:45:00",
+        "interval_start": "2026-01-19T06:30:00",
+        "kVA_bound": 6859.399649545791,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 26,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12371.140110633076,
+        "tariff_period": "normal",
+        "total_kW": 6185.570055316538,
+        "total_kWh": 1546.3925138291345
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.35149962461967,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0000000000002,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6397.062144916548,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T07:00:00",
+        "interval_start": "2026-01-19T06:45:00",
+        "kVA_bound": 6859.22875702698,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 27,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12370.81199699696,
+        "tariff_period": "normal",
+        "total_kW": 6185.40599849848,
+        "total_kWh": 1546.35149962462
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.32403978813559,
+          "CMP_01": 21.25,
+          "IF_01": 314.6795158990491,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 2540.7015164070763,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.500000000000002,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T07:15:00",
+        "interval_start": "2026-01-19T07:00:00",
+        "kVA_bound": 6859.11434104163,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 28,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 4888.028445497477,
+        "tariff_period": "normal",
+        "total_kW": 2444.0142227487386,
+        "total_kWh": 611.0035556871846
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.438596932399356,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1244.8212290446572,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T07:30:00",
+        "interval_start": "2026-01-19T07:15:00",
+        "kVA_bound": 1704.9524872183306,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 29,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2371.508775459195,
+        "tariff_period": "normal",
+        "total_kW": 1185.7543877295975,
+        "total_kWh": 296.4385969323994
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.64520331203959,
+          "CMP_01": 21.25,
+          "IF_01": 806.5605225270721,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 4569.865775220991,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T07:45:00",
+        "interval_start": "2026-01-19T07:30:00",
+        "kVA_bound": 6860.452522391187,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 30,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 8825.645806712893,
+        "tariff_period": "normal",
+        "total_kW": 4412.822903356447,
+        "total_kWh": 1103.2057258391117
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.01915670808732,
+          "CMP_01": 21.25,
+          "IF_01": 1249.9999999999898,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6399.843121245217,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T08:00:00",
+        "interval_start": "2026-01-19T07:45:00",
+        "kVA_bound": 6862.010661541386,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 31,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12376.153253664617,
+        "tariff_period": "normal",
+        "total_kW": 6188.076626832309,
+        "total_kWh": 1547.0191567080772
+      },
+      {
+        "asset_kWh": {
+          "AUX": 65.09305304905256,
+          "CMP_01": 21.25,
+          "IF_01": 1249.9999999999898,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6441.803781755207,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T08:15:00",
+        "interval_start": "2026-01-19T08:00:00",
+        "kVA_bound": 6903.985229628784,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 32,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12456.744424392338,
+        "tariff_period": "normal",
+        "total_kW": 6228.372212196169,
+        "total_kWh": 1557.0930530490423
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.12012182700556,
+          "CMP_01": 21.25,
+          "IF_01": 1249.9999999999898,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6466.908333928695,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T08:30:00",
+        "interval_start": "2026-01-19T08:15:00",
+        "kVA_bound": 6929.0980162035885,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 33,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12504.960974615962,
+        "tariff_period": "normal",
+        "total_kW": 6252.480487307981,
+        "total_kWh": 1563.1201218269953
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.00319160930232,
+          "CMP_01": 21.25,
+          "IF_01": 1249.9999999999898,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6470.586590240387,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T08:45:00",
+        "interval_start": "2026-01-19T08:30:00",
+        "kVA_bound": 6932.777473629824,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 34,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12512.025532874337,
+        "tariff_period": "normal",
+        "total_kW": 6256.0127664371685,
+        "total_kWh": 1564.0031916092921
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.75898167024576,
+          "CMP_01": 21.25,
+          "IF_01": 481.34618256571173,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 3304.52872666353,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.499999999999922,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T09:00:00",
+        "interval_start": "2026-01-19T08:45:00",
+        "kVA_bound": 6935.926598883756,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 35,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 6368.84131388766,
+        "tariff_period": "normal",
+        "total_kW": 3184.42065694383,
+        "total_kWh": 796.1051642359575
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.55368191528937,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1320.2776210772297,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T09:15:00",
+        "interval_start": "2026-01-19T09:00:00",
+        "kVA_bound": 1780.4320079803724,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 36,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2516.429455322315,
+        "tariff_period": "normal",
+        "total_kW": 1258.2147276611574,
+        "total_kWh": 314.55368191528936
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.3340225543904,
+          "CMP_01": 21.25,
+          "IF_01": 559.4621982357069,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 3624.7953779601626,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T09:30:00",
+        "interval_start": "2026-01-19T09:15:00",
+        "kVA_bound": 6934.155935901025,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 37,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 6990.369766320779,
+        "tariff_period": "normal",
+        "total_kW": 3495.1848831603893,
+        "total_kWh": 873.7962207900973
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.92754631378324,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6470.2715043451735,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T09:45:00",
+        "interval_start": "2026-01-19T09:30:00",
+        "kVA_bound": 6932.462284898495,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 38,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12511.420370510266,
+        "tariff_period": "normal",
+        "total_kW": 6255.710185255133,
+        "total_kWh": 1563.9275463137833
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.84391300555104,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6469.9231459345865,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T10:00:00",
+        "interval_start": "2026-01-19T09:45:00",
+        "kVA_bound": 6932.113812780861,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 39,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12510.751304044408,
+        "tariff_period": "normal",
+        "total_kW": 6255.375652022204,
+        "total_kWh": 1563.843913005551
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.58236526314016,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6468.833719351403,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T10:15:00",
+        "interval_start": "2026-01-19T10:00:00",
+        "kVA_bound": 6931.024030520815,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 40,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12508.658922105122,
+        "tariff_period": "normal",
+        "total_kW": 6254.329461052561,
+        "total_kWh": 1563.5823652631402
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.63247571570624,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6469.042444749644,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T10:30:00",
+        "interval_start": "2026-01-19T10:15:00",
+        "kVA_bound": 6931.232824073174,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 41,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12509.05980572565,
+        "tariff_period": "normal",
+        "total_kW": 6254.529902862825,
+        "total_kWh": 1563.6324757157063
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.620525756393,
+          "CMP_01": 21.25,
+          "IF_01": 735.4781020749973,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 4347.5065885471795,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T10:45:00",
+        "interval_start": "2026-01-19T10:30:00",
+        "kVA_bound": 6931.183032576036,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 42,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 8392.789022651123,
+        "tariff_period": "normal",
+        "total_kW": 4196.394511325561,
+        "total_kWh": 1049.0986278313903
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.65377310078209,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1316.5290873988247,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T11:00:00",
+        "interval_start": "2026-01-19T10:45:00",
+        "kVA_bound": 1776.6823879199253,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 43,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2509.2301848062566,
+        "tariff_period": "normal",
+        "total_kW": 1254.6150924031283,
+        "total_kWh": 313.6537731007821
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.10102480364608,
+          "CMP_01": 21.25,
+          "IF_01": 392.7955315690402,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 2936.757052002934,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T11:15:00",
+        "interval_start": "2026-01-19T11:00:00",
+        "kVA_bound": 6933.185111939591,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 44,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 5655.17245098149,
+        "tariff_period": "normal",
+        "total_kW": 2827.586225490745,
+        "total_kWh": 706.8965563726863
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.27350774255096,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6471.712540062593,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T11:30:00",
+        "interval_start": "2026-01-19T11:15:00",
+        "kVA_bound": 6933.903790851694,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 45,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12514.188061940407,
+        "tariff_period": "normal",
+        "total_kW": 6257.094030970204,
+        "total_kWh": 1564.273507742551
+      },
+      {
+        "asset_kWh": {
+          "AUX": 72.07558165481112,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 5664.091236379805,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T11:45:00",
+        "interval_start": "2026-01-19T11:30:00",
+        "kVA_bound": 5669.921204082603,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 0.0,
+        "slot": 46,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10976.60465323849,
+        "tariff_period": "normal",
+        "total_kW": 5488.302326619245,
+        "total_kWh": 1372.0755816548112
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.03739354710846,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6466.563745356055,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T12:00:00",
+        "interval_start": "2026-01-19T11:45:00",
+        "kVA_bound": 6928.75331503735,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 47,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12504.299148376867,
+        "tariff_period": "normal",
+        "total_kW": 6252.149574188434,
+        "total_kWh": 1563.0373935471084
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.365956819192505,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6405.452918488543,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T12:15:00",
+        "interval_start": "2026-01-19T12:00:00",
+        "kVA_bound": 6867.622328671034,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 48,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12386.92765455354,
+        "tariff_period": "normal",
+        "total_kW": 6193.46382727677,
+        "total_kWh": 1548.3659568191924
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.057249438938776,
+          "CMP_01": 21.25,
+          "IF_01": 902.1447687416639,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 4965.689405537957,
+        "bar_t": 1.92,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T12:30:00",
+        "interval_start": "2026-01-19T12:15:00",
+        "kVA_bound": 6862.16938125331,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 49,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 9593.616145444821,
+        "tariff_period": "normal",
+        "total_kW": 4796.8080727224105,
+        "total_kWh": 1199.2020181806026
+      },
+      {
+        "asset_kWh": {
+          "AUX": 55.03532131130581,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1247.3067741671575,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T12:45:00",
+        "interval_start": "2026-01-19T12:30:00",
+        "kVA_bound": 1707.4388387971076,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 50,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2376.2825704904462,
+        "tariff_period": "normal",
+        "total_kW": 1188.1412852452231,
+        "total_kWh": 297.0353213113058
+      },
+      {
+        "asset_kWh": {
+          "AUX": 54.94755234898078,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1246.9411885730658,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T13:00:00",
+        "interval_start": "2026-01-19T12:45:00",
+        "kVA_bound": 1707.0731347874198,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 51,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2375.580418791846,
+        "tariff_period": "normal",
+        "total_kW": 1187.790209395923,
+        "total_kWh": 296.94755234898076
+      },
+      {
+        "asset_kWh": {
+          "AUX": 66.17786612824239,
+          "CMP_01": 21.25,
+          "IF_01": 642.7955315690402,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 3942.710740490372,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T13:15:00",
+        "interval_start": "2026-01-19T13:00:00",
+        "kVA_bound": 6908.505284125408,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 52,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 7607.787181578261,
+        "tariff_period": "normal",
+        "total_kW": 3803.8935907891305,
+        "total_kWh": 950.9733976972826
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.7613543970725,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6469.579263990499,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T13:30:00",
+        "interval_start": "2026-01-19T13:15:00",
+        "kVA_bound": 6931.769818578867,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 53,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12510.09083517658,
+        "tariff_period": "normal",
+        "total_kW": 6255.04541758829,
+        "total_kWh": 1563.7613543970724
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.55323511440517,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 5661.91605110256,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T13:45:00",
+        "interval_start": "2026-01-19T13:30:00",
+        "kVA_bound": 5667.744760164245,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 0.0,
+        "slot": 54,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10972.425880915242,
+        "tariff_period": "normal",
+        "total_kW": 5486.212940457621,
+        "total_kWh": 1371.5532351144052
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.41136812718769,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6468.121463887471,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T14:00:00",
+        "interval_start": "2026-01-19T13:45:00",
+        "kVA_bound": 6930.311542454347,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 55,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12507.290945017501,
+        "tariff_period": "normal",
+        "total_kW": 6253.645472508751,
+        "total_kWh": 1563.4113681271876
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.44916054736458,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6468.278880892511,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T14:15:00",
+        "interval_start": "2026-01-19T14:00:00",
+        "kVA_bound": 6930.4690108717505,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 56,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12507.593284378916,
+        "tariff_period": "normal",
+        "total_kW": 6253.796642189458,
+        "total_kWh": 1563.4491605473645
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.39393872986642,
+          "CMP_01": 21.25,
+          "IF_01": 652.1447687416639,
+          "MILL_01": 143.99999999999267,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 3801.1635084534473,
+        "bar_t": 1.4399999999999267,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T14:30:00",
+        "interval_start": "2026-01-19T14:15:00",
+        "kVA_bound": 6930.238919965508,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 1.4999999999999236,
+        "slot": 57,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 7340.309659772184,
+        "tariff_period": "normal",
+        "total_kW": 3670.154829886092,
+        "total_kWh": 917.538707471523
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.59002779829774,
+          "CMP_01": 21.25,
+          "IF_01": 0.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 1316.263559160707,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T14:45:00",
+        "interval_start": "2026-01-19T14:30:00",
+        "kVA_bound": 1776.4167824929073,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 58,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2508.720222386382,
+        "tariff_period": "normal",
+        "total_kW": 1254.360111193191,
+        "total_kWh": 313.59002779829774
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.57614398984603,
+          "CMP_01": 21.25,
+          "IF_01": 392.7955315690402,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 2934.5701641265805,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T15:00:00",
+        "interval_start": "2026-01-19T14:45:00",
+        "kVA_bound": 6930.998108548757,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 59,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 5650.973404471089,
+        "tariff_period": "normal",
+        "total_kW": 2825.4867022355447,
+        "total_kWh": 706.3716755588862
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.14431559589595,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6467.009108373556,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T15:15:00",
+        "interval_start": "2026-01-19T15:00:00",
+        "kVA_bound": 6929.198823573965,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 60,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12505.154524767167,
+        "tariff_period": "normal",
+        "total_kW": 6252.577262383584,
+        "total_kWh": 1563.144315595896
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.39741240957117,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6468.063334049896,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T15:30:00",
+        "interval_start": "2026-01-19T15:15:00",
+        "kVA_bound": 6930.253393630945,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 61,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12507.17929927657,
+        "tariff_period": "normal",
+        "total_kW": 6253.589649638285,
+        "total_kWh": 1563.3974124095712
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.81374521793668,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6469.7974878383675,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T15:45:00",
+        "interval_start": "2026-01-19T15:30:00",
+        "kVA_bound": 6931.988113665801,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 62,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12510.509961743493,
+        "tariff_period": "normal",
+        "total_kW": 6255.254980871747,
+        "total_kWh": 1563.8137452179367
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.41265000165703,
+          "CMP_01": 21.25,
+          "IF_01": 1250.0,
+          "MILL_01": 192.0,
+          "PMP_01": 18.75,
+          "RHF_01": 10.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": true,
+          "PMP_01": true,
+          "RHF_01": true
+        },
+        "average_kVA": 6468.126803287206,
+        "bar_t": 1.92,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T16:00:00",
+        "interval_start": "2026-01-19T15:45:00",
+        "kVA_bound": 6930.3168835979695,
+        "pump_on": true,
+        "rhf_temperature_C": 1200,
+        "rolling_billet_t": 2.0,
+        "slot": 63,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 12507.301200013257,
+        "tariff_period": "normal",
+        "total_kW": 6253.650600006628,
+        "total_kWh": 1563.412650001657
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.54375234332339,
+          "CMP_01": 10.625,
+          "IF_01": 902.1447687416639,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 4140.792045131247,
+        "bar_t": 0.0,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T16:15:00",
+        "interval_start": "2026-01-19T16:00:00",
+        "kVA_bound": 5625.599985460176,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 64,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 8024.5081686798985,
+        "tariff_period": "normal",
+        "total_kW": 4012.2540843399493,
+        "total_kWh": 1003.0635210849873
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.33580914142142,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 420.07159401160675,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T16:30:00",
+        "interval_start": "2026-01-19T16:15:00",
+        "kVA_bound": 470.0943801945191,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 65,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 805.6864731313714,
+        "tariff_period": "normal",
+        "total_kW": 402.8432365656857,
+        "total_kWh": 100.71080914142142
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.37446579849279,
+          "CMP_01": 10.625,
+          "IF_01": 224.01805130684238,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 1343.7658457131095,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T16:45:00",
+        "interval_start": "2026-01-19T16:30:00",
+        "kVA_bound": 5624.894624856715,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 66,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 2598.1401368426814,
+        "tariff_period": "normal",
+        "total_kW": 1299.0700684213407,
+        "total_kWh": 324.7675171053352
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.30070192833102,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5574.224899494107,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T17:00:00",
+        "interval_start": "2026-01-19T16:45:00",
+        "kVA_bound": 5624.587275397708,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 67,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10805.405615426647,
+        "tariff_period": "normal",
+        "total_kW": 5402.702807713324,
+        "total_kWh": 1350.675701928331
+      },
+      {
+        "asset_kWh": {
+          "AUX": 71.24377196055481,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5573.987837230173,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T17:15:00",
+        "interval_start": "2026-01-19T17:00:00",
+        "kVA_bound": 5624.35006719864,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 68,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10804.950175684438,
+        "tariff_period": "normal",
+        "total_kW": 5402.475087842219,
+        "total_kWh": 1350.6187719605548
+      },
+      {
+        "asset_kWh": {
+          "AUX": 70.34989892535978,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5570.265659246897,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T17:30:00",
+        "interval_start": "2026-01-19T17:15:00",
+        "kVA_bound": 5620.6255962186615,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 69,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10797.799191402879,
+        "tariff_period": "normal",
+        "total_kW": 5398.8995957014395,
+        "total_kWh": 1349.7248989253599
+      },
+      {
+        "asset_kWh": {
+          "AUX": 63.94693458250854,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5543.603156331123,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T17:45:00",
+        "interval_start": "2026-01-19T17:30:00",
+        "kVA_bound": 5593.946578123448,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 70,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 10746.575476660068,
+        "tariff_period": "normal",
+        "total_kW": 5373.287738330034,
+        "total_kWh": 1343.3219345825084
+      },
+      {
+        "asset_kWh": {
+          "AUX": 63.039561841841454,
+          "CMP_01": 10.625,
+          "IF_01": 1064.883979578364,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 4776.463562753783,
+        "bar_t": 0.0,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T18:00:00",
+        "interval_start": "2026-01-19T17:45:00",
+        "kVA_bound": 5590.1658583706685,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 71,
+        "tariff_Rs_per_kWh": 8,
+        "tariff_cost_Rs": 9258.388331361644,
+        "tariff_period": "normal",
+        "total_kW": 4629.194165680822,
+        "total_kWh": 1157.2985414202055
+      },
+      {
+        "asset_kWh": {
+          "AUX": 64.62043186869091,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 392.09104913048924,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T18:15:00",
+        "interval_start": "2026-01-19T18:00:00",
+        "kVA_bound": 442.113641558142,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 72,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 1127.945182424291,
+        "tariff_period": "peak",
+        "total_kW": 375.98172747476366,
+        "total_kWh": 93.99543186869091
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.44217932831693,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 403.84824552728304,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T18:30:00",
+        "interval_start": "2026-01-19T18:15:00",
+        "kVA_bound": 453.87092263991707,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 73,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 1161.8061519398032,
+        "tariff_period": "peak",
+        "total_kW": 387.2687173132677,
+        "total_kWh": 96.81717932831693
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.16356666253704,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 402.68736756143363,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T18:45:00",
+        "interval_start": "2026-01-19T18:30:00",
+        "kVA_bound": 452.71003653250085,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 74,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 1158.4627999504444,
+        "tariff_period": "peak",
+        "total_kW": 386.15426665014814,
+        "total_kWh": 96.53856666253704
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.76677946541416,
+          "CMP_01": 10.625,
+          "IF_01": 640.6847179735186,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 3046.890389886843,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T19:00:00",
+        "interval_start": "2026-01-19T18:45:00",
+        "kVA_bound": 5609.862598468888,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 75,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 8853.917969267193,
+        "tariff_period": "peak",
+        "total_kW": 2951.305989755731,
+        "total_kWh": 737.8264974389327
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.30473045835343,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5557.585291943706,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T19:15:00",
+        "interval_start": "2026-01-19T19:00:00",
+        "kVA_bound": 5607.937394272802,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 76,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16160.15676550024,
+        "tariff_period": "peak",
+        "total_kW": 5386.718921833413,
+        "total_kWh": 1346.6797304583533
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.66204934599871,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5559.073199476805,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T19:30:00",
+        "interval_start": "2026-01-19T19:15:00",
+        "kVA_bound": 5609.426222971323,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 77,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16164.444592151984,
+        "tariff_period": "peak",
+        "total_kW": 5388.148197383995,
+        "total_kWh": 1347.0370493459986
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.7151411480862,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5559.2942784906545,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T19:45:00",
+        "interval_start": "2026-01-19T19:30:00",
+        "kVA_bound": 5609.647438813355,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 78,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16165.081693777032,
+        "tariff_period": "peak",
+        "total_kW": 5388.360564592344,
+        "total_kWh": 1347.090141148086
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.68408004070777,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5559.16493725927,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T20:00:00",
+        "interval_start": "2026-01-19T19:45:00",
+        "kVA_bound": 5609.518017532611,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 79,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16164.708960488493,
+        "tariff_period": "peak",
+        "total_kW": 5388.236320162831,
+        "total_kWh": 1347.0590800407078
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.83199231791265,
+          "CMP_01": 10.625,
+          "IF_01": 648.2173129116973,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 3078.223733599229,
+        "bar_t": 0.0,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T20:15:00",
+        "interval_start": "2026-01-19T20:00:00",
+        "kVA_bound": 5610.134318687631,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 80,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 8945.09166275532,
+        "tariff_period": "peak",
+        "total_kW": 2981.6972209184396,
+        "total_kWh": 745.4243052296099
+      },
+      {
+        "asset_kWh": {
+          "AUX": 67.99128548152642,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 406.13617192270414,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T20:30:00",
+        "interval_start": "2026-01-19T20:15:00",
+        "kVA_bound": 456.1588649449566,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 81,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 1168.395425778317,
+        "tariff_period": "peak",
+        "total_kW": 389.4651419261057,
+        "total_kWh": 97.36628548152642
+      },
+      {
+        "asset_kWh": {
+          "AUX": 66.52267081166423,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 400.0169870903084,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T20:45:00",
+        "interval_start": "2026-01-19T20:30:00",
+        "kVA_bound": 450.03963715386413,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 82,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 1150.7720497399707,
+        "tariff_period": "peak",
+        "total_kW": 383.5906832466569,
+        "total_kWh": 95.89767081166423
+      },
+      {
+        "asset_kWh": {
+          "AUX": 62.38094656665825,
+          "CMP_01": 10.625,
+          "IF_01": 974.0180513068518,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 4399.018462235067,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T21:00:00",
+        "interval_start": "2026-01-19T20:45:00",
+        "kVA_bound": 5587.421628057405,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 83,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 12789.287974482122,
+        "tariff_period": "peak",
+        "total_kW": 4263.09599149404,
+        "total_kWh": 1065.77399787351
+      },
+      {
+        "asset_kWh": {
+          "AUX": 57.28878960629025,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5515.8782283493565,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T21:15:00",
+        "interval_start": "2026-01-19T21:00:00",
+        "kVA_bound": 5566.204307389205,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 84,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16039.965475275483,
+        "tariff_period": "peak",
+        "total_kW": 5346.655158425161,
+        "total_kWh": 1336.6637896062903
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.83173586426902,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5513.9750346637875,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T21:30:00",
+        "interval_start": "2026-01-19T21:15:00",
+        "kVA_bound": 5564.299916797449,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 85,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16034.480830371227,
+        "tariff_period": "peak",
+        "total_kW": 5344.826943457076,
+        "total_kWh": 1336.206735864269
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.55392674948547,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5512.818224600083,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T21:45:00",
+        "interval_start": "2026-01-19T21:30:00",
+        "kVA_bound": 5563.142378819185,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 86,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16031.147120993826,
+        "tariff_period": "peak",
+        "total_kW": 5343.715706997942,
+        "total_kWh": 1335.9289267494855
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.43924100328556,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5512.340667912602,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T22:00:00",
+        "interval_start": "2026-01-19T21:45:00",
+        "kVA_bound": 5562.664521543352,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 87,
+        "tariff_Rs_per_kWh": 12,
+        "tariff_cost_Rs": 16029.770892039427,
+        "tariff_period": "peak",
+        "total_kW": 5343.256964013142,
+        "total_kWh": 1335.8142410032856
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.282175692635064,
+          "CMP_01": 10.625,
+          "IF_01": 314.88397957836395,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 1655.586707522306,
+        "bar_t": 0.0,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T22:15:00",
+        "interval_start": "2026-01-19T22:00:00",
+        "kVA_bound": 5562.010082748975,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 88,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 1602.164621083996,
+        "tariff_period": "offpeak",
+        "total_kW": 1602.164621083996,
+        "total_kWh": 400.541155270999
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.14857104592238,
+          "CMP_01": 10.625,
+          "IF_01": 0.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": false,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 356.79191682216174,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": false,
+        "interval_end": "2026-01-19T22:30:00",
+        "interval_start": "2026-01-19T22:15:00",
+        "kVA_bound": 406.8142214632731,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 89,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 342.0942841836895,
+        "tariff_period": "offpeak",
+        "total_kW": 342.0942841836895,
+        "total_kWh": 85.52357104592238
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.20615095826995,
+          "CMP_01": 10.625,
+          "IF_01": 807.3513846401852,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 3686.025273435822,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T22:45:00",
+        "interval_start": "2026-01-19T22:30:00",
+        "kVA_bound": 5561.693313022453,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 90,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 3571.7301423938206,
+        "tariff_period": "offpeak",
+        "total_kW": 3571.7301423938206,
+        "total_kWh": 892.9325355984552
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.13007130751257,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5511.053271432189,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T23:00:00",
+        "interval_start": "2026-01-19T22:45:00",
+        "kVA_bound": 5561.376314477631,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 91,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5342.02028523005,
+        "tariff_period": "offpeak",
+        "total_kW": 5342.02028523005,
+        "total_kWh": 1335.5050713075125
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.05833563673305,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5510.7545609356475,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T23:15:00",
+        "interval_start": "2026-01-19T23:00:00",
+        "kVA_bound": 5561.077415849383,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 92,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5341.733342546932,
+        "tariff_period": "offpeak",
+        "total_kW": 5341.733342546932,
+        "total_kWh": 1335.433335636733
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.136012270139396,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5511.078009863469,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T23:30:00",
+        "interval_start": "2026-01-19T23:15:00",
+        "kVA_bound": 5561.401068488576,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 93,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5342.044049080558,
+        "tariff_period": "offpeak",
+        "total_kW": 5342.044049080558,
+        "total_kWh": 1335.5110122701394
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.086068300026966,
+          "CMP_01": 10.625,
+          "IF_01": 1250.0,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 5510.870040966145,
+        "bar_t": 0.0,
+        "billet_arrival_t": 0.0,
+        "furnace_on": true,
+        "interval_end": "2026-01-19T23:45:00",
+        "interval_start": "2026-01-19T23:30:00",
+        "kVA_bound": 5561.192968613108,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 94,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 5341.844273200108,
+        "tariff_period": "offpeak",
+        "total_kW": 5341.844273200108,
+        "total_kWh": 1335.461068300027
+      },
+      {
+        "asset_kWh": {
+          "AUX": 56.11052221969994,
+          "CMP_01": 10.625,
+          "IF_01": 481.5506462450306,
+          "MILL_01": 0.0,
+          "PMP_01": 18.75,
+          "RHF_01": 0.0
+        },
+        "asset_run": {
+          "CMP_01": true,
+          "IF_01": true,
+          "MILL_01": false,
+          "PMP_01": true,
+          "RHF_01": false
+        },
+        "average_kVA": 2342.136689001947,
+        "bar_t": 0.0,
+        "billet_arrival_t": 9.5,
+        "furnace_on": true,
+        "interval_end": "2026-01-20T00:00:00",
+        "interval_start": "2026-01-19T23:45:00",
+        "kVA_bound": 5561.294859945078,
+        "pump_on": true,
+        "rhf_temperature_C": null,
+        "rolling_billet_t": 0.0,
+        "slot": 95,
+        "tariff_Rs_per_kWh": 4,
+        "tariff_cost_Rs": 2268.144673858922,
+        "tariff_period": "offpeak",
+        "total_kW": 2268.144673858922,
+        "total_kWh": 567.0361684647305
+      }
+    ],
+    "maintenance_actions": [],
+    "metrics": {
+      "asset_kWh": {
+        "AUX": 5997.976407674803,
+        "CMP_01": 1700.0,
+        "IF_01": 81774.90285024758,
+        "MILL_01": 11855.999999999993,
+        "PMP_01": 1800.0,
+        "RHF_01": 640.0
+      },
+      "bars_t": 118.55999999999992,
+      "billets_t": 123.49999999999993,
+      "charge_t": 132.6530612244898,
+      "final_inventory_t": 50.0,
+      "furnace_utilization": 0.9279848269953506,
+      "inventory_max_t": 50.0,
+      "inventory_min_t": 2.4999999999999982,
+      "liquid_t": 130,
+      "predicted_IF_SEC_kWh_per_t": 629.0377142326737,
+      "predicted_IF_kWh": 81774.90285024758,
+      "predicted_peak_average_kVA": 6471.712540062593,
+      "predicted_peak_kVA_bound": 6935.926598883756,
+      "predicted_peak_kW_reserve": 6696.035926680983,
+      "predicted_tariff_cost_Rs": 748220.0082784942,
+      "predicted_total_kWh": 103768.87925792238,
+      "reserved_furnace_utilization": 0.9298611111111111,
+      "rolling_utilization": 0.6432291666666663,
+      "runtime_hours": {
+        "CMP_01": 24.0,
+        "IF_01": 19.5,
+        "MILL_01": 15.5,
+        "PMP_01": 24.0,
+        "RHF_01": 16.0
+      }
+    },
+    "prior_observed_heats": [],
+    "reference_note": "Reference timeline is the latest completed observed day in this same run; not the matched-cost counterfactual.",
+    "schedule_id": "schedule_b334089ca353636e0e928311"
+  }
+}

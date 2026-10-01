@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "PyYAML": "6.0.3",
+    "joblib": "1.6.0",
+    "lightgbm": "4.6.0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "pyarrow": "23.0.1",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "python": "3.12.14",
+  "requirements_sha256": "44bdfbae473483718b0b6cbd69faf2450dfdf38960fcb3d17e8cab4812454bf3",
+  "threads": 1
+}

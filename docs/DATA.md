@@ -1,0 +1,13 @@
+# Data and provenance
+
+Three sources remain strictly separate:
+
+1. **Integrated simulated reference plant:** versioned steel-plant configuration and reduced-order digital twin; public observed readings/heats/production, separate evaluation events and latent truth. sim_v1.0 is immutable audit evidence; sim_v1.1 fixes RHF observation shared-noise cancellation without changing physics. Phase II analytics enforce posting-time rules.
+2. **UCI Steel:** [official dataset](https://archive.ics.uci.edu/dataset/851/steel%2Bindustry%2Benergy%2Bconsumption), [DOI 10.24432/C52G8C](https://doi.org/10.24432/C52G8C), creators Sathishkumar V E, Changsun Shin and Yongyun Cho, CC BY 4.0. Separate real-data energy forecasting benchmark. Day-first 15-minute timestamps; Jan–Aug / Sep–Oct / Nov–Dec chronological train/validation/test. Same-slot CO2, reactive power and power factor can leak the load target. Behavioural calibration copies normalized patterns, not plant size.
+3. **AI4I 2020:** [official dataset](https://archive.ics.uci.edu/dataset/601/ai4i), [DOI 10.24432/C5HS5C](https://doi.org/10.24432/C5HS5C), CC BY 4.0. Separate synthetic machine-state failure benchmark. UDI/Product ID and TWF/HDF/PWF/OSF/RNF are excluded predictors. Fixed stratified 70/15/15 seed-42 split. This is not reference-plant maintenance or days-ahead warning validation.
+
+Download the original CSVs from the official dataset pages for full reproduction; preserve source SHA256 and filenames from the original raw manifest rather than substituting a mirror. They are not needed to run the offline dashboard. Original supplied specification/roadmap PDFs are archived locally; redistribution rights were not supplied, so they are not uploaded. The derived config/assumption register records sources and status.
+
+Public Git contents include coherent frozen demo projections, source hashes, schema/availability/data cards, selected fitted inference artifacts and cited summary evidence. They exclude bulk raw/interim/corpus/generated parquet and evaluation latent/fault tapes. Those are retained in the full scientific archive with immutable ledgers. `phase4_public_profile.json` lists every selected original artifact and SHA256. Hash ledgers may reference retained archive paths absent from the lightweight checkout; this is explicit, not a failed scientific verification.
+
+Operator features and runtime memory cannot access latent health/fouling, future events, true fault severity, hidden repair/noise tapes or evaluation-only attribution. Independent evaluation can use hidden truth only in marked evaluation tables. No such tables are passed into the supervisor or PredictionService by Demo Mode.

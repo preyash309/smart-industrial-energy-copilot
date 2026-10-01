@@ -1,0 +1,211 @@
+{
+  "features_time_boundary": "PASS",
+  "identical_refit_candidate_artifacts": {
+    "external\\ai4i\\lightgbm_replay.joblib": true,
+    "external\\ai4i\\linear_replay.joblib": true,
+    "external\\uci\\last_value_replay.joblib": true,
+    "external\\uci\\lightgbm_replay.joblib": true,
+    "external\\uci\\linear_replay.joblib": true,
+    "external\\uci\\seasonal_naive_replay.joblib": true,
+    "health\\MILL_01\\lightgbm_replay.joblib": true,
+    "health\\MILL_01\\linear_replay.joblib": true,
+    "health\\PMP_01\\lightgbm_replay.joblib": true,
+    "health\\PMP_01\\linear_replay.joblib": true,
+    "heat_duration\\group_mean_replay.joblib": true,
+    "heat_duration\\historical_mean_replay.joblib": true,
+    "heat_duration\\lightgbm_replay.joblib": true,
+    "heat_duration\\linear_replay.joblib": true,
+    "heat_energy\\group_mean_replay.joblib": true,
+    "heat_energy\\historical_mean_replay.joblib": true,
+    "heat_energy\\lightgbm_replay.joblib": true,
+    "heat_energy\\linear_replay.joblib": true,
+    "load\\last_value_replay.joblib": true,
+    "load\\lightgbm_replay.joblib": true,
+    "load\\linear_replay.joblib": true,
+    "load\\seasonal_naive_replay.joblib": true
+  },
+  "independent_checks_per_run": 66,
+  "physical_runs": 50,
+  "point_metrics": {
+    "ai4i": {
+      "Brier": 0.012617292536631105,
+      "F1": 0.7391304347826086,
+      "PR_AUC": 0.8139794912187803,
+      "ROC_AUC": 0.9681051164427124,
+      "calibration_bins": [
+        {
+          "observed": 0.0,
+          "predicted": 0.0003317726082651797
+        },
+        {
+          "observed": 0.0,
+          "predicted": 0.0005243170667582631
+        },
+        {
+          "observed": 0.0,
+          "predicted": 0.0006787416576704866
+        },
+        {
+          "observed": 0.0,
+          "predicted": 0.00086968496788239
+        },
+        {
+          "observed": 0.006666666666666667,
+          "predicted": 0.001119323648060678
+        },
+        {
+          "observed": 0.006666666666666667,
+          "predicted": 0.0015408284213242391
+        },
+        {
+          "observed": 0.0,
+          "predicted": 0.002159134356043244
+        },
+        {
+          "observed": 0.006666666666666667,
+          "predicted": 0.003827366614796399
+        },
+        {
+          "observed": 0.006666666666666667,
+          "predicted": 0.01650710265630661
+        },
+        {
+          "observed": 0.31333333333333335,
+          "predicted": 0.3423985260639708
+        }
+      ],
+      "confusion_matrix": [
+        [
+          1442,
+          7
+        ],
+        [
+          17,
+          34
+        ]
+      ],
+      "precision": 0.8292682926829268,
+      "prevalence": 0.034,
+      "recall": 0.6666666666666666,
+      "threshold": 0.55
+    },
+    "health_MILL_01": {
+      "Brier": 0.006033765719440807,
+      "F1": 0.9482288828337875,
+      "PR_AUC": 0.9720113162487076,
+      "ROC_AUC": 0.9993937709461201,
+      "calibration_bins": [
+        {
+          "observed": 0.0,
+          "predicted": 5.308198885625617e-21
+        },
+        {
+          "observed": 0.0,
+          "predicted": 8.60532890387391e-16
+        },
+        {
+          "observed": 0.0,
+          "predicted": 7.299189589463914e-06
+        },
+        {
+          "observed": 0.6906474820143885,
+          "predicted": 0.6141289416201455
+        }
+      ],
+      "confusion_matrix": [
+        [
+          2585,
+          1
+        ],
+        [
+          18,
+          174
+        ]
+      ],
+      "precision": 0.9942857142857143,
+      "prevalence": 0.06911447084233262,
+      "recall": 0.90625,
+      "threshold": 0.4
+    },
+    "health_PMP_01": {
+      "Brier": 0.003279874363660707,
+      "F1": 0.9712793733681462,
+      "PR_AUC": 0.9970048986492543,
+      "ROC_AUC": 0.9997622501611862,
+      "calibration_bins": [
+        {
+          "observed": 0.0,
+          "predicted": 2.6538342914280303e-18
+        },
+        {
+          "observed": 0.0,
+          "predicted": 1.1634505794813424e-12
+        },
+        {
+          "observed": 0.0,
+          "predicted": 0.00020745012257077439
+        },
+        {
+          "observed": 0.6906474820143885,
+          "predicted": 0.6887445153907101
+        }
+      ],
+      "confusion_matrix": [
+        [
+          2580,
+          5
+        ],
+        [
+          6,
+          186
+        ]
+      ],
+      "precision": 0.9738219895287958,
+      "prevalence": 0.06913935902052575,
+      "recall": 0.96875,
+      "threshold": 0.45
+    },
+    "heat_duration": {
+      "MAE": 2.258434426331955,
+      "R2": 0.098480061022298,
+      "RMSE": 3.3190697275895875,
+      "WAPE": 0.02161947635785519
+    },
+    "heat_energy": {
+      "MAE": 154.2026101733151,
+      "R2": 0.2187356996174753,
+      "RMSE": 186.5906606677455,
+      "WAPE": 0.024074390851677875
+    },
+    "load": {
+      "MAE": 1.1007327358636843,
+      "R2": 0.9993251294478527,
+      "RMSE": 1.6323302602805807,
+      "WAPE": 0.004836598333244309
+    },
+    "uci": {
+      "MAE": 10.788924389337458,
+      "R2": 0.6417071171940638,
+      "RMSE": 18.636416010024867,
+      "WAPE": 0.43376613107205453
+    }
+  },
+  "prediction_quantile_ordering": "PASS",
+  "protected_inputs": {
+    "protected_files": 120,
+    "status": "PASS"
+  },
+  "serialization_interfaces_fallback": "PASS",
+  "status": "PASS_WITH_DOCUMENTED_WARNINGS",
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "exit_code": 0,
+    "output": "94 passed in 181.84s (0:03:01)",
+    "passed": 94,
+    "phase1_existing": 33,
+    "phase2a_existing": 15,
+    "phase2b_new": 46
+  },
+  "total_physical_violations": 0,
+  "warning_policy": "Calibration discrepancies and limited simulated scenario domain are retained; no test recalibration or complex-model promotion"
+}

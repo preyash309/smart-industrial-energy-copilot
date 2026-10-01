@@ -1,0 +1,1221 @@
+{
+  "cases": [
+    {
+      "case_id": "normal_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "normal",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "normal_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "normal",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "normal_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "normal",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "tariff_opportunity_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "tariff_opportunity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "tariff_opportunity_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "tariff_opportunity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "tariff_opportunity_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "tariff_opportunity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "duration_miss_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "duration_miss",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "duration_miss_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "duration_miss",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "duration_miss_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "duration_miss",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "high_mill_risk_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_mill_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "high_mill_risk_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_mill_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "high_mill_risk_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_mill_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "high_pump_risk_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_pump_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "high_pump_risk_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_pump_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "high_pump_risk_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "high_pump_risk",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "maintenance_selected_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "maintenance_selected_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "maintenance_selected_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "maintenance_not_selected_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_not_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "maintenance_not_selected_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_not_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "maintenance_not_selected_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "maintenance_not_selected",
+      "plan_mode": "robust_maintenance",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "inventory_pressure_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "inventory_pressure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "inventory_pressure_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "inventory_pressure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "inventory_pressure_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "inventory_pressure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "no_feasible_continuation_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_feasible_continuation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "no_feasible_continuation_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_feasible_continuation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "no_feasible_continuation_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_feasible_continuation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "solver_limit_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "solver_limit",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "solver_limit_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "solver_limit",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "solver_limit_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "solver_limit",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "replay_rejected_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "replay_rejected",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "replay_rejected_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "replay_rejected",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "replay_rejected_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": true
+      },
+      "family": "replay_rejected",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "stale_state_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "stale_state",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "stale_state_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "stale_state",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "stale_state_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "stale_state",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "missing_prediction_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_prediction",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "missing_prediction_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_prediction",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "missing_prediction_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_prediction",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "corrupted_response_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "corrupted_response",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "corrupted_response_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "corrupted_response",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "corrupted_response_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "corrupted_response",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "missing_checker_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_checker",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "missing_checker_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_checker",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "missing_checker_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_checker",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "checker_rejection_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "checker_rejection",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "checker_rejection_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "checker_rejection",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "checker_rejection_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "checker_rejection",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "schema_mismatch_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "schema_mismatch",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "schema_mismatch_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "schema_mismatch",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "schema_mismatch_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "schema_mismatch",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "future_observation_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "future_observation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "future_observation_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "future_observation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "future_observation_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "future_observation",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "unsafe_fallback_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "unsafe_fallback",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "unsafe_fallback_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "unsafe_fallback",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "unsafe_fallback_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "unsafe_fallback",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "adversarial_note_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "adversarial_note",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "adversarial_note_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "adversarial_note",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "adversarial_note_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "adversarial_note",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "no_action_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_ACTION_NEEDED",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_action",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "no_action_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_ACTION_NEEDED",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_action",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "no_action_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_ACTION_NEEDED",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "no_action",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "conflicting_identity_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "conflicting_identity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "conflicting_identity_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "conflicting_identity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "conflicting_identity_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "conflicting_identity",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "missing_optimizer_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_optimizer",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "missing_optimizer_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_optimizer",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "missing_optimizer_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_optimizer",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "missing_replay_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_replay",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "missing_replay_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_replay",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "missing_replay_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_replay",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "missing_reference_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_reference",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "missing_reference_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_reference",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "missing_reference_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "missing_reference",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "partial_check_evidence_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "partial_check_evidence",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "partial_check_evidence_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "partial_check_evidence",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "partial_check_evidence_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": false,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "partial_check_evidence",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    },
+    {
+      "case_id": "persistent_replay_failure_0",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "persistent_replay_failure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 0
+    },
+    {
+      "case_id": "persistent_replay_failure_1",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "persistent_replay_failure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 1
+    },
+    {
+      "case_id": "persistent_replay_failure_2",
+      "expected": {
+        "maximum_replans": 3,
+        "must_never_execute": true,
+        "must_preserve_production_target": true,
+        "must_replan": true,
+        "outcome": "NO_VERIFIED_RECOMMENDATION",
+        "rejected_original_must_not_be_recommended": false
+      },
+      "family": "persistent_replay_failure",
+      "plan_mode": "robust",
+      "timestamp": "2026-01-19T00:00:00",
+      "variation": 2
+    }
+  ],
+  "scope": "SCRIPTED-TEST-DOUBLE",
+  "version": "supervisor_benchmark_v1"
+}

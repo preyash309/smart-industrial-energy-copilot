@@ -1,0 +1,33 @@
+{
+  "absolute_paths": [
+    {
+      "category": "historic_or_machine_absolute_path",
+      "file": "docs/phase3a_usage.md",
+      "line": 3
+    },
+    {
+      "category": "historic_or_machine_absolute_path",
+      "file": "reports/phase3a_summary.md",
+      "line": 4
+    },
+    {
+      "category": "historic_or_machine_absolute_path",
+      "file": "scripts/phase3a_browser_flow.cjs",
+      "line": 4
+    },
+    {
+      "category": "historic_or_machine_absolute_path",
+      "file": "scripts/phase3a_screenshots.cjs",
+      "line": 4
+    },
+    {
+      "category": "historic_or_machine_absolute_path",
+      "file": "scripts/phase4_inventory.py",
+      "line": 67
+    }
+  ],
+  "git_history": "Not available: research tree is not a Git repository",
+  "potential_secrets": [],
+  "scan_scope": "All non-environment text under 16 MB; binary models scanned by provenance, not token patterns",
+  "values_redacted": true
+}

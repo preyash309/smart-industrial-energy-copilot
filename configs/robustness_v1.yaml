@@ -1,0 +1,76 @@
+version: robustness_v1
+plant_config: data/processed/sim_v1.1/config_snapshot.yaml
+prediction_directory: models/phase2b_v1
+origin: '2026-01-12T00:00:00'
+horizon_days:
+  value: 30
+  unit: day
+  status: assumption
+  source: Phase II-E protocol declared before fresh runs
+  notes: Preserve full exogenous tape
+reserve_candidates:
+  value:
+  - 0
+  - 5
+  - 10
+  - 15
+  - 20
+  unit: min
+  status: assumption
+  source: Phase II-E protocol declared before fresh runs
+  notes: Development candidates only
+buffer_fraction_candidates:
+  value:
+  - 0
+  - 0.25
+  unit: dimensionless
+  status: assumption
+  source: Phase II-E protocol declared before fresh runs
+  notes: Additional p90-p50 fraction; explicitly separate from scenario reservation
+start_grid_minutes:
+  value: 1
+  unit: min
+  status: assumption
+  source: Phase II-E fresh development grid-5 reserve trial
+  notes: Successor planning grid only; 5-min grid left under 5 min reserve in scenario
+    envelope. Physical/observation clock remains 15 min and frozen optimizer is untouched.
+    Evaluate grid-1 reserve candidates on fresh development before final regression.
+commit_heats:
+  value: 1
+  unit: heat
+  status: assumption
+  source: Phase II-E protocol declared before fresh runs
+  notes: Commit current heat and rolling commands as their slot starts; immediate
+    heat-completion replan never changes an issued command.
+split_manifest: configs/robustness_split_v1.json
+output_directory: replay/robustness_v1
+load_refresh: Retain published midnight AUX forecast; frozen load API disallows intraday
+  origins
+practice: practice_loss_40
+replan_trigger: Immediately after heat completion; only closed meter slots and completed
+  heat logs are published. Current-slot rolling remains locked.
+maintenance: Informational health only; no automatic maintenance
+reserve_cost_budget_fraction:
+  value: 0.005
+  unit: fraction
+  status: assumption
+  source: Fresh development grid-1 reserve/cost curve, seeds 1001-1006 only
+  notes: Smallest positive reserve with equal development feasibility and <=0.5% cost
+    penalty. Five minutes costs 0.3975% versus zero; ten minutes costs 0.835%, so
+    reserve is not maximized. Initial 0.25% rule chose zero and is retained in provisional_static_policy_selection.json.
+    No final seeds used.
+solver_node_limit:
+  value: 1000
+  unit: branch-and-bound node
+  status: assumption
+  source: Fresh development execution resource failures; no final evaluation used
+  notes: Deterministic serial solver work limit; accepted incumbents remain independently
+    checked. Optimality is reported only if proven. Run at most two evaluation workers
+    concurrently.
+evaluation_workers:
+  value: 2
+  unit: process
+  status: assumption
+  source: Fresh development host memory exhaustion with six simultaneous solves
+  notes: Resource setting only; plant constraints/predictions unchanged. Initial resource
+    failures remain retained.

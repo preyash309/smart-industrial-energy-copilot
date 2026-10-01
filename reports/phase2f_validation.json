@@ -1,0 +1,621 @@
+{
+  "ROI_limitation": "No validated service, labor, spare-parts or avoided-failure costs.",
+  "all_attempt_comparison": {
+    "F0": {
+      "attempted": 24,
+      "completed_production_rate": 0.9166666666666666,
+      "feasibility_rate": 0.9166666666666666,
+      "no_feasible_continuation": 2,
+      "physical_replay_failure": 0,
+      "physically_valid": 22,
+      "production_completed": 22,
+      "replans": 288
+    },
+    "F1": {
+      "attempted": 24,
+      "completed_production_rate": 0.9166666666666666,
+      "feasibility_rate": 0.9166666666666666,
+      "no_feasible_continuation": 2,
+      "physical_replay_failure": 0,
+      "physically_valid": 22,
+      "production_completed": 22,
+      "replans": 288
+    },
+    "F2": {
+      "attempted": 24,
+      "completed_production_rate": 0.875,
+      "feasibility_rate": 0.875,
+      "no_feasible_continuation": 3,
+      "physical_replay_failure": 0,
+      "physically_valid": 21,
+      "production_completed": 21,
+      "replans": 281
+    }
+  },
+  "all_final_cases_complete": true,
+  "attribution_window": "24 hours from each service start; may extend beyond the evaluated calendar day",
+  "audits": {
+    "exact_test_command": "$env:PYTHONPATH=\"src;.\"; .venv/Scripts/python.exe -m pytest -q",
+    "information_boundary": "PASS",
+    "matched_unaffected_streams": "PASS",
+    "no_action_E4_regression": "PASS",
+    "physical_checks_on_accepted_days": "PASS",
+    "tests_passed": 253,
+    "upstream_protected_files": 3530
+  },
+  "completion_decision": "PHASE II-F COMPLETE",
+  "declared_days": [
+    12,
+    14,
+    26,
+    28
+  ],
+  "declared_final_seeds": [
+    2201,
+    2202,
+    2203,
+    2204,
+    2205,
+    2206
+  ],
+  "development_validation_final": {
+    "development": {
+      "F0": {
+        "attempted": 24,
+        "conditional_mean_corrective_downtime_hours": 0.2264885201697531,
+        "conditional_mean_peak_kVA": 6493.899930837733,
+        "conditional_mean_production_t": 118.56,
+        "conditional_mean_synthetic_cost_Rs": 743865.2075614695,
+        "conditional_mean_total_kWh": 104031.66618096562,
+        "conditional_mean_total_unavailability_hours": 0.2264885201697531,
+        "feasibility_rate": 0.75,
+        "maintenance_count": 0,
+        "mean_replans": 11.5,
+        "physically_valid": 18
+      },
+      "F2": {
+        "absolute_feasibility_change_vs_F0": 0.125,
+        "attempted": 24,
+        "conditional_cost_difference_Rs_vs_F0": 1343.5628587419633,
+        "conditional_mean_corrective_downtime_hours": 0.0,
+        "conditional_mean_peak_kVA": 6485.446073923832,
+        "conditional_mean_production_t": 118.55999999999999,
+        "conditional_mean_synthetic_cost_Rs": 745208.7704202115,
+        "conditional_mean_total_kWh": 103874.59497151413,
+        "conditional_mean_total_unavailability_hours": 0.21428571428571427,
+        "feasibility_rate": 0.875,
+        "maintenance_count": 19,
+        "mean_replans": 12.0,
+        "physically_valid": 21
+      }
+    },
+    "final": {
+      "F0": {
+        "attempted": 24,
+        "conditional_mean_corrective_downtime_hours": 0.14257940492424243,
+        "conditional_mean_peak_kVA": 6494.638656580807,
+        "conditional_mean_production_t": 118.56,
+        "conditional_mean_synthetic_cost_Rs": 743914.4319819311,
+        "conditional_mean_total_kWh": 103957.40484244535,
+        "conditional_mean_total_unavailability_hours": 0.14257940492424243,
+        "feasibility_rate": 0.9166666666666666,
+        "maintenance_count": 0,
+        "mean_replans": 12.0,
+        "physically_valid": 22
+      },
+      "F2": {
+        "absolute_feasibility_change_vs_F0": -0.04166666666666663,
+        "attempted": 24,
+        "conditional_cost_difference_Rs_vs_F0": -5.096844282001257,
+        "conditional_mean_corrective_downtime_hours": 0.0,
+        "conditional_mean_peak_kVA": 6492.321678290839,
+        "conditional_mean_production_t": 118.55999999999999,
+        "conditional_mean_synthetic_cost_Rs": 743909.3351376491,
+        "conditional_mean_total_kWh": 103929.13235711938,
+        "conditional_mean_total_unavailability_hours": 0.16666666666666666,
+        "feasibility_rate": 0.875,
+        "maintenance_count": 16,
+        "mean_replans": 11.708333333333334,
+        "physically_valid": 21
+      }
+    },
+    "validation": {
+      "F0": {
+        "attempted": 16,
+        "conditional_mean_corrective_downtime_hours": 0.07880625854700854,
+        "conditional_mean_peak_kVA": 6497.308745162196,
+        "conditional_mean_production_t": 118.56,
+        "conditional_mean_synthetic_cost_Rs": 745706.7303354605,
+        "conditional_mean_total_kWh": 104076.1844595393,
+        "conditional_mean_total_unavailability_hours": 0.07880625854700854,
+        "feasibility_rate": 0.8125,
+        "maintenance_count": 0,
+        "mean_replans": 11.125,
+        "physically_valid": 13
+      },
+      "F2": {
+        "absolute_feasibility_change_vs_F0": 0.1875,
+        "attempted": 16,
+        "conditional_cost_difference_Rs_vs_F0": -0.4133411751827225,
+        "conditional_mean_corrective_downtime_hours": 0.0,
+        "conditional_mean_peak_kVA": 6491.688850791034,
+        "conditional_mean_production_t": 118.56,
+        "conditional_mean_synthetic_cost_Rs": 745706.3169942853,
+        "conditional_mean_total_kWh": 103966.15822637237,
+        "conditional_mean_total_unavailability_hours": 0.21875,
+        "feasibility_rate": 1.0,
+        "maintenance_count": 14,
+        "mean_replans": 12.0,
+        "physically_valid": 16
+      }
+    }
+  },
+  "fault_process_window": "Selected calendar day only; not the service-relative attribution window",
+  "final_failures": [
+    {
+      "completed_heats": 5,
+      "day": 14,
+      "evaluation_only": true,
+      "last_public_time": "2026-01-19T08:38:16.661621140",
+      "limitation": "Termination limit; mathematical infeasibility not proved.",
+      "original_failure_class": "solver_infeasibility",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "solver_limit_no_accepted_continuation",
+      "reason": "No feasible maintenance continuation at feasibility",
+      "remaining_heats": 8,
+      "seed": 2202,
+      "solver_status": "solver_limit",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F2"
+    },
+    {
+      "completed_heats": 12,
+      "day": 28,
+      "evaluation_only": true,
+      "last_public_time": "2026-02-02T22:13:39.601407769",
+      "limitation": "Remaining robust occupancy cannot fit the allowed window.",
+      "original_failure_class": "solver_infeasibility",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "duration_accumulation_no_feasible_continuation",
+      "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+      "remaining_heats": 1,
+      "seed": 2204,
+      "solver_status": "infeasible",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F0"
+    },
+    {
+      "completed_heats": 12,
+      "day": 28,
+      "evaluation_only": true,
+      "last_public_time": "2026-02-02T22:13:39.601407769",
+      "limitation": "Remaining robust occupancy cannot fit the allowed window.",
+      "original_failure_class": "solver_infeasibility",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "duration_accumulation_no_feasible_continuation",
+      "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+      "remaining_heats": 1,
+      "seed": 2204,
+      "solver_status": "infeasible",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F1"
+    },
+    {
+      "completed_heats": 12,
+      "day": 28,
+      "evaluation_only": true,
+      "last_public_time": "2026-02-02T22:13:39.601407769",
+      "limitation": "Remaining robust occupancy cannot fit the allowed window.",
+      "original_failure_class": "solver_infeasibility",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "duration_accumulation_no_feasible_continuation",
+      "reason": "No eligible candidates under required scenario reserve/buffer occupancy bounds",
+      "remaining_heats": 1,
+      "seed": 2204,
+      "solver_status": "infeasible",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F2"
+    },
+    {
+      "completed_heats": 12,
+      "day": 26,
+      "evaluation_only": true,
+      "last_public_time": "2026-01-31T22:03:28.581659358",
+      "limitation": "Furnace duration/scheduling failure; not automatically maintenance-caused.",
+      "original_failure_class": "end_of_day_overrun",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "end_of_day_overrun",
+      "reason": "D026_H12 cannot complete daily target within working day: end 1442.77 min",
+      "remaining_heats": 1,
+      "seed": 2205,
+      "solver_status": "optimal",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F0"
+    },
+    {
+      "completed_heats": 12,
+      "day": 26,
+      "evaluation_only": true,
+      "last_public_time": "2026-01-31T22:03:28.581659358",
+      "limitation": "Furnace duration/scheduling failure; not automatically maintenance-caused.",
+      "original_failure_class": "end_of_day_overrun",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "end_of_day_overrun",
+      "reason": "D026_H12 cannot complete daily target within working day: end 1442.77 min",
+      "remaining_heats": 1,
+      "seed": 2205,
+      "solver_status": "optimal",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F1"
+    },
+    {
+      "completed_heats": 12,
+      "day": 26,
+      "evaluation_only": true,
+      "last_public_time": "2026-01-31T22:03:28.581659358",
+      "limitation": "Furnace duration/scheduling failure; not automatically maintenance-caused.",
+      "original_failure_class": "end_of_day_overrun",
+      "planner_diagnostic_source": "acknowledged/public controller history only",
+      "primary_cause": "end_of_day_overrun",
+      "reason": "D026_H12 cannot complete daily target within working day: end 1442.77 min",
+      "remaining_heats": 1,
+      "seed": 2205,
+      "solver_status": "optimal",
+      "split": "final",
+      "status": "no_feasible_continuation",
+      "strategy": "F2"
+    }
+  ],
+  "final_fault_process_evaluation_only": {
+    "F0": {
+      "attempted": 24,
+      "corrective_repair_hours": 3.5130590776358077,
+      "failure_occurrence_rate": 0.3333333333333333,
+      "fault_count": 9,
+      "limitation": "Evaluation-only fault process; failed operating plans remain infeasible",
+      "tape_valid": 24
+    },
+    "F2": {
+      "attempted": 24,
+      "corrective_repair_hours": 0,
+      "failure_occurrence_rate": 0.0,
+      "fault_count": 0,
+      "limitation": "Evaluation-only fault process; failed operating plans remain infeasible",
+      "tape_valid": 24
+    }
+  },
+  "labels": [
+    "DIGITAL-TWIN-REALIZED",
+    "SYNTHETIC-MAINTENANCE",
+    "SYNTHETIC-TARIFF",
+    "EVALUATION-ONLY"
+  ],
+  "maintenance": {
+    "acknowledged_preventive_asset_hours": 4.0,
+    "acknowledged_services_in_failed_days": 2,
+    "attribution": {
+      "averted_within_24h": 14,
+      "undetermined_counterfactual": 2
+    },
+    "by_asset": {
+      "MILL_01": {
+        "classifications": {
+          "averted_within_24h": 5,
+          "undetermined_counterfactual": 1
+        },
+        "executed": 6
+      },
+      "PMP_01": {
+        "classifications": {
+          "averted_within_24h": 9,
+          "undetermined_counterfactual": 1
+        },
+        "executed": 10
+      }
+    },
+    "committed_services": 16,
+    "dispositions": {
+      "executed": 16,
+      "replaced_by_replan": 7
+    },
+    "eligible_asset_decision_observations": 61,
+    "eligible_selected_recommendations": 23,
+    "executed_services": 16,
+    "independently_accepted_preventive_asset_hours": 3.5,
+    "independently_verified_full_day_services": 14,
+    "recommendations": 23,
+    "replaced_or_cancelled_recommendations": 7,
+    "unnecessary_rate_among_executed_services": 0.0
+  },
+  "maintenance_ROI": null,
+  "paired_statistics": {
+    "IF_SEC_kWh_per_t": {
+      "F0": {
+        "max": 637.6868365596829,
+        "mean": 627.9825777278446,
+        "median": 626.7350461318035,
+        "min": 614.3386545245651,
+        "n": 21
+      },
+      "F2": {
+        "max": 637.6868365596829,
+        "mean": 627.9825777278446,
+        "median": 626.7350461318035,
+        "min": 614.3386545245651,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      }
+    },
+    "bar_t": {
+      "F0": {
+        "max": 118.56,
+        "mean": 118.55999999999999,
+        "median": 118.56,
+        "min": 118.55999999999997,
+        "n": 21
+      },
+      "F2": {
+        "max": 118.56,
+        "mean": 118.55999999999999,
+        "median": 118.56,
+        "min": 118.55999999999996,
+        "n": 21
+      },
+      "delta": {
+        "max": 2.842170943040401e-14,
+        "mean": -6.767073673905716e-16,
+        "median": 0.0,
+        "min": -4.263256414560601e-14,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 2.3972426982459526e-14,
+        "mean": -5.707720710109408e-16,
+        "median": 0.0,
+        "min": -3.595864047368928e-14,
+        "n": 21
+      }
+    },
+    "billet_t": {
+      "F0": {
+        "max": 123.5,
+        "mean": 123.5,
+        "median": 123.5,
+        "min": 123.5,
+        "n": 21
+      },
+      "F2": {
+        "max": 123.5,
+        "mean": 123.5,
+        "median": 123.5,
+        "min": 123.5,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      }
+    },
+    "corrective_asset_downtime_hours": {
+      "F0": {
+        "max": 0.6610445544444445,
+        "mean": 0.12974121637566138,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "F2": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.0,
+        "mean": -0.12974121637566138,
+        "median": 0.0,
+        "min": -0.6610445544444445,
+        "n": 21
+      }
+    },
+    "peak_piecewise_kVA": {
+      "F0": {
+        "max": 6503.487993415766,
+        "mean": 6494.6644045052135,
+        "median": 6499.674366367474,
+        "min": 6475.216502735244,
+        "n": 21
+      },
+      "F2": {
+        "max": 6503.487993415766,
+        "mean": 6492.321678290839,
+        "median": 6499.674366367474,
+        "min": 6475.216502735244,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.13670872778857301,
+        "mean": -2.3427262143759,
+        "median": 0.0,
+        "min": -14.878416639498028,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.0021061097260251633,
+        "mean": -0.03609146540157815,
+        "median": 0.0,
+        "min": -0.22920267112808615,
+        "n": 21
+      }
+    },
+    "physical_evaluation_tariff_cost_Rs": {
+      "F0": {
+        "max": 758566.8503434537,
+        "mean": 743858.7643283247,
+        "median": 745372.3570750491,
+        "min": 721203.9333917713,
+        "n": 21
+      },
+      "F2": {
+        "max": 759461.7192818996,
+        "mean": 743909.3351376491,
+        "median": 745899.9592559648,
+        "min": 721203.9333917713,
+        "n": 21
+      },
+      "delta": {
+        "max": 4494.666986454977,
+        "mean": 50.57080932426089,
+        "median": 0.0,
+        "min": -3637.447173371096,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.6101993405614077,
+        "mean": 0.007496939793042736,
+        "median": 0.0,
+        "min": -0.48451767948139635,
+        "n": 21
+      }
+    },
+    "plant_kWh_per_t_bars": {
+      "F0": {
+        "max": 887.4778310183677,
+        "mean": 876.8864212140086,
+        "median": 875.8517609294199,
+        "min": 862.4657497933506,
+        "n": 21
+      },
+      "F2": {
+        "max": 886.9723966188512,
+        "mean": 876.5952459271202,
+        "median": 875.8517609294199,
+        "min": 862.4657497933506,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.04114220573183047,
+        "mean": -0.29117528688827643,
+        "median": 0.0,
+        "min": -1.8975991112030215,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.004714109009806433,
+        "mean": -0.03312614917284844,
+        "median": 0.0,
+        "min": -0.21555240707745585,
+        "n": 21
+      }
+    },
+    "preventive_asset_downtime_hours": {
+      "F0": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "F2": {
+        "max": 0.5,
+        "mean": 0.16666666666666666,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.5,
+        "mean": 0.16666666666666666,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      }
+    },
+    "total_asset_downtime_hours": {
+      "F0": {
+        "max": 0.6610445544444445,
+        "mean": 0.12974121637566138,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "F2": {
+        "max": 0.5,
+        "mean": 0.16666666666666666,
+        "median": 0.0,
+        "min": 0.0,
+        "n": 21
+      },
+      "delta": {
+        "max": 0.25,
+        "mean": 0.036925450291005295,
+        "median": 0.0,
+        "min": -0.24748836722222223,
+        "n": 21
+      }
+    },
+    "total_kWh": {
+      "F0": {
+        "max": 105219.37164553769,
+        "mean": 103963.65409913287,
+        "median": 103840.98477579202,
+        "min": 102253.93929549964,
+        "n": 21
+      },
+      "F2": {
+        "max": 105159.447343131,
+        "mean": 103929.13235711941,
+        "median": 103840.98477579202,
+        "min": 102253.93929549964,
+        "n": 21
+      },
+      "delta": {
+        "max": 4.8778199115768075,
+        "mean": -34.52174201347502,
+        "median": 0.0,
+        "min": -224.97935062422766,
+        "n": 21
+      },
+      "percent_delta": {
+        "max": 0.004714109009817051,
+        "mean": -0.033126149172849347,
+        "median": 0.0,
+        "min": -0.21555240707745338,
+        "n": 21
+      }
+    }
+  },
+  "paired_valid_cases": 21,
+  "statistical_limitation": "Six final seeds, four enriched days each; days within a seed are not independent.",
+  "upstream_design_changed": false
+}

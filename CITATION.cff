@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the linked frozen experiment reports when using the prototype."
+title: "Smart Industrial Energy Copilot"
+version: "1.0.0"
+date-released: "2026-10-01"
+url: "https://github.com/preyash309/smart-industrial-energy-copilot"
+authors:
+  - given-names: "Preyash"
+    family-names: "Pratyush"
+    alias: "preyash309"

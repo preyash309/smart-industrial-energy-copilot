@@ -1,0 +1,84 @@
+{
+  "status": "PUBLIC CANDIDATE VALIDATED / LICENSE OWNER DECISION PENDING",
+  "tests": {
+    "pre": {
+      "passed": 492,
+      "skipped": 1,
+      "seconds": 136.46,
+      "archive_log": "data/tmp/phase4_pre_tests.log",
+      "sha256": "13434426f8f51ee641f0a9611109747da206e3cc250c096598e463ee97a41c7b"
+    },
+    "full": {
+      "passed": 492,
+      "skipped": 1,
+      "seconds": 378.9,
+      "archive_log": "data/tmp/phase4_final_tests.log",
+      "sha256": "6294b0b22abda74e010390671e377936f5f1a7272655ddb7494bfcc3c9a82ca9"
+    },
+    "public": {
+      "passed": 43,
+      "skipped": 0,
+      "seconds": 15.69,
+      "archive_log": "data/tmp/phase4_public_tests.log",
+      "sha256": "3ed4b022b9707ecfc01495db3f4f576d773d8432df158f16fef77fa1867dbe69"
+    },
+    "clean": {
+      "passed": 43,
+      "skipped": 0,
+      "seconds": 6.9,
+      "archive_log": "data/tmp/phase4_clean_tests.log",
+      "sha256": "bed837b9809f0386ce77d3dbfff08e5e7d3f88d9a56b68f44ea98127ca7501d6"
+    },
+    "scientific_smoke": {
+      "passed": 224,
+      "skipped": 0,
+      "seconds": 28.83,
+      "archive_log": "data/tmp/phase4_scientific_smoke.log",
+      "sha256": "7632c56a1f37f26148a43f63263cbe1bf34e29bc82e0eb2592dbf61f623f18ff"
+    }
+  },
+  "protected_hashes": {
+    "upstream": 9954,
+    "dashboard": 99,
+    "status": "PASS",
+    "changed": 0
+  },
+  "clean_environment": {
+    "python": "3.12.14",
+    "streamlit": "1.64.0",
+    "plotly": "7.1.0",
+    "PyYAML": "6.0.3",
+    "installation": "pip --no-index from locally repacked qualified installed distributions; all available RECORD SHA256 checked",
+    "network_installation": "NOT PERFORMED: restricted authoring network",
+    "pip_check": "No broken requirements found"
+  },
+  "clean_checkout": {
+    "candidate": "633b516",
+    "default_Git_eol": "Original failure detected; .gitattributes * -text fixed byte preservation in fresh clone",
+    "app_test": "All four scenarios / seven pages, approval/reset/rejection tested",
+    "server_start": "127.0.0.1:8503 bound by Streamlit/Uvicorn",
+    "fresh_interactive_browser": "DENIED BY BROWSER SECURITY POLICY; no retry/workaround",
+    "screenshots": "Four unchanged Phase III-A assets; no new browser capture claimed"
+  },
+  "scientific_changes": [],
+  "deleted_originals": [],
+  "moved_originals": [],
+  "large_files": {
+    "10": [],
+    "50": [],
+    "100": []
+  },
+  "secrets": "No likely credentials; no .env/secrets configuration selected; binary artifacts verified by source provenance",
+  "paths": "No private absolute runtime paths in src; supplied historic receipts remain explicitly historical",
+  "license": "OWNER SELECTION PENDING",
+  "remote_repository": "https://github.com/preyash309/smart-industrial-energy-copilot",
+  "remote_publication": "Authorized creation and audited source push; release publishing not authorized",
+  "CI": "Both exact job test commands passed locally; remote install/workflow status recorded separately after push",
+  "remaining_limitations": [
+    "No chosen project license",
+    "Full bulk scientific archive is retained locally, not hosted/downloadable in Git",
+    "Fresh network wheel resolution not tested locally",
+    "Fresh interactive browser audit denied; AppTest and prior screenshot evidence available",
+    "No industrial field evidence, real service ROI/billing/authentication/control, or qualified live G1"
+  ]
+}

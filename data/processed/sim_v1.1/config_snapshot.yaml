@@ -1,0 +1,820 @@
+version: plant_v1.1
+plant_id: SE_REFERENCE_01
+start: '2026-01-05T00:00:00'
+timezone: Asia/Kolkata
+seed:
+  value: 42
+  unit: dimensionless
+  status: assumption
+  source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+    assumption
+  notes: One global seed; stable independent Generator streams.
+clock_minutes:
+  value: 15
+  unit: min
+  status: assumption
+  source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+    assumption
+  notes: Shared interval; subslot overlap integration preserves physical heat times.
+stochastic: true
+calibration_file: configs/calibration_v1.yaml
+calendar:
+  off_weekdays:
+    value:
+    - 6
+    unit: weekday index
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Sunday off; Monday index zero; no invented holiday calendar.
+  maintenance_dates: []
+  annual_days:
+    value: 300
+    unit: working day/year
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Planning reference, not imposed on a 30-day calendar.
+  heats_per_day:
+    value: 13
+    unit: heat/working day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Upper end of 12-13; 130 t liquid -> 123.5 t billet -> 118.56 t bar.
+  mill_start_hour:
+    value: 0
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Continuous rolling shift starts at midnight; initial stock bridges first
+      heat.
+  mill_hours:
+    value: 16
+    unit: h/working day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 15 h cannot consume 123.5 t at 8 t/h; 16 h accommodates fault interruptions.
+if:
+  liquid_per_heat:
+    value: 10
+    unit: t
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 10 t denotes tapped liquid/crucible capacity; charge includes melt loss.
+  melt_yield:
+    value: 0.98
+    unit: t liquid/t charge
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Not specified; explicit placeholder requiring pilot confirmation.
+  rated_kw:
+    value: 5000
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Full power during normal melting; anomalous half-power fault explicitly
+      recorded.
+  best_sec:
+    value: 570
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 10 (secondary citation; not
+      field verification)
+    notes: Otto Junker foundry best practice; transfer to billet shop unverified.
+  practice_loss:
+    value: 60
+    unit: kWh/t liquid
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Chronic operator practice losses from spec Section 12.
+  baseline_fault_loss:
+    value: 20
+    unit: kWh/t liquid
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: V0 effective fault allowance; V1 replaces with physical fault contributions.
+  baseline_sec:
+    value: 650
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 10 (secondary citation; not
+      field verification)
+    notes: Representative point in cluster range, not measured plant baseline.
+  baseline_powered_min:
+    value: 78
+    unit: min
+    status: derived
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4,5,10; explicit calculation
+    notes: 10*650/5000*60 = 78, replacing inconsistent ~90-min power-on.
+  cycle_min:
+    value: 105
+    unit: min
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Approximate baseline tap-to-tap target.
+  nonpowered_min:
+    value: 27
+    unit: min
+    status: derived
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4,5,10; explicit calculation
+    notes: 105 - 78 = 27 charging/tapping/non-powered minutes.
+  tap_temp:
+    value: 1640
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Spec target; detailed chemistry out of scope.
+  tap_min:
+    value: 1620
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 'Quality window missing in spec: engineering assumption to confirm.'
+  tap_max:
+    value: 1710
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Allows specified +50 K superheat while labelling waste; metallurgy to confirm.
+  pf:
+    value: 0.97
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Compensated induction panel; UCI whole-site PF cannot be transplanted.
+material:
+  cast_yield:
+    value: 0.95
+    unit: t billet/t liquid
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Caster instantaneous at tap; delay not sourced.
+  rolling_yield:
+    value: 0.96
+    unit: t bar/t billet
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Scale/crop losses; explicit mass sinks.
+  initial_yard:
+    value: 50
+    unit: t
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 16 h rolling consumes 123.5 t before last heats tap; opening buffer must
+      bridge roughly 38 t timing deficit.
+  yard_min:
+    value: 0
+    unit: t
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Hard lower bound.
+  yard_max:
+    value: 200
+    unit: t
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Hard upper bound.
+  billet_target:
+    value: 123.5
+    unit: t/working day
+    status: derived
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4,5,10; explicit calculation
+    notes: 13*10*0.95; spec approximate 120.
+  bar_target:
+    value: 118.56
+    unit: t/working day
+    status: derived
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4,5,10; explicit calculation
+    notes: 123.5*0.96; spec approximate 115.
+mill:
+  capacity_tph:
+    value: 8
+    unit: t billet/h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Matched RHF throughput.
+  rating_kw:
+    value: 1200
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Main drive nameplate.
+  sec:
+    value: 100
+    unit: kWh/t bar
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 10 (secondary citation; not
+      field verification)
+    notes: Approximate bar-mill SEC; power follows tonnes, below nameplate.
+  pf:
+    value: 0.95
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Compensated motor; assumption.
+  base_temp:
+    value: 55
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Healthy bearing baseline; no measured source.
+  base_vibration:
+    value: 1.5
+    unit: mm/s
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Healthy RMS vibration; no measured source.
+  rpm:
+    value: 1500
+    unit: rpm
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Nominal speed placeholder.
+rhf:
+  capacity_tph:
+    value: 8
+    unit: t billet/h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Pusher capacity.
+  temp:
+    value: 1200
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Midpoint of discharge limits.
+  temp_min:
+    value: 1150
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Hard discharge bound.
+  temp_max:
+    value: 1250
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Hard discharge bound.
+  fuel_sec:
+    value: 1.48
+    unit: GJ/t bar
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 10 (secondary citation; not
+      field verification)
+    notes: TERI 2015 cluster mean; not a thermal first-principles model.
+  coal_ncv:
+    value: 22
+    unit: GJ/t coal
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Confirm purchased fuel analysis.
+  electric_kw:
+    value: 40
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Blower/pusher missing from daily electricity table; explicit added load.
+  hold_fuel:
+    value: 20
+    unit: kg/h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Holding coal during mill repair, no output; unsourced placeholder.
+  pf:
+    value: 0.95
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Motor compensation assumption.
+  flue_temp:
+    value: 350
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Baseline exhaust; unsourced placeholder.
+pump:
+  rating_kw:
+    value: 75
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Continuous circulation baseline gives 1.8 MWh/day.
+  pf:
+    value: 0.96
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Motor compensation assumption.
+  flow:
+    value: 100
+    unit: m3/h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Not specified; confirm engineering data.
+  min_flow:
+    value: 80
+    unit: m3/h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: IF permissive threshold, provisional safety setting.
+  base_vibration:
+    value: 1
+    unit: mm/s
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Healthy baseline assumption.
+  base_temp:
+    value: 40
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Healthy bearing assumption.
+compressor:
+  rating_kw:
+    value: 90
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Nameplate.
+  loaded_kw:
+    value: 85
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Operating duty below nameplate.
+  idle_kw:
+    value: 42.5
+    unit: kW
+    status: derived
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4,5,10; explicit calculation
+    notes: (1700 - 16*85)/8; baseline ~1.7 MWh/working day.
+  pf:
+    value: 0.95
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Motor compensation assumption.
+  pressure:
+    value: 7
+    unit: bar
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Not specified; placeholder.
+aux:
+  average_kw:
+    value: 250
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 6 MWh/day includes caster/cranes/fume; six electrical branches incl. RHF.
+  pf:
+    value: 0.96
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Compensated composite load.
+  profile_blend:
+    value: 0.15
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 15% UCI training profile shape, 85% flat; transfer rhythm conservatively.
+  offday_fraction:
+    value: 0.35
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Sunday background fraction, not copied absolute UCI size.
+faults:
+  superheat_probability:
+    value: 0.2
+    unit: probability/heat
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Rate is assumed, not measured.
+  superheat_k:
+    value: 50
+    unit: K
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Plant-spec mechanism.
+  superheat_loss:
+    value: 20
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 12 (secondary citation; not
+      field verification)
+    notes: Otto Junker loss table via spec Section 12.
+  lid_probability:
+    value: 0.3
+    unit: probability/heat
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed occurrence rate.
+  lid_minutes:
+    value: 20
+    unit: min
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Specified open duration.
+  lid_loss:
+    value: 15
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 12 (secondary citation; not
+      field verification)
+    notes: Heat loss from lid exposure.
+  charge_probability:
+    value: 0.4
+    unit: probability/heat
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed rusty/loose-charge fraction.
+  charge_loss:
+    value:
+    - 25
+    - 30
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 12 (secondary citation; not
+      field verification)
+    notes: Spec loss range.
+  half_probability:
+    value: 0.025
+    unit: probability/heat
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Rare fault; violates normal full-power practice and is flagged.
+  half_fraction:
+    value: 0.5
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Specified half-power malfunction.
+  half_minutes:
+    value: 20
+    unit: min
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed partial-heat fault duration; remainder recovers rated power.
+  half_loss:
+    value: 20
+    unit: kWh/t liquid
+    status: sourced
+    source: Readme/Reference_Plant_Spec_v2.pdf, Section 12 (secondary citation; not
+      field verification)
+    notes: Longer exposure loss.
+  practice_sd:
+    value: 3
+    unit: kWh/t liquid
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Physical practice variation, not meter noise.
+  delay_probability:
+    value: 0.12
+    unit: probability/heat
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Charge/tap delay assumption.
+  delay_max:
+    value: 4
+    unit: min
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Small non-powered delay; capacity slack.
+  leak_onset_day:
+    value: 8
+    unit: day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed calendar onset; fixed before decisions.
+  leak_extra_kw:
+    value: 15
+    unit: kW
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Idle wasted compressor power; capped at nameplate.
+  fouling_daily:
+    value: 0.003
+    unit: severity/day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Calendar deposit accumulation; fuel and flue effects.
+  fouling_loss:
+    value: 0.05
+    unit: fraction at full severity
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Spec approximately 5% additional coal.
+  fouling_flue:
+    value: 40
+    unit: K at full severity
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Flue response magnitude assumed.
+  wear_days:
+    value:
+    - 13
+    - 16
+    unit: day to threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Spec roughly two weeks; calendar-age hazard, no NASA data used.
+  repair_hours:
+    value:
+    - 0.25
+    - 0.5
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed quick bearing/impeller replacement with spares; validate locally.
+  mill_vibration_gain:
+    value: 5
+    unit: mm/s at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Monotone wear response assumption.
+  mill_temp_gain:
+    value: 25
+    unit: K at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Monotone wear response assumption.
+  mill_energy_gain:
+    value: 0.02
+    unit: fraction at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Friction increases drive energy.
+  pump_flow_loss:
+    value: 0.15
+    unit: fraction at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Impeller erosion reduces flow.
+  pump_vibration_gain:
+    value: 4
+    unit: mm/s at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Wear/cavitation response assumption.
+  pump_temp_gain:
+    value: 15
+    unit: K at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Wear response assumption.
+  pump_efficiency_loss:
+    value: 0.05
+    unit: fraction at wear threshold
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Reduced hydraulic efficiency; nameplate cap enforced.
+  initial_wear:
+    value: 0.02
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Newly maintained baseline.
+observations:
+  relative_noise:
+    value: 0.005
+    unit: standard deviation/value
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Engineering meter error; process CV is not meter error.
+  missing_probability:
+    value: 0.005
+    unit: probability/channel/slot
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Readme/Data_Workflow (1).pdf D5 stress-test rate; UCI has no missing observations.
+  glitch_probability:
+    value: 0.0005
+    unit: probability/channel/slot
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Assumed rare multiplicative spikes.
+  glitch_multiplier:
+    value: 3
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Observation only; never alters physical ledger.
+  sensor_noise:
+    value: 0.005
+    unit: relative standard deviation
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Sensor channels independent from meter channels.
+weather:
+  mean:
+    value: 25
+    unit: degC
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Synthetic ambient; no real weather feed.
+  daily_amplitude:
+    value: 5
+    unit: K
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Diurnal ambient assumption.
+  sd:
+    value: 1
+    unit: K
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Exogenous variation; influences bearing temperatures.
+tariff:
+  jurisdiction: Punjab
+  basis: kVAh
+  mode: bands_only_no_billing
+  source: https://docs.pspcl.in/docs/cecommercial2620260310162642809.pdf
+  notes: FY2026-27 official tariff checked. Bands retained for descriptive energy
+    view; no rate, bill or savings claims.
+  peak_start:
+    value: 18
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Evening ToD band from Data Workflow D1.
+  peak_end:
+    value: 22
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Evening ToD band.
+  night_start:
+    value: 22
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Night band.
+  night_end:
+    value: 6
+    unit: h
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Night band.
+  peak_season_start: 06-16
+  peak_season_end: 10-15
+acceptance:
+  contract_kva:
+    value: 7000
+    unit: kVA
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Hard contract demand bound, also checked at subslot concurrency.
+  sec_range:
+    value:
+    - 640
+    - 660
+    unit: kWh/t liquid
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Required mean baseline envelope.
+  daily_mwh:
+    value:
+    - 96.9
+    - 107.1
+    unit: MWh/working day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 102 +/-5%; off-days reported separately.
+  if_share:
+    value:
+    - 0.75
+    - 0.85
+    unit: fraction
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Working-day electricity share.
+  coal_tpd:
+    value:
+    - 7
+    - 9
+    unit: t/working day
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: 7.7 t reference adjusted to 118.56 t bars/day; holding and fouling included.
+  tolerance:
+    value: 1.0e-08
+    unit: t or kWh
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Floating-point ledger tolerance.
+  acf_absolute:
+    value: 0.25
+    unit: dimensionless
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Cross-plant absolute envelope; not parameter fitting.
+  profile_rmse:
+    value: 1.0
+    unit: normalized load
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Wide cross-process envelope declared before comparison.
+  ramp_ratio:
+    value:
+    - 0.2
+    - 3.0
+    unit: ratio to UCI ramp SD
+    status: assumption
+    source: Readme/Reference_Plant_Spec_v2.pdf, Sections 4-6,12; Phase-I engineering
+      assumption
+    notes: Cross-process ramp envelope; discrepancies documented.

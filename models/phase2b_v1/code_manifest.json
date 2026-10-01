@@ -1,0 +1,16 @@
+{
+  "configs/forecast_v1.yaml": "e75d9640491d2616b711f43fcfa506d17f6f61725758cb5f466e43504b89dc27",
+  "docs/phase2b_usage.md": "df41bb8f64e82acd1d9d480e8d65f7f5639e8184a085e83bdf9fcf0d0c6a3487",
+  "requirements-phase2b.lock.txt": "44bdfbae473483718b0b6cbd69faf2450dfdf38960fcb3d17e8cab4812454bf3",
+  "scripts/phase2b.py": "cd905c8922f8d77ea008eca18d4c2e2f4f036117095be7338e960ffe9ddeba19",
+  "scripts/phase2b_setup.py": "528b658fb2d163e6b030c004b6f8ec8940f52d8d37f9e5497379b7876135868b",
+  "src/energy_copilot/forecast/__init__.py": "cced98a8ef7ef4359d6cfce5721114fcff7df696db7028df9bca621a6ea84273",
+  "src/energy_copilot/forecast/contracts.py": "ec69298fdc4a904882981d79d203480ab690e7a9a1f0c7a128947bee08c75cbc",
+  "src/energy_copilot/forecast/datasets.py": "d108347ff94f419cf1f50320c003c2514edf3487fe19943881e50a26ed88ab62",
+  "src/energy_copilot/forecast/evaluation.py": "c1694857a85a40054481db43a276b5870cf3d87aee5a086724cfcce528748e49",
+  "src/energy_copilot/forecast/interfaces.py": "29b19a6a189d9dd8f745913f0b4f5e400267b849fe52df14d0bc250692aecf27",
+  "src/energy_copilot/forecast/models.py": "f0de9c9834a103c4cc5949f3564b1b3686312468dd7bf1612cb023847e569a7d",
+  "src/energy_copilot/forecast/reporting.py": "637ed00485b252267547a37968cbd139bfe72b16a2d6d70c1c6a5f57795d6fa7",
+  "src/energy_copilot/forecast/uncertainty.py": "e4ce024a88f8baea39e5c77c64c0e65c9c553b8a3f39cea7a26b7b5bb692cfa4",
+  "tests/test_phase2b.py": "c226124cc8a566d49fe29b94c8d2fa499e62ad2174a2dbcc44a03d6bcfb86a81"
+}

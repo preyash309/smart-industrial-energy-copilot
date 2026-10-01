@@ -1,0 +1,241 @@
+version: forecast_v1
+source_version: sim_v1.1
+analytics_version: analytics_v1
+background_components:
+- AUX
+health_assets:
+- MILL_01
+- PMP_01
+parameters:
+  seed:
+    value: 42
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  days:
+    value: 30
+    unit: day
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  load_horizon_slots:
+    value: 96
+    unit: 15-minute slot
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  health_horizon_hours:
+    value: 24
+    unit: h
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  health_stride_slots:
+    value: 4
+    unit: 15-minute slot
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  load_lags:
+    value:
+    - 1
+    - 2
+    - 4
+    - 96
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  load_windows:
+    value:
+    - 4
+    - 96
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  ridge_alpha:
+    value: 10.0
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  logistic_C:
+    value: 1.0
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  calibrator_C:
+    value: 100.0
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  max_iter:
+    value: 2000
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  trees:
+    value: 220
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  leaves:
+    value: 15
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  learning_rate:
+    value: 0.05
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  min_child_samples:
+    value: 40
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  reg_lambda:
+    value: 2.0
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  minimum_improvement:
+    value: 0.02
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  health_minimum_pr_gain:
+    value: 0.01
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  min_calibration_group:
+    value: 30
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+  threshold_grid:
+    value:
+    - 0.05
+    - 0.1
+    - 0.15
+    - 0.2
+    - 0.25
+    - 0.3
+    - 0.35
+    - 0.4
+    - 0.45
+    - 0.5
+    - 0.55
+    - 0.6
+    - 0.65
+    - 0.7
+    - 0.75
+    - 0.8
+    - 0.85
+    - 0.9
+    - 0.95
+    unit: training setting
+    status: assumption
+    source: Phase II-B declared experimental design
+    notes: Model-only setting; does not change frozen physical config. Threshold and
+      model selection use validation only.
+seeds:
+  train:
+    value:
+    - 101
+    - 102
+    - 103
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
+    - 110
+    - 111
+    - 112
+    - 113
+    - 114
+    unit: simulation seed
+    status: assumption
+    source: Whole-seed four-way partition fixed before training
+    notes: All practice variants and failure episodes of each seed remain together.
+  validation:
+    value:
+    - 115
+    - 116
+    - 117
+    - 118
+    unit: simulation seed
+    status: assumption
+    source: Whole-seed four-way partition fixed before training
+    notes: All practice variants and failure episodes of each seed remain together.
+  calibration:
+    value:
+    - 119
+    - 120
+    - 121
+    unit: simulation seed
+    status: assumption
+    source: Whole-seed four-way partition fixed before training
+    notes: All practice variants and failure episodes of each seed remain together.
+  test:
+    value:
+    - 122
+    - 123
+    - 124
+    - 125
+    unit: simulation seed
+    status: assumption
+    source: Whole-seed four-way partition fixed before training
+    notes: All practice variants and failure episodes of each seed remain together.
+practice_modes:
+  normal:
+    practice_loss:
+      value: 60.0
+      unit: kWh/t liquid
+      status: sourced
+      source: sim_v1.1/config_snapshot.yaml if.practice_loss
+      notes: Unchanged baseline decision.
+  practice_loss_40:
+    practice_loss:
+      value: 40.0
+      unit: kWh/t liquid
+      status: assumption
+      source: 'Unchanged simulate(practice={''practice_loss'': ...}) interface'
+      notes: Explicit illustrative process decision, not a measured or best-safe practice
+        claim; faults are never suppressed. Energy and powered time follow unchanged
+        physics.

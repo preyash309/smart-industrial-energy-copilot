@@ -1,0 +1,34 @@
+{
+  "candidate_liquid_t": 10,
+  "excluded_scheduled_components": [
+    "IF_01",
+    "MILL_01",
+    "RHF_01",
+    "PMP_01",
+    "CMP_01"
+  ],
+  "fallback": "Training-only empirical baseline if production artifact missing, explicitly unusable for constraints; absent metadata fails closed.",
+  "health_assets": [
+    "MILL_01",
+    "PMP_01"
+  ],
+  "health_horizon_hours": 24,
+  "input_envelope": "features (exact ordered artifact schema), available_at per field, forecast_origin; all publications <= origin",
+  "interpretation": "p10/p50/p90 individual-outcome empirical prediction quantiles; p90 is NOT a hard physical bound",
+  "interval_minutes": 15,
+  "load_components": [
+    "AUX"
+  ],
+  "load_max_horizon_slots": 96,
+  "load_origin": "local midnight",
+  "practice_modes": {
+    "normal": {
+      "practice_loss_kWh_t": 60.0
+    },
+    "practice_loss_40": {
+      "practice_loss_kWh_t": 40.0
+    }
+  },
+  "timezone": "Asia/Kolkata",
+  "version": "forecast_v1"
+}

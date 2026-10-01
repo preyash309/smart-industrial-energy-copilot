@@ -1,0 +1,219 @@
+{
+  "G0": {
+    "cases": 81,
+    "correct_escalation_rate": 1.0,
+    "estimated_API_cost": null,
+    "false_verified_rate": 0.0,
+    "information_leakage_rate": 0.0,
+    "input_tokens": 0,
+    "is_live_llm": false,
+    "limitation": "Mock protocol responses do not measure LLM capability, provider latency, token use, or explanation quality.",
+    "median_latency_seconds": 0.006642600001214305,
+    "model": "G0-rule",
+    "optimizer_calls": 75,
+    "output_tokens": 0,
+    "provenance_completeness": 1.0,
+    "replans": 15,
+    "replay_calls": 66,
+    "safe_completion_rate": 1.0,
+    "scope": "SCRIPTED-TEST-DOUBLE",
+    "total_latency_seconds": 0.5013707999951293,
+    "total_tool_calls": 528,
+    "unsupported_action_rate": 0.0,
+    "unsupported_number_rate": 0.0
+  },
+  "G1_live": {
+    "performance": null,
+    "status": "NOT_RUN_PENDING"
+  },
+  "G1_mock": {
+    "cases": 81,
+    "correct_escalation_rate": 1.0,
+    "estimated_API_cost": null,
+    "false_verified_rate": 0.0,
+    "information_leakage_rate": 0.0,
+    "input_tokens": 0,
+    "is_live_llm": false,
+    "limitation": "Mock protocol responses do not measure LLM capability, provider latency, token use, or explanation quality.",
+    "median_latency_seconds": 0.006936599998880411,
+    "model": "G1-MOCK-protocol",
+    "optimizer_calls": 75,
+    "output_tokens": 0,
+    "provenance_completeness": 1.0,
+    "replans": 15,
+    "replay_calls": 66,
+    "safe_completion_rate": 1.0,
+    "scope": "SCRIPTED-TEST-DOUBLE",
+    "total_latency_seconds": 0.5163460000039777,
+    "total_tool_calls": 528,
+    "unsupported_action_rate": 0.0,
+    "unsupported_number_rate": 0.0
+  },
+  "full_test_command": "$env:PYTHONPATH='src;.'; .venv/Scripts/python.exe -m pytest -q",
+  "integration": [
+    {
+      "assumptions": "Frozen E4, Phase-F policy, synthetic practice and tariff; no LLM inference and no policy selection.",
+      "attempt": "normal_release_checks",
+      "case": "normal",
+      "day": 7,
+      "decision_id": "decision_fb018bbca8d7049c740a40b3",
+      "explicit_approval": false,
+      "maintenance_selected_in_initial_plan": [],
+      "metrics": {
+        "estimated_API_cost": null,
+        "failed_tool_calls": 0,
+        "input_tokens": 0,
+        "llm_latency_seconds": 0.0,
+        "model_calls": 11,
+        "optimizer_calls": 2,
+        "output_tokens": 0,
+        "replans": 1,
+        "replay_calls": 2,
+        "tool_calls": 11,
+        "wall_clock_seconds": 81.44201979999889
+      },
+      "outcome": "VERIFIED_RECOMMENDATION",
+      "realized": {
+        "failure_reason": null,
+        "inventory_bounds": [
+          6.500000000000043,
+          49.99999999999999
+        ],
+        "physically_valid": true,
+        "production_complete": true,
+        "realized_control_sha256": "13fd4afc53e959d916d1923c30756486db7210dfa3a9cef8b2c139d666c3b290",
+        "realized_cost_Rs": 743167.909357633,
+        "realized_energy_kWh": 104164.08728761796,
+        "realized_peak_kVA": 6479.596580021595,
+        "replay_id": "replay_89a6fc2bfb909aa083f8d272",
+        "schedule_id": "schedule_fcbc4814c677353c6286df12",
+        "status": "PASS",
+        "violations": []
+      },
+      "reason": "Request operator review of the independently accepted deterministic adaptive_robust plan.",
+      "scope": "LIVE_FROZEN_DETERMINISTIC_STACK",
+      "seed": 3001,
+      "simulated_execution": false,
+      "source_hashes": {
+        "gateway": "6227be31160180e680c1adc789794f1b373b327e1ebb9e43a5aa4f86e22bc0f4",
+        "phase_F_release": "30c253bcdd0017ba1f4c43388c2c7b5175de3347debb32b6f6a47c1403f5ecc3",
+        "supervisor_config": "89ed0617c9ae7750710254a9469229ab5f94d1bd0d7c8a570373bda86f4aa3fa",
+        "supervisor_source": "a7aab73989292f8712ca4d7ea0d52404c63acf81937ac430b4ab9b5f417a9c52"
+      }
+    },
+    {
+      "assumptions": "Frozen E4, Phase-F policy, synthetic practice and tariff; no LLM inference and no policy selection.",
+      "attempt": "maintenance_release_checks",
+      "case": "maintenance",
+      "day": 14,
+      "decision_id": "decision_6adf0239661efa297ae4ae44",
+      "explicit_approval": false,
+      "maintenance_selected_in_initial_plan": [
+        {
+          "asset_id": "PMP_01",
+          "duration_min": 15,
+          "policy_version": "maintenance_v1",
+          "start_time": "2026-01-19T00:00:00"
+        }
+      ],
+      "metrics": {
+        "estimated_API_cost": null,
+        "failed_tool_calls": 0,
+        "input_tokens": 0,
+        "llm_latency_seconds": 0.0,
+        "model_calls": 11,
+        "optimizer_calls": 3,
+        "output_tokens": 0,
+        "replans": 2,
+        "replay_calls": 2,
+        "tool_calls": 11,
+        "wall_clock_seconds": 73.54534950000016
+      },
+      "outcome": "NO_VERIFIED_RECOMMENDATION",
+      "realized": {
+        "failure_reason": "The represented heat execution exceeded the working-day window.",
+        "inventory_bounds": null,
+        "physically_valid": false,
+        "production_complete": false,
+        "realized_control_sha256": "fb53878b0541fed028bc49f1aa4178efa51785c38df157ff3af8bc4bf2cec273",
+        "realized_cost_Rs": null,
+        "realized_energy_kWh": null,
+        "realized_peak_kVA": null,
+        "replay_id": "replay_d1a2254035406b5c63a0d8a2",
+        "schedule_id": "schedule_b334089ca353636e0e928311",
+        "status": "FAIL",
+        "violations": [
+          "physical_acceptance_failed"
+        ]
+      },
+      "reason": "NO VERIFIED RECOMMENDATION: Deterministic replan returned an unchanged rejected candidate; operator escalation required",
+      "scope": "LIVE_FROZEN_DETERMINISTIC_STACK",
+      "seed": 3002,
+      "simulated_execution": false,
+      "source_hashes": {
+        "gateway": "6227be31160180e680c1adc789794f1b373b327e1ebb9e43a5aa4f86e22bc0f4",
+        "phase_F_release": "30c253bcdd0017ba1f4c43388c2c7b5175de3347debb32b6f6a47c1403f5ecc3",
+        "supervisor_config": "89ed0617c9ae7750710254a9469229ab5f94d1bd0d7c8a570373bda86f4aa3fa",
+        "supervisor_source": "a7aab73989292f8712ca4d7ea0d52404c63acf81937ac430b4ab9b5f417a9c52"
+      }
+    },
+    {
+      "assumptions": "Frozen E4, Phase-F policy, synthetic practice and tariff; no LLM inference and no policy selection.",
+      "attempt": "late_day_release_approval",
+      "case": "late_day",
+      "day": 28,
+      "decision_id": "decision_44c2d2c83de392e30af1cf95",
+      "explicit_approval": true,
+      "maintenance_selected_in_initial_plan": [],
+      "metrics": {
+        "estimated_API_cost": null,
+        "failed_tool_calls": 0,
+        "input_tokens": 0,
+        "llm_latency_seconds": 0.0,
+        "model_calls": 8,
+        "optimizer_calls": 1,
+        "output_tokens": 0,
+        "replans": 0,
+        "replay_calls": 1,
+        "tool_calls": 8,
+        "wall_clock_seconds": 7.617575300000681
+      },
+      "outcome": "VERIFIED_RECOMMENDATION",
+      "realized": {
+        "failure_reason": null,
+        "inventory_bounds": [
+          2.5000000000000764,
+          50.00000000000008
+        ],
+        "physically_valid": true,
+        "production_complete": true,
+        "realized_control_sha256": "0818437fd0c61a5f9446c438ea224cf8e655c207680b2a4db8ff43616d2afbf1",
+        "realized_cost_Rs": 752130.6991844844,
+        "realized_energy_kWh": 104050.1420500442,
+        "realized_peak_kVA": 6491.669825439409,
+        "replay_id": "replay_8382961b57b5999d7fa8ac6a",
+        "schedule_id": "schedule_30dcca7532b8f5dbda6fb0ed",
+        "status": "PASS",
+        "violations": []
+      },
+      "reason": "Request operator review of the independently accepted deterministic robust plan.",
+      "scope": "LIVE_FROZEN_DETERMINISTIC_STACK",
+      "seed": 3003,
+      "simulated_execution": true,
+      "source_hashes": {
+        "gateway": "6227be31160180e680c1adc789794f1b373b327e1ebb9e43a5aa4f86e22bc0f4",
+        "phase_F_release": "30c253bcdd0017ba1f4c43388c2c7b5175de3347debb32b6f6a47c1403f5ecc3",
+        "supervisor_config": "89ed0617c9ae7750710254a9469229ab5f94d1bd0d7c8a570373bda86f4aa3fa",
+        "supervisor_source": "a7aab73989292f8712ca4d7ea0d52404c63acf81937ac430b4ab9b5f417a9c52"
+      }
+    }
+  ],
+  "limitations": "No measured LLM superiority or field reliability.",
+  "live_llm_exit_gate_passed": false,
+  "protected_upstream_files": 8411,
+  "real_execution_enabled": false,
+  "status": "OFFLINE_IMPLEMENTATION_COMPLETE_LIVE_G1_PENDING",
+  "tests_passed": 461,
+  "upstream_hashes_unchanged": true,
+  "user_requested_live_deferral": true
+}

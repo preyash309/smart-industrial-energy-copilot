@@ -1,0 +1,128 @@
+version: optimizer_v1
+plant_config: data/processed/sim_v1.1/config_snapshot.yaml
+prediction_directory: models/phase2b_v1
+prediction_version: forecast_v1
+prediction_schema_sha256: 5fa06e4683cc4a4573091f40e854d71cf676b139492c8f11368ddfae0cd67ff4
+prediction_contract_sha256: 3ecad1cfdf8961a8e214542362217c56371a2cd70813d1ab4555788ecebb18a9
+timezone: Asia/Kolkata
+slot_minutes:
+  value: 15
+  unit: min
+  status: assumption
+  source: Phase II-C deterministic planning contract
+  notes: 96 quarter-hour accounting, rolling and availability slots.
+horizon_slots:
+  value: 96
+  unit: slot
+  status: assumption
+  source: Phase II-C deterministic planning contract
+  notes: One local day; no DST in declared timezone.
+candidate_step_minutes:
+  value: 5
+  unit: min
+  status: assumption
+  source: Phase II-C deterministic planning contract
+  notes: 'Subslot start grid: avoids rounding a 105.2-min prediction to 120 min. Strict
+    15-min policy is tested separately; not a simulator change.'
+tolerance:
+  value: 1.0e-06
+  unit: numeric ledger tolerance
+  status: assumption
+  source: Phase II-C deterministic planning contract
+  notes: Independent checker tolerance; does not relax safety interlocks.
+sec_target: null
+sec_target_notes: No target supplied. Disabled explicitly; caller may supply an explicit
+  kWh/t-liquid cap.
+allowed_practices:
+- normal
+- practice_loss_40
+practice_notes: normal is reference; practice_loss_40 is a synthetic, physically coupled
+  experiment, not a validated shop-floor recommendation.
+solver:
+  library: pyomo.appsi.highs
+  pyomo_version: 6.9.5
+  highspy_version: 1.12.0
+  threads:
+    value: 1
+    unit: thread
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Deterministic serial solver.
+  seed:
+    value: 42
+    unit: dimensionless
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Fixed solver random seed, not plant randomness.
+  time_limit_seconds:
+    value: 60
+    unit: s
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Incumbent requires independent check; limit is never reported as optimal.
+  relative_gap:
+    value: 0.0
+    unit: fraction
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Request proven optimum.
+  absolute_gap:
+    value: 1.0e-06
+    unit: objective unit
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Numerical certificate tolerance.
+tariff:
+  version: synthetic_tou_v1
+  source: Phase II-C synthetic experiment; not a DISCOM tariff
+  unit: Rs/kWh
+  period_rates:
+    offpeak:
+      value: 4
+      unit: Rs/kWh
+      status: assumption
+      source: Phase II-C deterministic planning contract
+      notes: Explicit synthetic test rate, no billing claim.
+    normal:
+      value: 8
+      unit: Rs/kWh
+      status: assumption
+      source: Phase II-C deterministic planning contract
+      notes: Explicit synthetic test rate, no billing claim.
+    peak:
+      value: 12
+      unit: Rs/kWh
+      status: assumption
+      source: Phase II-C deterministic planning contract
+      notes: Explicit synthetic test rate, no billing claim.
+  offpeak_hours:
+    value:
+    - 0
+    - 6
+    - 22
+    - 24
+    unit: h
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Half-open [0,6), [22,24).
+  peak_hours:
+    value:
+    - 18
+    - 22
+    unit: h
+    status: assumption
+    source: Phase II-C deterministic planning contract
+    notes: Half-open synthetic evening band.
+policy:
+  heat_order: input order
+  pump: continuous whenever externally available
+  rhf: fixed configured-temperature readiness throughout allowed rolling window
+  compressor: configured loaded duty during allowed rolling window, idle otherwise
+  inventory_release: billets available at first accounting boundary after predicted
+    completion; rolling uses opening stock only
+  demand: additive asset apparent-power upper bound with full IF/mill/compressor nameplate
+    reserves in active slots
+  energy_allocation: forecast heat kWh at rated IF power at end of predicted cycle;
+    preceding time nonpowered
+  quality: only frozen supported practice modes; fixed RHF setpoint, no metallurgical
+    decision variables

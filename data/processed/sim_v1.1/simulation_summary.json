@@ -1,0 +1,117 @@
+{
+  "baseline": true,
+  "checks": {
+    "baseline_coal": true,
+    "baseline_electricity": true,
+    "baseline_heat_count": true,
+    "baseline_if_share": true,
+    "baseline_sec": true,
+    "cast_balance": true,
+    "caster_yield": true,
+    "daily_bar_target": true,
+    "daily_billet_target": true,
+    "demand": true,
+    "electrical_balance": true,
+    "feeder_apparent_power": true,
+    "fuel_energy_balance": true,
+    "full_power_duration": true,
+    "furnace_cycle_consistency": true,
+    "furnace_heat_meter_balance": true,
+    "furnace_loss_accounting": true,
+    "heat_no_overlap": true,
+    "inventory_bounds": true,
+    "latent_boundary": true,
+    "main_vector_power": true,
+    "melt_balance": true,
+    "power_energy_units": true,
+    "pump_interlock": true,
+    "rhf_temperature": true,
+    "rolling_balance": true,
+    "rolling_capacity": true,
+    "rolling_yield": true,
+    "shared_clock": true,
+    "tap_temperature": true,
+    "yard_balance": true
+  },
+  "days": 30,
+  "electrical_balance_max_error_kWh": 4.547473508864641e-13,
+  "event_counts": [
+    {
+      "asset_id": "CMP_01",
+      "count": 1,
+      "label": "air_leak",
+      "type": "fault"
+    },
+    {
+      "asset_id": "IF_01",
+      "count": 153,
+      "label": "charge_bad",
+      "type": "fault"
+    },
+    {
+      "asset_id": "IF_01",
+      "count": 8,
+      "label": "half",
+      "type": "fault"
+    },
+    {
+      "asset_id": "IF_01",
+      "count": 103,
+      "label": "lid",
+      "type": "fault"
+    },
+    {
+      "asset_id": "IF_01",
+      "count": 57,
+      "label": "superheat",
+      "type": "fault"
+    },
+    {
+      "asset_id": "MILL_01",
+      "count": 2,
+      "label": "bearing_wear",
+      "type": "failure"
+    },
+    {
+      "asset_id": "MILL_01",
+      "count": 2,
+      "label": "bearing_wear_replacement",
+      "type": "repair"
+    },
+    {
+      "asset_id": "PMP_01",
+      "count": 2,
+      "label": "impeller_wear",
+      "type": "failure"
+    },
+    {
+      "asset_id": "PMP_01",
+      "count": 2,
+      "label": "impeller_wear_replacement",
+      "type": "repair"
+    },
+    {
+      "asset_id": "RHF_01",
+      "count": 1,
+      "label": "recuperator_fouling",
+      "type": "fault"
+    }
+  ],
+  "heats": 338,
+  "heats_per_working_day": 13.0,
+  "if_working_day_share": 0.792189781461394,
+  "max_yard_t": 50.0,
+  "mean_bar_t_working_day": 118.56,
+  "mean_billet_t_working_day": 123.5,
+  "mean_calendar_day_MWh": 92.94003881951201,
+  "mean_coal_t_working_day": 7.993855690054905,
+  "mean_if_sec_kWh_t": 650.9299600908571,
+  "mean_working_day_MWh": 106.81896786866771,
+  "min_yard_t": 2.499999999999993,
+  "peak_kVA": 6502.922854377966,
+  "seed": 42,
+  "total_bar_t": 3082.56,
+  "total_coal_kg": 207840.24794142751,
+  "total_electricity_kWh": 2788201.1645853603,
+  "working_days": 26
+}

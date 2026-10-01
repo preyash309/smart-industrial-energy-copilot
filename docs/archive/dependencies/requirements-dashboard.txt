@@ -1,0 +1,5 @@
+streamlit==1.64.0
+plotly==7.1.0
+PyYAML==6.0.3
+pytest>=8,<10
+# Install into .venv-dashboard only. The frozen backend uses its existing .venv.

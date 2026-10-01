@@ -1,0 +1,10 @@
+...........................................                              [100%]
+43 passed in 15.69s
+{
+  "status": "PASS",
+  "selected_originals": 309,
+  "demo_scenarios": 4,
+  "deck_metrics": 30,
+  "full_archive_verified": false,
+  "sealed": true
+}

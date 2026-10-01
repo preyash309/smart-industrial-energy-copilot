@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "bytes": 20403712,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv/Lib/site-packages/numpy.libs/libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 22475776,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv/Lib/site-packages/pyarrow/arrow.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 13401600,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv/Lib/site-packages/pyarrow/arrow_flight.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 20260864,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv/Lib/site-packages/scipy.libs/libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 20589056,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv-dashboard/Lib/site-packages/numpy.libs/libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 21993984,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv-dashboard/Lib/site-packages/pyarrow/arrow.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 14660096,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv-dashboard/Lib/site-packages/pyarrow/arrow_flight.dll",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 19408921,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv-dashboard/Lib/site-packages/pydeck/nbextension/static/index.js.map",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    },
+    {
+      "bytes": 19408921,
+      "decision": "REMOVE FROM PUBLIC / KEEP LOCAL",
+      "handling": "RETAIN ARCHIVE / DO NOT COMMIT BULK",
+      "path": ".venv-dashboard/share/jupyter/nbextensions/pydeck/index.js.map",
+      "protected": false,
+      "rationale": "Qualified local environments; never Git contents"
+    }
+  ],
+  "thresholds_MB": {
+    "10": 9,
+    "100": 0,
+    "50": 0
+  }
+}
